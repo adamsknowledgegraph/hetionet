@@ -1,0 +1,122 @@
+{
+  "name": "Disease Atlas dashboard read model",
+  "version": "2026-04-17",
+  "sourceOfTruth": "Geo Disease Atlas space 141d3ace705feabc04d50c78bbf7226e",
+  "principles": [
+    "Geo remains the source of truth.",
+    "The dashboard reads entities, relations, relation entities, values, and Sources backlinks from Geo.",
+    "Evidence-only relations must be rendered separately from canonical Health relations.",
+    "Every displayed imported claim should link to its relation entity and source entities."
+  ],
+  "views": {
+    "disease": {
+      "entityTypes": ["Disease"],
+      "primaryFields": ["name", "description", "Disease Ontology ID", "Website", "Sources"],
+      "canonicalRelations": ["Symptoms", "Related drugs", "Related pathways"],
+      "evidenceRelations": [
+        "Associated with",
+        "Presents with",
+        "Localizes to",
+        "Resembles",
+        "Upregulates",
+        "Downregulates"
+      ],
+      "incomingEvidenceRelations": ["Treats", "Palliates"],
+      "summaryCounts": [
+        "associatedGenes",
+        "treatingDrugs",
+        "palliativeDrugs",
+        "symptomsEvidence",
+        "anatomyEvidence",
+        "similarDiseasesEvidence",
+        "expressionGenes",
+        "pathways",
+        "sources"
+      ]
+    },
+    "gene": {
+      "entityTypes": ["Gene"],
+      "primaryFields": ["name", "description", "Entrez Gene ID", "Website", "Sources"],
+      "incomingRelations": [
+        "Associated with",
+        "Upregulates",
+        "Downregulates"
+      ],
+      "outgoingRelations": [
+        "Participates in pathway",
+        "Participates in biological process",
+        "Has molecular function",
+        "Located in cellular component"
+      ],
+      "dashboardUse": "Click a gene to see diseases it is associated with, diseases where it is differentially expressed, pathway context, GO annotations, and provenance for each claim."
+    },
+    "drug": {
+      "entityTypes": ["Drug"],
+      "primaryFields": ["name", "description", "DrugBank ID", "Inchikey", "InChI", "Website", "Sources"],
+      "outgoingRelations": ["Treats", "Palliates"],
+      "incomingRelations": ["Includes"],
+      "dashboardUse": "Click a drug to see treating and palliative disease evidence, drug-class membership, and source links."
+    },
+    "evidence": {
+      "entityTypes": ["Relation"],
+      "requiredFields": [
+        "name",
+        "Evidence category",
+        "License",
+        "Log2 fold change",
+        "Sources"
+      ],
+      "requiredRelationShape": ["fromEntity", "relationProperty", "toEntity"],
+      "dashboardUse": "Every row displayed as a claim should be able to open this evidence entity."
+    },
+    "source": {
+      "entityTypes": ["Dataset", "Source", "Paper"],
+      "primaryFields": [
+        "name",
+        "description",
+        "Website",
+        "DOI",
+        "Pmid",
+        "Publish date",
+        "Source database identifier",
+        "Version ID",
+        "License",
+        "Sources"
+      ],
+      "incomingRelations": ["Sources"],
+      "dashboardUse": "Click a source, dataset, or paper to see which claims, entities, and other source records depend on it."
+    }
+  },
+  "acceptanceQueries": [
+    {
+      "name": "TNF gene disease evidence",
+      "startEntity": "TNF",
+      "expect": [
+        "incoming Associated with relations from at least one curated disease",
+        "incoming Upregulates or Downregulates relations when STARGEO evidence exists",
+        "outgoing pathway or GO annotation relations where published",
+        "each imported relation has Sources and useful evidence/source values"
+      ]
+    },
+    {
+      "name": "Asthma disease overview",
+      "startEntity": "Asthma",
+      "expect": [
+        "Associated with",
+        "treating drugs via incoming Treats and/or Related drugs",
+        "Presents with",
+        "Localizes to",
+        "Related pathways",
+        "source-backed evidence relation entities"
+      ]
+    },
+    {
+      "name": "Source backlinks",
+      "startEntity": "MEDLINE cooccurrence",
+      "expect": [
+        "Website link present",
+        "backlinks from symptom, anatomy, or disease similarity evidence relation entities"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "importBatch": "asthma-v1",
+  "datasetName": "Hetionet v1.0",
+  "disease": {
+    "name": "Asthma",
+    "hetionetName": "asthma",
+    "reuseEntityId": "c1d11a58e7f548fca52da2f8f0642a06",
+    "diseaseOntologyId": "DOID:2841",
+    "source": "Disease Ontology",
+    "license": "CC BY 3.0"
+  },
+  "sources": [
+    {
+      "name": "Hetionet v1.0",
+      "type": "Dataset",
+      "description": "Integrated biomedical knowledge graph dataset used as the Disease Atlas import source."
+    },
+    {
+      "name": "Disease Ontology",
+      "type": "Source",
+      "description": "Ontology source for disease labels and identifiers integrated into Hetionet."
+    },
+    {
+      "name": "DISEASES",
+      "type": "Source",
+      "description": "Disease-gene association source integrated by Hetionet."
+    },
+    {
+      "name": "PharmacotherapyDB",
+      "type": "Source",
+      "description": "Curated indication source used by Hetionet for compound treats disease relations."
+    },
+    {
+      "name": "DrugCentral",
+      "type": "Source",
+      "description": "Drug classification source used by Hetionet for pharmacologic class membership."
+    },
+    {
+      "name": "Gene Ontology",
+      "type": "Source",
+      "description": "Controlled vocabulary for biological process, molecular function, and cellular component concepts."
+    },
+    {
+      "name": "NCBI gene2go",
+      "type": "Source",
+      "description": "Gene to Gene Ontology annotation source used by Hetionet for GO participation edges."
+    },
+    {
+      "name": "Reactome",
+      "type": "Source",
+      "description": "Curated pathway source used by Hetionet for pathway participation edges."
+    }
+  ],
+  "entities": {
+    "genes": [
+      {
+        "name": "IL4",
+        "externalId": "3565",
+        "description": "interleukin 4."
+      },
+      {
+        "name": "IL5",
+        "externalId": "3567",
+        "description": "interleukin 5."
+      },
+      {
+        "name": "IL13",
+        "externalId": "3596",
+        "description": "interleukin 13."
+      },
+      {
+        "name": "IL33",
+        "externalId": "90865",
+        "description": "interleukin 33."
+      },
+      {
+        "name": "TSLP",
+        "externalId": "85480",
+        "description": "thymic stromal lymphopoietin."
+      },
+      {
+        "name": "TNF",
+        "externalId": "7124",
+        "description": "tumor necrosis factor."
+      },
+      {
+        "name": "ADRB2",
+        "externalId": "154",
+        "description": "adrenoceptor beta 2, surface."
+      },
+      {
+        "name": "PDE4A",
+        "externalId": "5141",
+        "description": "phosphodiesterase 4A, cAMP-specific."
+      },
+      {
+        "name": "STAT6",
+        "externalId": "6778",
+        "description": "signal transducer and activator of transcription 6, interleukin-4 induced."
+      },
+      {
+        "name": "GATA3",
+        "externalId": "2625",
+        "description": "GATA binding protein 3."
+      },
+      {
+        "name": "ALOX5",
+        "externalId": "240",
+        "description": "arachidonate 5-lipoxygenase."
+      },
+      {
+        "name": "LTC4S",
+        "externalId": "4056",
+        "description": "leukotriene C4 synthase."
+      }
+    ],
+    "drugs": [
+      {
+        "name": "Montelukast",
+        "externalId": "DB00471"
+      },
+      {
+        "name": "Beclomethasone",
+        "externalId": "DB00394"
+      },
+      {
+        "name": "Prednisone",
+        "externalId": "DB00635"
+      },
+      {
+        "name": "Ciclesonide",
+        "externalId": "DB01410"
+      },
+      {
+        "name": "Arformoterol",
+        "externalId": "DB01274"
+      },
+      {
+        "name": "Salmeterol",
+        "externalId": "DB00938"
+      },
+      {
+        "name": "Hydrocortisone",
+        "externalId": "DB00741"
+      },
+      {
+        "name": "Nedocromil",
+        "externalId": "DB00716"
+      }
+    ],
+    "drugClasses": [
+      {
+        "name": "Corticosteroid Hormone Receptor Agonists",
+        "externalId": "N0000175450",
+        "description": "Drug class imported from Hetionet v1.0."
+      },
+      {
+        "name": "Adrenergic beta2-Agonists",
+        "externalId": "N0000009922",
+        "description": "Drug class imported from Hetionet v1.0."
+      },
+      {
+        "name": "Leukotriene Receptor Antagonists",
+        "externalId": "N0000000083",
+        "description": "Drug class imported from Hetionet v1.0."
+      }
+    ],
+    "pathways": [
+      {
+        "name": "Immune System",
+        "externalId": "PC7_4688",
+        "description": "Pathway imported from Hetionet v1.0."
+      },
+      {
+        "name": "Signaling by GPCR",
+        "externalId": "PC7_7457",
+        "description": "Pathway imported from Hetionet v1.0."
+      },
+      {
+        "name": "GPCR downstream signaling",
+        "externalId": "PC7_4043",
+        "description": "Pathway imported from Hetionet v1.0."
+      }
+    ],
+    "biologicalProcesses": [
+      {
+        "name": "inflammatory response",
+        "goId": "GO:0006954",
+        "description": "Gene Ontology biological process term imported from Hetionet v1.0."
+      },
+      {
+        "name": "regulation of immune response",
+        "goId": "GO:0050776",
+        "description": "Gene Ontology biological process term imported from Hetionet v1.0."
+      }
+    ],
+    "molecularFunctions": [
+      {
+        "name": "cytokine activity",
+        "goId": "GO:0005125",
+        "description": "Gene Ontology molecular function term imported from Hetionet v1.0."
+      },
+      {
+        "name": "cytokine receptor binding",
+        "goId": "GO:0005126",
+        "description": "Gene Ontology molecular function term imported from Hetionet v1.0."
+      }
+    ],
+    "cellularComponents": [
+      {
+        "name": "cell surface",
+        "goId": "GO:0009986",
+        "description": "Gene Ontology cellular component term imported from Hetionet v1.0."
+      }
+    ]
+  },
+  "relations": {
+    "associatedGenes": [
+      {
+        "from": "Asthma",
+        "to": "IL4",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "IL5",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "IL13",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "IL33",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": true
+      },
+      {
+        "from": "Asthma",
+        "to": "TSLP",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": true
+      },
+      {
+        "from": "Asthma",
+        "to": "TNF",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "ADRB2",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "PDE4A",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "STAT6",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "GATA3",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "ALOX5",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      },
+      {
+        "from": "Asthma",
+        "to": "LTC4S",
+        "metaedge": "DaG",
+        "primarySource": "DISEASES",
+        "unbiased": false
+      }
+    ],
+    "treats": [
+      {
+        "from": "Montelukast",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Beclomethasone",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Prednisone",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Ciclesonide",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Arformoterol",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Salmeterol",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Hydrocortisone",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      },
+      {
+        "from": "Nedocromil",
+        "to": "Asthma",
+        "metaedge": "CtD",
+        "primarySource": "PharmacotherapyDB",
+        "unbiased": false
+      }
+    ],
+    "includesDrug": [
+      {
+        "from": "Corticosteroid Hormone Receptor Agonists",
+        "to": "Prednisone",
+        "metaedge": "PCiC",
+        "primarySource": "DrugCentral",
+        "unbiased": false
+      },
+      {
+        "from": "Corticosteroid Hormone Receptor Agonists",
+        "to": "Hydrocortisone",
+        "metaedge": "PCiC",
+        "primarySource": "DrugCentral",
+        "unbiased": false
+      },
+      {
+        "from": "Adrenergic beta2-Agonists",
+        "to": "Arformoterol",
+        "metaedge": "PCiC",
+        "primarySource": "DrugCentral",
+        "unbiased": false
+      },
+      {
+        "from": "Adrenergic beta2-Agonists",
+        "to": "Salmeterol",
+        "metaedge": "PCiC",
+        "primarySource": "DrugCentral",
+        "unbiased": false
+      },
+      {
+        "from": "Leukotriene Receptor Antagonists",
+        "to": "Montelukast",
+        "metaedge": "PCiC",
+        "primarySource": "DrugCentral",
+        "unbiased": false
+      }
+    ],
+    "participatesInPathway": [
+      {
+        "from": "IL5",
+        "to": "Immune System",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "STAT6",
+        "to": "Immune System",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "ADRB2",
+        "to": "Signaling by GPCR",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "IL5",
+        "to": "Signaling by GPCR",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "PDE4A",
+        "to": "Signaling by GPCR",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "ADRB2",
+        "to": "GPCR downstream signaling",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "IL5",
+        "to": "GPCR downstream signaling",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      },
+      {
+        "from": "PDE4A",
+        "to": "GPCR downstream signaling",
+        "metaedge": "GpPW",
+        "primarySource": "Reactome",
+        "unbiased": false
+      }
+    ],
+    "participatesInBiologicalProcess": [
+      {
+        "from": "ALOX5",
+        "to": "inflammatory response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "GATA3",
+        "to": "inflammatory response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL13",
+        "to": "inflammatory response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL5",
+        "to": "inflammatory response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "TNF",
+        "to": "inflammatory response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "GATA3",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL13",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL33",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL4",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL5",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "STAT6",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "TNF",
+        "to": "regulation of immune response",
+        "metaedge": "GpBP",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      }
+    ],
+    "hasMolecularFunction": [
+      {
+        "from": "IL13",
+        "to": "cytokine activity",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL33",
+        "to": "cytokine activity",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL4",
+        "to": "cytokine activity",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL5",
+        "to": "cytokine activity",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "TNF",
+        "to": "cytokine activity",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "TSLP",
+        "to": "cytokine activity",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "GATA3",
+        "to": "cytokine receptor binding",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL13",
+        "to": "cytokine receptor binding",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL4",
+        "to": "cytokine receptor binding",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL5",
+        "to": "cytokine receptor binding",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "TNF",
+        "to": "cytokine receptor binding",
+        "metaedge": "GpMF",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      }
+    ],
+    "locatedInCellularComponent": [
+      {
+        "from": "IL13",
+        "to": "cell surface",
+        "metaedge": "GpCC",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "IL4",
+        "to": "cell surface",
+        "metaedge": "GpCC",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      },
+      {
+        "from": "TNF",
+        "to": "cell surface",
+        "metaedge": "GpCC",
+        "primarySource": "NCBI gene2go",
+        "unbiased": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "importBatch": "asthma-v1",
+  "papers": [
+    {
+      "name": "Systematic integration of biomedical knowledge prioritizes drugs for repurposing",
+      "description": "Main Project Rephetio paper describing Hetionet v1.0, its 47,031 nodes, 2,250,197 relationships, and drug repurposing model.",
+      "doi": "10.7554/eLife.26726",
+      "pmid": "28936969",
+      "publishDate": "2017-10-13T00:00:00.000Z",
+      "website": "https://elifesciences.org/articles/26726",
+      "sources": ["Hetionet v1.0"]
+    },
+    {
+      "name": "Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes",
+      "description": "Foundational hetnet edge-prediction paper for prioritizing disease-associated genes using heterogeneous biomedical networks.",
+      "doi": "10.1371/journal.pcbi.1004259",
+      "pmid": "26158728",
+      "publishDate": "2015-07-09T00:00:00.000Z",
+      "website": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004259",
+      "sources": ["DISEASES", "Disease Ontology"]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hetionet v1.0",
+      "type": "Dataset",
+      "description": "Integrated biomedical knowledge graph used as the Disease Atlas import source.",
+      "website": "https://github.com/hetio/hetionet",
+      "sourceDatabaseIdentifier": "hetionet-v1.0.0",
+      "version": "v1.0.0",
+      "doi": "10.5281/zenodo.268568",
+      "license": "Mixed source licenses; see node and edge provenance.",
+      "sources": ["Systematic integration of biomedical knowledge prioritizes drugs for repurposing"]
+    },
+    {
+      "name": "Disease Ontology",
+      "type": "Source",
+      "description": "Ontology source for disease labels and identifiers integrated into Hetionet.",
+      "website": "https://disease-ontology.org/",
+      "sourceDatabaseIdentifier": "DOID",
+      "license": "CC BY 3.0",
+      "sources": ["Systematic integration of biomedical knowledge prioritizes drugs for repurposing"]
+    },
+    {
+      "name": "DISEASES",
+      "type": "Source",
+      "description": "Disease-gene association source integrated by Hetionet.",
+      "website": "https://diseases.jensenlab.org/",
+      "sourceDatabaseIdentifier": "DISEASES / processed Hetionet source DOI 10.5281/zenodo.48427",
+      "license": "Source-specific; see DISEASES terms and Hetionet processing notes.",
+      "sources": ["Systematic integration of biomedical knowledge prioritizes drugs for repurposing"]
+    },
+    {
+      "name": "PharmacotherapyDB",
+      "type": "Source",
+      "description": "Curated indication source used by Hetionet for compound-treats-disease relations.",
+      "website": "https://github.com/dhimmel/indications",
+      "sourceDatabaseIdentifier": "PharmacotherapyDB / DOI 10.5281/zenodo.47664",
+      "license": "CC0 1.0 / source-specific; see repository metadata.",
+      "sources": ["Systematic integration of biomedical knowledge prioritizes drugs for repurposing"]
+    },
+    {
+      "name": "DrugBank",
+      "type": "Source",
+      "description": "Drug identifier and chemistry source used by Hetionet compound nodes.",
+      "website": "https://go.drugbank.com/",
+      "sourceDatabaseIdentifier": "DrugBank",
+      "license": "CC BY-NC 4.0 in Hetionet v1.0 node metadata.",
+      "sources": ["Hetionet v1.0"]
+    },
+    {
+      "name": "DrugCentral",
+      "type": "Source",
+      "description": "Drug classification source used by Hetionet for pharmacologic class membership.",
+      "website": "https://drugcentral.org/",
+      "sourceDatabaseIdentifier": "DrugCentral / NDF-RT pharmacologic classes",
+      "license": "CC BY 4.0 in Hetionet v1.0 node metadata.",
+      "sources": ["Hetionet v1.0"]
+    },
+    {
+      "name": "Entrez Gene",
+      "type": "Source",
+      "description": "NCBI Gene source for gene identifiers and descriptions in Hetionet gene nodes.",
+      "website": "https://www.ncbi.nlm.nih.gov/gene/",
+      "sourceDatabaseIdentifier": "NCBI Gene",
+      "license": "CC0 1.0 in Hetionet v1.0 node metadata.",
+      "sources": ["Hetionet v1.0"]
+    },
+    {
+      "name": "Gene Ontology",
+      "type": "Source",
+      "description": "Controlled vocabulary for biological process, molecular function, and cellular component concepts.",
+      "website": "http://geneontology.org/",
+      "sourceDatabaseIdentifier": "GO",
+      "license": "CC BY 4.0 in Hetionet v1.0 node metadata.",
+      "sources": ["Hetionet v1.0"]
+    },
+    {
+      "name": "NCBI gene2go",
+      "type": "Source",
+      "description": "Gene-to-Gene-Ontology annotation source used by Hetionet for GO participation edges.",
+      "website": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2go.gz",
+      "sourceDatabaseIdentifier": "NCBI gene2go",
+      "license": "NCBI / source-specific.",
+      "sources": ["Hetionet v1.0"]
+    },
+    {
+      "name": "Reactome",
+      "type": "Source",
+      "description": "Curated pathway source used by Hetionet for pathway participation edges.",
+      "website": "https://reactome.org/",
+      "sourceDatabaseIdentifier": "Reactome via Pathway Commons",
+      "license": "CC BY 4.0 in Hetionet v1.0 node metadata.",
+      "sources": ["Hetionet v1.0"]
+    }
+  ],
+  "disease": {
+    "name": "Asthma",
+    "diseaseOntologyId": "DOID:2841",
+    "website": "http://purl.obolibrary.org/obo/DOID_2841",
+    "license": "CC BY 3.0",
+    "sources": ["Disease Ontology", "Hetionet v1.0"]
+  },
+  "genes": [
+    {"name": "IL4", "entrezGeneId": "3565", "description": "interleukin 4", "website": "http://identifiers.org/ncbigene/3565", "license": "CC0 1.0"},
+    {"name": "IL5", "entrezGeneId": "3567", "description": "interleukin 5", "website": "http://identifiers.org/ncbigene/3567", "license": "CC0 1.0"},
+    {"name": "IL13", "entrezGeneId": "3596", "description": "interleukin 13", "website": "http://identifiers.org/ncbigene/3596", "license": "CC0 1.0"},
+    {"name": "IL33", "entrezGeneId": "90865", "description": "interleukin 33", "website": "http://identifiers.org/ncbigene/90865", "license": "CC0 1.0"},
+    {"name": "TSLP", "entrezGeneId": "85480", "description": "thymic stromal lymphopoietin", "website": "http://identifiers.org/ncbigene/85480", "license": "CC0 1.0"},
+    {"name": "TNF", "entrezGeneId": "7124", "description": "tumor necrosis factor", "website": "http://identifiers.org/ncbigene/7124", "license": "CC0 1.0"},
+    {"name": "ADRB2", "entrezGeneId": "154", "description": "adrenoceptor beta 2, surface", "website": "http://identifiers.org/ncbigene/154", "license": "CC0 1.0"},
+    {"name": "PDE4A", "entrezGeneId": "5141", "description": "phosphodiesterase 4A, cAMP-specific", "website": "http://identifiers.org/ncbigene/5141", "license": "CC0 1.0"},
+    {"name": "STAT6", "entrezGeneId": "6778", "description": "signal transducer and activator of transcription 6, interleukin-4 induced", "website": "http://identifiers.org/ncbigene/6778", "license": "CC0 1.0"},
+    {"name": "GATA3", "entrezGeneId": "2625", "description": "GATA binding protein 3", "website": "http://identifiers.org/ncbigene/2625", "license": "CC0 1.0"},
+    {"name": "ALOX5", "entrezGeneId": "240", "description": "arachidonate 5-lipoxygenase", "website": "http://identifiers.org/ncbigene/240", "license": "CC0 1.0"},
+    {"name": "LTC4S", "entrezGeneId": "4056", "description": "leukotriene C4 synthase", "website": "http://identifiers.org/ncbigene/4056", "license": "CC0 1.0"}
+  ],
+  "drugs": [
+    {"name": "Montelukast", "drugBankId": "DB00471", "inchikey": "UCHDWCPVSPXUMX-TZIWLTJVSA-N", "inchi": "InChI=1S/C35H36ClNO3S/c1-34(2,40)30-9-4-3-7-25(30)13-17-32(41-23-35(18-19-35)22-33(38)39)27-8-5-6-24(20-27)10-15-29-16-12-26-11-14-28(36)21-31(26)37-29/h3-12,14-16,20-21,32,40H,13,17-19,22-23H2,1-2H3,(H,38,39)/b15-10+/t32-/m1/s1", "website": "http://www.drugbank.ca/drugs/DB00471", "license": "CC BY-NC 4.0"},
+    {"name": "Beclomethasone", "drugBankId": "DB00394", "inchikey": "KUVIULQEHSCUHY-XYWKZLDCSA-N", "inchi": "InChI=1S/C28H37ClO7/c1-6-23(33)35-15-22(32)28(36-24(34)7-2)16(3)12-20-19-9-8-17-13-18(30)10-11-25(17,4)27(19,29)21(31)14-26(20,28)5/h10-11,13,16,19-21,31H,6-9,12,14-15H2,1-5H3/t16-,19-,20-,21-,25-,26-,27-,28-/m0/s1", "website": "http://www.drugbank.ca/drugs/DB00394", "license": "CC BY-NC 4.0"},
+    {"name": "Prednisone", "drugBankId": "DB00635", "inchikey": "XOFYZVNMUHMLCC-ZPOLXVRWSA-N", "inchi": "InChI=1S/C21H26O5/c1-19-7-5-13(23)9-12(19)3-4-14-15-6-8-21(26,17(25)11-22)20(15,2)10-16(24)18(14)19/h5,7,9,14-15,18,22,26H,3-4,6,8,10-11H2,1-2H3/t14-,15-,18+,19-,20-,21-/m0/s1", "website": "http://www.drugbank.ca/drugs/DB00635", "license": "CC BY-NC 4.0"},
+    {"name": "Ciclesonide", "drugBankId": "DB01410", "inchikey": "LUKZNWIVRBCLON-FOMURGDPSA-N", "inchi": "InChI=1S/C32H44O7/c1-18(2)28(36)37-17-25(35)32-26(38-29(39-32)19-8-6-5-7-9-19)15-23-22-11-10-20-14-21(33)12-13-30(20,3)27(22)24(34)16-31(23,32)4/h12-14,18-19,22-24,26-27,29,34H,5-11,15-17H2,1-4H3/t22-,23-,24-,26+,27+,29?,30-,31-,32+/m0/s1", "website": "http://www.drugbank.ca/drugs/DB01410", "license": "CC BY-NC 4.0"},
+    {"name": "Arformoterol", "drugBankId": "DB01274", "inchikey": "BPZSYCZIITTYBL-YJYMSZOUSA-N", "inchi": "InChI=1S/C19H24N2O4/c1-13(9-14-3-6-16(25-2)7-4-14)20-11-19(24)15-5-8-18(23)17(10-15)21-12-22/h3-8,10,12-13,19-20,23-24H,9,11H2,1-2H3,(H,21,22)/t13-,19+/m1/s1", "website": "http://www.drugbank.ca/drugs/DB01274", "license": "CC BY-NC 4.0"},
+    {"name": "Salmeterol", "drugBankId": "DB00938", "inchikey": "GIIZNNXWQWCKIB-UHFFFAOYSA-N", "inchi": "InChI=1S/C25H37NO4/c27-20-23-18-22(13-14-24(23)28)25(29)19-26-15-7-1-2-8-16-30-17-9-6-12-21-10-4-3-5-11-21/h3-5,10-11,13-14,18,25-29H,1-2,6-9,12,15-17,19-20H2", "website": "http://www.drugbank.ca/drugs/DB00938", "license": "CC BY-NC 4.0"},
+    {"name": "Hydrocortisone", "drugBankId": "DB00741", "inchikey": "JYGXADMDTFJGBT-VWUMJDOOSA-N", "inchi": "InChI=1S/C21H30O5/c1-19-7-5-13(23)9-12(19)3-4-14-15-6-8-21(26,17(25)11-22)20(15,2)10-16(24)18(14)19/h9,14-16,18,22,24,26H,3-8,10-11H2,1-2H3/t14-,15-,16-,18+,19-,20-,21-/m0/s1", "website": "http://www.drugbank.ca/drugs/DB00741", "license": "CC BY-NC 4.0"},
+    {"name": "Nedocromil", "drugBankId": "DB00716", "inchikey": "RQTOOFIXOKYGAN-UHFFFAOYSA-N", "inchi": "InChI=1S/C19H17NO7/c1-3-5-9-16-10(13(21)7-12(18(23)24)20(16)4-2)6-11-14(22)8-15(19(25)26)27-17(9)11/h6-8H,3-5H2,1-2H3,(H,23,24)(H,25,26)", "website": "http://www.drugbank.ca/drugs/DB00716", "license": "CC BY-NC 4.0"}
+  ],
+  "drugClasses": [
+    {"name": "Corticosteroid Hormone Receptor Agonists", "sourceDatabaseIdentifier": "N0000175450", "classType": "Mechanism of Action", "website": "http://purl.bioontology.org/ontology/NDFRT/N0000175450", "license": "CC BY 4.0"},
+    {"name": "Adrenergic beta2-Agonists", "sourceDatabaseIdentifier": "N0000009922", "classType": "Mechanism of Action", "website": "http://purl.bioontology.org/ontology/NDFRT/N0000009922", "license": "CC BY 4.0"},
+    {"name": "Leukotriene Receptor Antagonists", "sourceDatabaseIdentifier": "N0000000083", "classType": "Mechanism of Action", "website": "http://purl.bioontology.org/ontology/NDFRT/N0000000083", "license": "CC BY 4.0"}
+  ],
+  "pathways": [
+    {"name": "Immune System", "sourceDatabaseIdentifier": "PC7_4688", "license": "CC BY 4.0"},
+    {"name": "Signaling by GPCR", "sourceDatabaseIdentifier": "PC7_7457", "license": "CC BY 4.0"},
+    {"name": "GPCR downstream signaling", "sourceDatabaseIdentifier": "PC7_4043", "license": "CC BY 4.0"}
+  ],
+  "goTerms": [
+    {"name": "inflammatory response", "goId": "GO:0006954", "website": "http://purl.obolibrary.org/obo/GO_0006954", "license": "CC BY 4.0"},
+    {"name": "regulation of immune response", "goId": "GO:0050776", "website": "http://purl.obolibrary.org/obo/GO_0050776", "license": "CC BY 4.0"},
+    {"name": "cytokine activity", "goId": "GO:0005125", "website": "http://purl.obolibrary.org/obo/GO_0005125", "license": "CC BY 4.0"},
+    {"name": "cytokine receptor binding", "goId": "GO:0005126", "website": "http://purl.obolibrary.org/obo/GO_0005126", "license": "CC BY 4.0"},
+    {"name": "cell surface", "goId": "GO:0009986", "website": "http://purl.obolibrary.org/obo/GO_0009986", "license": "CC BY 4.0"}
+  ]
+}

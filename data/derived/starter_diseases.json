@@ -1,0 +1,1180 @@
+{
+  "space_id": "141d3ace705feabc04d50c78bbf7226e",
+  "source_dataset": {
+    "name": "Hetionet v1.0",
+    "source_file": "data/source/hetionet-v1.0.json.bz2"
+  },
+  "starter_diseases": [
+    {
+      "name": "asthma",
+      "disease_ontology_id": "DOID:2841",
+      "geo_reuse_entity_id": "c1d11a58e7f548fca52da2f8f0642a06",
+      "source": "Disease Ontology",
+      "license": "CC BY 3.0",
+      "relation_counts": {
+        "associated_genes": 222,
+        "upregulated_genes": 4,
+        "downregulated_genes": 0,
+        "treating_compounds": 37,
+        "palliative_compounds": 3,
+        "symptoms_from_medline_cooccurrence": 26,
+        "anatomy_from_medline_cooccurrence": 23,
+        "similar_diseases_from_medline_cooccurrence": 2
+      },
+      "selected_genes": [
+        {
+          "name": "IL4",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL5",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL13",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL33",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "TSLP",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "TNF",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "ADRB2",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "PDE4A",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "STAT6",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "GATA3",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "FCER1A",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "HLA-G",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "ALOX5",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "LTC4S",
+          "support": [
+            "associated"
+          ]
+        }
+      ],
+      "selected_compounds": [
+        {
+          "name": "Montelukast",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Leukotriene Receptor Antagonists"
+          ]
+        },
+        {
+          "name": "Beclomethasone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": []
+        },
+        {
+          "name": "Prednisone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Prednisolone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Ciclesonide",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": []
+        },
+        {
+          "name": "Arformoterol",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Adrenergic beta2-Agonists"
+          ]
+        },
+        {
+          "name": "Salmeterol",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Adrenergic beta2-Agonists"
+          ]
+        },
+        {
+          "name": "Hydrocortisone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Nedocromil",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Decreased Histamine Release"
+          ]
+        },
+        {
+          "name": "Epinephrine",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Catecholamines"
+          ]
+        },
+        {
+          "name": "Pseudoephedrine",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Adrenergic alpha-Agonists"
+          ]
+        }
+      ],
+      "top_annotations": {
+        "Pathway": [
+          {
+            "name": "Signaling Pathways",
+            "identifier": "PC7_7439",
+            "supporting_associated_genes": 76
+          },
+          {
+            "name": "Signaling by GPCR",
+            "identifier": "PC7_7457",
+            "supporting_associated_genes": 57
+          },
+          {
+            "name": "Immune System",
+            "identifier": "PC7_4688",
+            "supporting_associated_genes": 53
+          },
+          {
+            "name": "GPCR downstream signaling",
+            "identifier": "PC7_4043",
+            "supporting_associated_genes": 48
+          },
+          {
+            "name": "Class A/1 (Rhodopsin-like receptors)",
+            "identifier": "PC7_2620",
+            "supporting_associated_genes": 38
+          },
+          {
+            "name": "GPCR ligand binding",
+            "identifier": "PC7_4044",
+            "supporting_associated_genes": 38
+          },
+          {
+            "name": "Peptide ligand-binding receptors",
+            "identifier": "PC7_6396",
+            "supporting_associated_genes": 31
+          },
+          {
+            "name": "Allograft Rejection",
+            "identifier": "WP2328_r84648",
+            "supporting_associated_genes": 28
+          }
+        ],
+        "Biological Process": [
+          {
+            "name": "response to lipid",
+            "identifier": "GO:0033993",
+            "supporting_associated_genes": 81
+          },
+          {
+            "name": "positive regulation of immune system process",
+            "identifier": "GO:0002684",
+            "supporting_associated_genes": 78
+          },
+          {
+            "name": "response to biotic stimulus",
+            "identifier": "GO:0009607",
+            "supporting_associated_genes": 76
+          },
+          {
+            "name": "response to external biotic stimulus",
+            "identifier": "GO:0043207",
+            "supporting_associated_genes": 75
+          },
+          {
+            "name": "response to other organism",
+            "identifier": "GO:0051707",
+            "supporting_associated_genes": 75
+          },
+          {
+            "name": "regulation of immune response",
+            "identifier": "GO:0050776",
+            "supporting_associated_genes": 74
+          },
+          {
+            "name": "response to organic cyclic compound",
+            "identifier": "GO:0014070",
+            "supporting_associated_genes": 72
+          },
+          {
+            "name": "inflammatory response",
+            "identifier": "GO:0006954",
+            "supporting_associated_genes": 71
+          }
+        ],
+        "Molecular Function": [
+          {
+            "name": "cytokine activity",
+            "identifier": "GO:0005125",
+            "supporting_associated_genes": 38
+          },
+          {
+            "name": "cytokine receptor binding",
+            "identifier": "GO:0005126",
+            "supporting_associated_genes": 38
+          },
+          {
+            "name": "protein homodimerization activity",
+            "identifier": "GO:0042803",
+            "supporting_associated_genes": 25
+          },
+          {
+            "name": "G-protein coupled receptor binding",
+            "identifier": "GO:0001664",
+            "supporting_associated_genes": 25
+          },
+          {
+            "name": "G-protein coupled receptor activity",
+            "identifier": "GO:0004930",
+            "supporting_associated_genes": 22
+          },
+          {
+            "name": "protein complex binding",
+            "identifier": "GO:0032403",
+            "supporting_associated_genes": 21
+          },
+          {
+            "name": "lipid binding",
+            "identifier": "GO:0008289",
+            "supporting_associated_genes": 20
+          },
+          {
+            "name": "enzyme regulator activity",
+            "identifier": "GO:0030234",
+            "supporting_associated_genes": 20
+          }
+        ],
+        "Cellular Component": [
+          {
+            "name": "cell surface",
+            "identifier": "GO:0009986",
+            "supporting_associated_genes": 46
+          },
+          {
+            "name": "side of membrane",
+            "identifier": "GO:0098552",
+            "supporting_associated_genes": 35
+          },
+          {
+            "name": "external side of plasma membrane",
+            "identifier": "GO:0009897",
+            "supporting_associated_genes": 29
+          },
+          {
+            "name": "membrane protein complex",
+            "identifier": "GO:0098796",
+            "supporting_associated_genes": 28
+          },
+          {
+            "name": "endosome",
+            "identifier": "GO:0005768",
+            "supporting_associated_genes": 25
+          },
+          {
+            "name": "plasma membrane protein complex",
+            "identifier": "GO:0098797",
+            "supporting_associated_genes": 24
+          },
+          {
+            "name": "neuron projection",
+            "identifier": "GO:0043005",
+            "supporting_associated_genes": 23
+          },
+          {
+            "name": "endoplasmic reticulum membrane",
+            "identifier": "GO:0005789",
+            "supporting_associated_genes": 23
+          }
+        ]
+      },
+      "wave_1_policy": {
+        "publish_now": [
+          "disease identifiers",
+          "associated genes",
+          "treating compounds",
+          "palliative compounds",
+          "pharmacologic classes",
+          "gene pathway and GO context"
+        ],
+        "hold_for_review": [
+          "disease symptom edges from MEDLINE cooccurrence",
+          "disease anatomy edges from MEDLINE cooccurrence",
+          "disease resemblance edges from MEDLINE cooccurrence",
+          "differential expression edges until import metadata is finalized"
+        ]
+      }
+    },
+    {
+      "name": "psoriasis",
+      "disease_ontology_id": "DOID:8893",
+      "geo_reuse_entity_id": "1bd0dae46c25444d8d923e67dd421645",
+      "source": "Disease Ontology",
+      "license": "CC BY 3.0",
+      "relation_counts": {
+        "associated_genes": 92,
+        "upregulated_genes": 250,
+        "downregulated_genes": 250,
+        "treating_compounds": 21,
+        "palliative_compounds": 4,
+        "symptoms_from_medline_cooccurrence": 25,
+        "anatomy_from_medline_cooccurrence": 24,
+        "similar_diseases_from_medline_cooccurrence": 6
+      },
+      "selected_genes": [
+        {
+          "name": "TNF",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL17A",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL23A",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL23R",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL12B",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL36RN",
+          "support": [
+            "associated",
+            "upregulated"
+          ]
+        },
+        {
+          "name": "IFIH1",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IFNLR1",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "STAT3",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "CARD14",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "TRAF3IP2",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "TYK2",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "DDX58",
+          "support": [
+            "associated"
+          ]
+        }
+      ],
+      "selected_compounds": [
+        {
+          "name": "Methotrexate",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Folic Acid Metabolism Inhibitors"
+          ]
+        },
+        {
+          "name": "Cyclosporine",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Cytochrome P450 3A4 Inhibitors",
+            "P-Glycoprotein Inhibitors"
+          ]
+        },
+        {
+          "name": "Clobetasol propionate",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": []
+        },
+        {
+          "name": "Triamcinolone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Betamethasone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Fluocinolone Acetonide",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Methoxsalen",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Photoabsorption",
+            "Photosensitizing Activity",
+            "Psoralens"
+          ]
+        },
+        {
+          "name": "Mycophenolate mofetil",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": []
+        },
+        {
+          "name": "Cholecalciferol",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Vitamin D"
+          ]
+        },
+        {
+          "name": "Salicylic acid",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Decreased Prostaglandin Production",
+            "Nonsteroidal Anti-inflammatory Compounds"
+          ]
+        }
+      ],
+      "top_annotations": {
+        "Pathway": [
+          {
+            "name": "Immune System",
+            "identifier": "PC7_4688",
+            "supporting_associated_genes": 24
+          },
+          {
+            "name": "Adaptive Immune System",
+            "identifier": "PC7_1563",
+            "supporting_associated_genes": 15
+          },
+          {
+            "name": "Signaling Pathways",
+            "identifier": "PC7_7439",
+            "supporting_associated_genes": 15
+          },
+          {
+            "name": "Allograft Rejection",
+            "identifier": "WP2328_r84648",
+            "supporting_associated_genes": 15
+          },
+          {
+            "name": "Innate Immune System",
+            "identifier": "PC7_4741",
+            "supporting_associated_genes": 14
+          },
+          {
+            "name": "IL23-mediated signaling events",
+            "identifier": "PC7_4614",
+            "supporting_associated_genes": 14
+          },
+          {
+            "name": "Cytokine Signaling in Immune system",
+            "identifier": "PC7_2907",
+            "supporting_associated_genes": 13
+          },
+          {
+            "name": "IL12-mediated signaling events",
+            "identifier": "PC7_4594",
+            "supporting_associated_genes": 12
+          }
+        ],
+        "Biological Process": [
+          {
+            "name": "response to biotic stimulus",
+            "identifier": "GO:0009607",
+            "supporting_associated_genes": 36
+          },
+          {
+            "name": "response to other organism",
+            "identifier": "GO:0051707",
+            "supporting_associated_genes": 35
+          },
+          {
+            "name": "response to external biotic stimulus",
+            "identifier": "GO:0043207",
+            "supporting_associated_genes": 35
+          },
+          {
+            "name": "positive regulation of immune system process",
+            "identifier": "GO:0002684",
+            "supporting_associated_genes": 34
+          },
+          {
+            "name": "regulation of immune response",
+            "identifier": "GO:0050776",
+            "supporting_associated_genes": 33
+          },
+          {
+            "name": "regulation of defense response",
+            "identifier": "GO:0031347",
+            "supporting_associated_genes": 32
+          },
+          {
+            "name": "response to cytokine",
+            "identifier": "GO:0034097",
+            "supporting_associated_genes": 31
+          },
+          {
+            "name": "response to lipid",
+            "identifier": "GO:0033993",
+            "supporting_associated_genes": 31
+          }
+        ],
+        "Molecular Function": [
+          {
+            "name": "cytokine receptor binding",
+            "identifier": "GO:0005126",
+            "supporting_associated_genes": 19
+          },
+          {
+            "name": "cytokine activity",
+            "identifier": "GO:0005125",
+            "supporting_associated_genes": 16
+          },
+          {
+            "name": "protein homodimerization activity",
+            "identifier": "GO:0042803",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "kinase binding",
+            "identifier": "GO:0019900",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "regulatory region nucleic acid binding",
+            "identifier": "GO:0001067",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "transcription regulatory region DNA binding",
+            "identifier": "GO:0044212",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "regulatory region DNA binding",
+            "identifier": "GO:0000975",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "double-stranded DNA binding",
+            "identifier": "GO:0003690",
+            "supporting_associated_genes": 9
+          }
+        ],
+        "Cellular Component": [
+          {
+            "name": "cell surface",
+            "identifier": "GO:0009986",
+            "supporting_associated_genes": 19
+          },
+          {
+            "name": "side of membrane",
+            "identifier": "GO:0098552",
+            "supporting_associated_genes": 18
+          },
+          {
+            "name": "membrane protein complex",
+            "identifier": "GO:0098796",
+            "supporting_associated_genes": 13
+          },
+          {
+            "name": "plasma membrane protein complex",
+            "identifier": "GO:0098797",
+            "supporting_associated_genes": 12
+          },
+          {
+            "name": "external side of plasma membrane",
+            "identifier": "GO:0009897",
+            "supporting_associated_genes": 12
+          },
+          {
+            "name": "nuclear outer membrane-endoplasmic reticulum membrane network",
+            "identifier": "GO:0042175",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "endoplasmic reticulum membrane",
+            "identifier": "GO:0005789",
+            "supporting_associated_genes": 10
+          },
+          {
+            "name": "endosome",
+            "identifier": "GO:0005768",
+            "supporting_associated_genes": 10
+          }
+        ]
+      },
+      "wave_1_policy": {
+        "publish_now": [
+          "disease identifiers",
+          "associated genes",
+          "treating compounds",
+          "palliative compounds",
+          "pharmacologic classes",
+          "gene pathway and GO context"
+        ],
+        "hold_for_review": [
+          "disease symptom edges from MEDLINE cooccurrence",
+          "disease anatomy edges from MEDLINE cooccurrence",
+          "disease resemblance edges from MEDLINE cooccurrence",
+          "differential expression edges until import metadata is finalized"
+        ]
+      }
+    },
+    {
+      "name": "rheumatoid arthritis",
+      "disease_ontology_id": "DOID:7148",
+      "geo_reuse_entity_id": "a9fbd2d46b235e259d2f671bd8c20a62",
+      "source": "Disease Ontology",
+      "license": "CC BY 3.0",
+      "relation_counts": {
+        "associated_genes": 267,
+        "upregulated_genes": 250,
+        "downregulated_genes": 250,
+        "treating_compounds": 15,
+        "palliative_compounds": 16,
+        "symptoms_from_medline_cooccurrence": 51,
+        "anatomy_from_medline_cooccurrence": 48,
+        "similar_diseases_from_medline_cooccurrence": 2
+      },
+      "selected_genes": [
+        {
+          "name": "TNF",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL6",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL1B",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "IL15",
+          "support": [
+            "associated",
+            "upregulated"
+          ]
+        },
+        {
+          "name": "IFNG",
+          "support": [
+            "associated",
+            "upregulated"
+          ]
+        },
+        {
+          "name": "PTPRC",
+          "support": [
+            "associated",
+            "upregulated"
+          ]
+        },
+        {
+          "name": "BLK",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "DPP4",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "MIF",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "CD2",
+          "support": [
+            "associated",
+            "upregulated"
+          ]
+        },
+        {
+          "name": "IL4",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "AIRE",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "PTPN22",
+          "support": [
+            "associated"
+          ]
+        },
+        {
+          "name": "CTLA4",
+          "support": [
+            "associated",
+            "upregulated"
+          ]
+        },
+        {
+          "name": "HLA-DRB1",
+          "support": [
+            "associated"
+          ]
+        }
+      ],
+      "selected_compounds": [
+        {
+          "name": "Methotrexate",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Folic Acid Metabolism Inhibitors"
+          ]
+        },
+        {
+          "name": "Leflunomide",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": []
+        },
+        {
+          "name": "Cyclosporine",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Cytochrome P450 3A4 Inhibitors",
+            "P-Glycoprotein Inhibitors"
+          ]
+        },
+        {
+          "name": "Dexamethasone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Hydrocortisone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Methylprednisolone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Triamcinolone",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": [
+            "Corticosteroid Hormone Receptor Agonists"
+          ]
+        },
+        {
+          "name": "Auranofin",
+          "support": [
+            "treats"
+          ],
+          "pharmacologic_classes": []
+        },
+        {
+          "name": "Piroxicam",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Nonsteroidal Anti-inflammatory Compounds"
+          ]
+        },
+        {
+          "name": "Diclofenac",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Decreased Prostaglandin Production",
+            "Nonsteroidal Anti-inflammatory Compounds"
+          ]
+        },
+        {
+          "name": "Acetylsalicylic acid",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Decreased Prostaglandin Production",
+            "Nonsteroidal Anti-inflammatory Compounds"
+          ]
+        },
+        {
+          "name": "Nabumetone",
+          "support": [
+            "palliates"
+          ],
+          "pharmacologic_classes": [
+            "Nonsteroidal Anti-inflammatory Compounds"
+          ]
+        }
+      ],
+      "top_annotations": {
+        "Pathway": [
+          {
+            "name": "Immune System",
+            "identifier": "PC7_4688",
+            "supporting_associated_genes": 77
+          },
+          {
+            "name": "Signaling Pathways",
+            "identifier": "PC7_7439",
+            "supporting_associated_genes": 59
+          },
+          {
+            "name": "Adaptive Immune System",
+            "identifier": "PC7_1563",
+            "supporting_associated_genes": 41
+          },
+          {
+            "name": "Allograft Rejection",
+            "identifier": "WP2328_r84648",
+            "supporting_associated_genes": 36
+          },
+          {
+            "name": "Innate Immune System",
+            "identifier": "PC7_4741",
+            "supporting_associated_genes": 35
+          },
+          {
+            "name": "Disease",
+            "identifier": "PC7_3278",
+            "supporting_associated_genes": 33
+          },
+          {
+            "name": "Cytokine Signaling in Immune system",
+            "identifier": "PC7_2907",
+            "supporting_associated_genes": 32
+          },
+          {
+            "name": "Signaling by GPCR",
+            "identifier": "PC7_7457",
+            "supporting_associated_genes": 31
+          }
+        ],
+        "Biological Process": [
+          {
+            "name": "positive regulation of immune system process",
+            "identifier": "GO:0002684",
+            "supporting_associated_genes": 99
+          },
+          {
+            "name": "regulation of immune response",
+            "identifier": "GO:0050776",
+            "supporting_associated_genes": 86
+          },
+          {
+            "name": "response to cytokine",
+            "identifier": "GO:0034097",
+            "supporting_associated_genes": 84
+          },
+          {
+            "name": "response to biotic stimulus",
+            "identifier": "GO:0009607",
+            "supporting_associated_genes": 81
+          },
+          {
+            "name": "response to external biotic stimulus",
+            "identifier": "GO:0043207",
+            "supporting_associated_genes": 80
+          },
+          {
+            "name": "response to other organism",
+            "identifier": "GO:0051707",
+            "supporting_associated_genes": 80
+          },
+          {
+            "name": "response to lipid",
+            "identifier": "GO:0033993",
+            "supporting_associated_genes": 77
+          },
+          {
+            "name": "regulation of cytokine production",
+            "identifier": "GO:0001817",
+            "supporting_associated_genes": 74
+          }
+        ],
+        "Molecular Function": [
+          {
+            "name": "cytokine receptor binding",
+            "identifier": "GO:0005126",
+            "supporting_associated_genes": 44
+          },
+          {
+            "name": "cytokine activity",
+            "identifier": "GO:0005125",
+            "supporting_associated_genes": 42
+          },
+          {
+            "name": "protein homodimerization activity",
+            "identifier": "GO:0042803",
+            "supporting_associated_genes": 30
+          },
+          {
+            "name": "protein complex binding",
+            "identifier": "GO:0032403",
+            "supporting_associated_genes": 29
+          },
+          {
+            "name": "regulatory region nucleic acid binding",
+            "identifier": "GO:0001067",
+            "supporting_associated_genes": 27
+          },
+          {
+            "name": "regulatory region DNA binding",
+            "identifier": "GO:0000975",
+            "supporting_associated_genes": 27
+          },
+          {
+            "name": "transcription regulatory region DNA binding",
+            "identifier": "GO:0044212",
+            "supporting_associated_genes": 25
+          },
+          {
+            "name": "double-stranded DNA binding",
+            "identifier": "GO:0003690",
+            "supporting_associated_genes": 22
+          }
+        ],
+        "Cellular Component": [
+          {
+            "name": "cell surface",
+            "identifier": "GO:0009986",
+            "supporting_associated_genes": 59
+          },
+          {
+            "name": "side of membrane",
+            "identifier": "GO:0098552",
+            "supporting_associated_genes": 53
+          },
+          {
+            "name": "external side of plasma membrane",
+            "identifier": "GO:0009897",
+            "supporting_associated_genes": 39
+          },
+          {
+            "name": "vacuole",
+            "identifier": "GO:0005773",
+            "supporting_associated_genes": 29
+          },
+          {
+            "name": "membrane protein complex",
+            "identifier": "GO:0098796",
+            "supporting_associated_genes": 29
+          },
+          {
+            "name": "lytic vacuole",
+            "identifier": "GO:0000323",
+            "supporting_associated_genes": 27
+          },
+          {
+            "name": "lysosome",
+            "identifier": "GO:0005764",
+            "supporting_associated_genes": 27
+          },
+          {
+            "name": "endosome",
+            "identifier": "GO:0005768",
+            "supporting_associated_genes": 26
+          }
+        ]
+      },
+      "wave_1_policy": {
+        "publish_now": [
+          "disease identifiers",
+          "associated genes",
+          "treating compounds",
+          "palliative compounds",
+          "pharmacologic classes",
+          "gene pathway and GO context"
+        ],
+        "hold_for_review": [
+          "disease symptom edges from MEDLINE cooccurrence",
+          "disease anatomy edges from MEDLINE cooccurrence",
+          "disease resemblance edges from MEDLINE cooccurrence",
+          "differential expression edges until import metadata is finalized"
+        ]
+      }
+    }
+  ]
+}

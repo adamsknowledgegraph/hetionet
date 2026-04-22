@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Disease Atlas and Ciaran Space Ontology Comparison</title>
+  <style>
+    @page {
+      margin: 0.65in;
+    }
+
+    body {
+      color: #172033;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11.2pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    h1 {
+      color: #0f2f4a;
+      font-size: 25pt;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      margin: 0 0 8pt;
+    }
+
+    h2 {
+      border-top: 1.2pt solid #d7e0e7;
+      color: #12344f;
+      font-size: 15pt;
+      margin: 21pt 0 7pt;
+      padding-top: 10pt;
+    }
+
+    h3 {
+      color: #1d4d69;
+      font-size: 12.5pt;
+      margin: 13pt 0 5pt;
+    }
+
+    p {
+      margin: 0 0 8pt;
+    }
+
+    a {
+      color: #0d5d91;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 8pt 0 13pt;
+      page-break-inside: avoid;
+      width: 100%;
+    }
+
+    th {
+      background: #eef5f7;
+      color: #12344f;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    th,
+    td {
+      border: 0.75pt solid #d2dce3;
+      padding: 5pt 6pt;
+      vertical-align: top;
+    }
+
+    code {
+      background: #eef3f5;
+      border-radius: 3pt;
+      color: #122a3a;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 9.5pt;
+      padding: 1pt 3pt;
+    }
+
+    ul,
+    ol {
+      margin: 4pt 0 10pt 18pt;
+      padding: 0;
+    }
+
+    li {
+      margin: 2pt 0;
+    }
+
+    .kicker {
+      color: #607080;
+      font-size: 9.5pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 4pt;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      color: #425466;
+      font-size: 12pt;
+      margin-bottom: 13pt;
+      max-width: 640pt;
+    }
+
+    .callout {
+      background: #f5faf8;
+      border-left: 4pt solid #2c8c72;
+      margin: 12pt 0 14pt;
+      padding: 9pt 11pt;
+      page-break-inside: avoid;
+    }
+
+    .small {
+      color: #5d6b76;
+      font-size: 9.5pt;
+    }
+
+    .footer {
+      border-top: 1pt solid #d7e0e7;
+      color: #6b7785;
+      font-size: 9pt;
+      margin-top: 22pt;
+      padding-top: 8pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="kicker">Geo ontology review</div>
+  <h1>Disease Atlas and Ciaran Space Ontology Comparison</h1>
+  <p class="subtitle">
+    A practical comparison of the live Geo ontology used in Disease Atlas and the ontology currently used in Ciaran's metabolic-model space, with recommendations for reuse, provenance, source identifiers, and cross-space interoperability.
+  </p>
+  <p class="small">
+    Prepared from live Geo queries on April 20, 2026. Spaces reviewed:
+    <a href="https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e">Disease Atlas</a>
+    and
+    <a href="https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc">Ciaran's space</a>.
+  </p>
+
+  <div class="callout">
+    <p><strong>Executive summary.</strong> Ciaran's space is a metabolic-network style graph, probably imported from BiGG / an E. coli K-12 MG1655 genome-scale model. Disease Atlas is a disease-mechanism and evidence graph.</p>
+    <p>The biggest ontology issue in Ciaran's space is not the metabolism-specific terms. Those are mostly reasonable. The biggest gaps are provenance and reuse:</p>
+    <ol>
+      <li><code>Gene</code> is duplicated locally instead of reusing Health's <code>Gene</code>.</li>
+      <li>There are no <code>Source</code>, <code>Dataset</code>, or <code>Paper</code> entities.</li>
+      <li>There is no source provenance linking entities or relations back to BiGG, the model, or the paper.</li>
+      <li><code>BiGG ID</code> is useful, but it is overloaded across reactions, metabolites, genes, and compartments.</li>
+      <li>Relation entities are mostly not named or provenance-backed in the way Disease Atlas evidence claims are.</li>
+    </ol>
+  </div>
+
+  <h2>Ontology Inventory</h2>
+  <h3>Disease Atlas</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Area</th>
+        <th>Terms in use</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shared Health/Root types</td>
+        <td><code>Disease</code>, <code>Symptom</code>, <code>Anatomical structure</code>, <code>Side effect</code>, <code>Drug</code>, <code>Drug class</code>, <code>Gene</code>, <code>Pathway</code>, <code>Dataset</code>, <code>Source</code>, <code>Paper</code></td>
+      </tr>
+      <tr>
+        <td>Local types</td>
+        <td><code>Biological Process</code>, <code>Molecular Function</code>, <code>Cellular Component</code></td>
+      </tr>
+      <tr>
+        <td>Core relation properties</td>
+        <td><code>Associated with</code>, <code>Treats</code>, <code>Related drugs</code>, <code>Related pathways</code>, <code>Sources</code>, <code>Includes</code>, <code>Presents with</code>, <code>Localizes to</code>, <code>Resembles</code>, <code>Palliates</code>, <code>Upregulates</code>, <code>Downregulates</code>, plus GO annotation relations</td>
+      </tr>
+      <tr>
+        <td>Source and identifier fields</td>
+        <td><code>Website</code>, <code>DOI</code>, <code>Pmid</code>, <code>Publish date</code>, <code>Source database identifier</code>, <code>Version ID</code>, <code>DrugBank ID</code>, <code>Inchikey</code>, <code>GO ID</code>, <code>Disease Ontology ID</code>, <code>Entrez Gene ID</code>, <code>License</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Ciaran's Space</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Area</th>
+        <th>Terms in use</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Local types</td>
+        <td><code>Reaction</code>, <code>Metabolite</code>, <code>Subsystem</code>, <code>Gene</code>, <code>Compartment</code></td>
+      </tr>
+      <tr>
+        <td>Relation properties</td>
+        <td><code>substrate of</code>, <code>product of</code>, <code>catalysed by</code>, <code>part of</code></td>
+      </tr>
+      <tr>
+        <td>Value properties</td>
+        <td><code>BiGG ID</code>, <code>Common Name</code>, <code>Formula</code>, <code>Charge</code>, <code>Gene Reaction Rule</code>, <code>Lower Bound</code>, <code>Upper Bound</code>, <code>Stoichiometry</code>, <code>Organism</code>, <code>Compartment Code</code></td>
+      </tr>
+      <tr>
+        <td>Source/provenance entities</td>
+        <td>None found</td>
+      </tr>
+      <tr>
+        <td>Pages/data blocks</td>
+        <td>None found</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Live Counts Observed In Ciaran's Space</h2>
+  <p>The live API caps some result sets at 2,000, so counts marked as capped are lower bounds.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type/property</th>
+        <th>Observed count</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Reaction</code></td>
+        <td>At least 2,000</td>
+        <td>API-capped. Examples include exchange reactions and transport reactions.</td>
+      </tr>
+      <tr>
+        <td><code>Metabolite</code></td>
+        <td>1,844</td>
+        <td>Examples include palmitoyl-CoA, superoxide anion, arsenite, and other metabolites.</td>
+      </tr>
+      <tr>
+        <td><code>Gene</code></td>
+        <td>1,366</td>
+        <td>Local duplicate of Health <code>Gene</code>. Examples include <code>mepM</code>, <code>lpxP</code>, <code>fhuF</code>.</td>
+      </tr>
+      <tr>
+        <td><code>Subsystem</code></td>
+        <td>39</td>
+        <td>Examples include transport, membrane lipid metabolism, amino-acid metabolism, and unassigned.</td>
+      </tr>
+      <tr>
+        <td><code>Compartment</code></td>
+        <td>3</td>
+        <td><code>Cytoplasm</code>, <code>Periplasm</code>, <code>Extracellular</code>.</td>
+      </tr>
+      <tr>
+        <td>Metabolic relation properties</td>
+        <td>At least 2,000 each for major relations</td>
+        <td><code>substrate of</code>, <code>product of</code>, <code>catalysed by</code>, and <code>part of</code> are high-volume relation properties.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Direct Overlap And Reuse Opportunities</h2>
+  <p>There is almost no true ontology reuse overlap right now. The one obvious duplicate is:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Local Ciaran term</th>
+        <th>Existing reusable term</th>
+        <th>Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Gene</code></td>
+        <td>Health <code>Gene</code> = <code>93a0c3dc71314daf862e66c3af8b4fe4</code></td>
+        <td>Reuse Health <code>Gene</code>, or dual-type existing Ciaran gene entities with Health <code>Gene</code> and eventually retire the local type.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Other useful existing Root/Health terms Ciaran should reuse:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Need in Ciaran's space</th>
+        <th>Existing Root/Health term</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dataset entity for model/source import</td>
+        <td><code>Dataset</code></td>
+      </tr>
+      <tr>
+        <td>Source database entity</td>
+        <td><code>Source</code></td>
+      </tr>
+      <tr>
+        <td>BiGG paper</td>
+        <td><code>Paper</code></td>
+      </tr>
+      <tr>
+        <td>Link every entity/relation to provenance</td>
+        <td><code>Sources</code></td>
+      </tr>
+      <tr>
+        <td>External URL</td>
+        <td><code>Website</code></td>
+      </tr>
+      <tr>
+        <td>Paper/source DOI</td>
+        <td><code>DOI</code></td>
+      </tr>
+      <tr>
+        <td>PubMed ID</td>
+        <td><code>Pmid</code></td>
+      </tr>
+      <tr>
+        <td>Publication/model date</td>
+        <td><code>Publish date</code></td>
+      </tr>
+      <tr>
+        <td>Database/model identifier</td>
+        <td><code>Source database identifier</code></td>
+      </tr>
+      <tr>
+        <td>Model/source version</td>
+        <td><code>Version ID</code></td>
+      </tr>
+      <tr>
+        <td>Gene synonym/locus tag if needed</td>
+        <td>Health <code>Alias</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>There are also likely useful Health properties for metabolites if the BiGG import has cross-references:</p>
+  <ul>
+    <li><code>SMILES</code></li>
+    <li><code>KEGG ID</code></li>
+  </ul>
+
+  <p>Disease Atlas currently has local <code>InChI</code> and <code>License</code>. Those are useful ideas, but ideally they should become shared Root/Health-style properties rather than Ciaran reusing Disease Atlas-local properties.</p>
+
+  <h2>Ciaran-Specific Terms To Keep</h2>
+  <p>I would not force everything into Disease Atlas or Health. These terms are domain-specific and should probably stay local, or become part of a future metabolism ontology.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Keep?</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Reaction</code></td>
+        <td>Yes</td>
+        <td>No Root/Health equivalent found. Core metabolic-model type.</td>
+      </tr>
+      <tr>
+        <td><code>Metabolite</code></td>
+        <td>Yes</td>
+        <td>No Root/Health equivalent found. Should maybe become a shared Health type later.</td>
+      </tr>
+      <tr>
+        <td><code>Compartment</code></td>
+        <td>Yes, but refine</td>
+        <td>Model compartment is not exactly the same as GO cellular component.</td>
+      </tr>
+      <tr>
+        <td><code>Subsystem</code></td>
+        <td>Maybe dual-type as <code>Pathway</code></td>
+        <td>Many subsystems are pathway-like, but some are model categories such as transport or unassigned.</td>
+      </tr>
+      <tr>
+        <td><code>substrate of</code> / <code>product of</code></td>
+        <td>Keep or invert</td>
+        <td>Very useful metabolic relation vocabulary. Could be improved for navigation.</td>
+      </tr>
+      <tr>
+        <td><code>Stoichiometry</code>, <code>Lower Bound</code>, <code>Upper Bound</code>, <code>Gene Reaction Rule</code></td>
+        <td>Keep</td>
+        <td>These are model/math-specific fields, not general health ontology.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Suggested Improvements For Ciaran's Space</h2>
+  <h3>Pass 1: provenance/source repair</h3>
+  <p>Create:</p>
+  <ul>
+    <li><code>Dataset</code>: likely <code>BiGG model: E. coli K-12 MG1655</code>, with exact model ID once confirmed.</li>
+    <li><code>Source</code>: <code>BiGG Models</code>.</li>
+    <li><code>Paper</code>: <code>BiGG Models: A platform for integrating, standardizing and sharing genome-scale models</code>.</li>
+    <li><code>DOI</code>: <code>10.1093/nar/gkv1049</code>.</li>
+    <li><code>Pmid</code>: <code>26476456</code>.</li>
+    <li><code>Website</code>: <code>https://bigg.ucsd.edu/</code>.</li>
+    <li>Model page link if confirmed, likely <code>https://bigg.ucsd.edu/models/iJO1366</code>.</li>
+  </ul>
+  <p>Then add <code>Sources</code> relations from reactions, metabolites, genes, compartments, subsystems, and relation/equation claim entities back to the dataset/source.</p>
+
+  <h3>Pass 2: ontology reuse</h3>
+  <ul>
+    <li>Add Health <code>Gene</code> type to all current gene entities.</li>
+    <li>Keep <code>BiGG ID</code>, but also add generic Root <code>Source database identifier</code>.</li>
+    <li>Add <code>Website</code> links on entities where possible:
+      <br>Reaction: <code>/models/{model}/reactions/{bigg_id}</code>
+      <br>Metabolite: <code>/models/{model}/metabolites/{bigg_id}</code>
+      <br>Gene: <code>/models/{model}/genes/{bigg_id}</code>
+    </li>
+    <li>Add <code>Version ID</code> to the dataset if the model or BiGG version is known.</li>
+    <li>Use <code>Alias</code> for alternate gene names/locus tags if available.</li>
+  </ul>
+
+  <h3>Pass 3: relation cleanup</h3>
+  <ul>
+    <li>Rename or normalize <code>catalysed by</code> to <code>Catalyzed by</code> or <code>Catalyzed by gene</code>.</li>
+    <li>Normalize <code>part of</code> to <code>Part of</code>, if keeping it generic.</li>
+    <li>Consider changing relation direction for reaction navigation:
+      <br>Instead of <code>Metabolite substrate of Reaction</code>, use <code>Reaction consumes Metabolite</code>.
+      <br>Instead of <code>Metabolite product of Reaction</code>, use <code>Reaction produces Metabolite</code>.
+    </li>
+    <li>Preserve stoichiometry on relation entities, not just as anonymous values.</li>
+    <li>Name relation entities like <code>Dodecanoate exchange - consumes - Dodecanoate</code>.</li>
+  </ul>
+
+  <h2>Best Way To Make Both Ontologies More Overlapping</h2>
+  <p>The common layer should be provenance and identifiers first, biology second.</p>
+  <p>Shared/common ontology both spaces should use:</p>
+  <ul>
+    <li><code>Gene</code></li>
+    <li><code>Dataset</code></li>
+    <li><code>Source</code></li>
+    <li><code>Paper</code></li>
+    <li><code>Sources</code></li>
+    <li><code>Website</code></li>
+    <li><code>DOI</code></li>
+    <li><code>Pmid</code></li>
+    <li><code>Publish date</code></li>
+    <li><code>Source database identifier</code></li>
+    <li><code>Version ID</code></li>
+    <li><code>Alias</code></li>
+  </ul>
+
+  <p>Then, over time, promote or share these across spaces:</p>
+  <ul>
+    <li><code>Metabolite</code></li>
+    <li><code>Reaction</code></li>
+    <li><code>Catalyzed by</code></li>
+    <li><code>Consumes</code></li>
+    <li><code>Produces</code></li>
+    <li><code>Part of</code></li>
+    <li><code>Stoichiometry</code></li>
+    <li><code>Organism</code> / <code>Taxon</code></li>
+    <li><code>BiGG ID</code> or source-specific identifier properties</li>
+  </ul>
+
+  <h2>Main Recommendation</h2>
+  <div class="callout">
+    <p>Do not make Disease Atlas absorb Ciaran's metabolism ontology yet. Instead, make both spaces interoperable through shared <code>Gene</code>, shared provenance, shared source identifiers, and source-backed relation entities.</p>
+    <p>That gives a clean bridge:</p>
+    <p><code>Disease -> Gene</code> in Disease Atlas<br><code>Gene -> Reaction -> Metabolite</code> in Ciaran's space</p>
+    <p>Once Ciaran's genes reuse Health <code>Gene</code>, a future dashboard can click a gene from Disease Atlas and discover metabolic reactions from Ciaran's graph without merging the two spaces or overloading Disease Atlas with metabolic-model details.</p>
+  </div>
+
+  <h2>Source Notes</h2>
+  <ul>
+    <li>Geo Disease Atlas space: <a href="https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e">https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e</a></li>
+    <li>Ciaran's Geo space: <a href="https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc">https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc</a></li>
+    <li>BiGG Models: <a href="https://bigg.ucsd.edu/models">https://bigg.ucsd.edu/models</a></li>
+    <li>BiGG Models paper: <a href="https://pubmed.ncbi.nlm.nih.gov/26476456/">PubMed PMID 26476456</a>, DOI <code>10.1093/nar/gkv1049</code></li>
+  </ul>
+
+  <p class="footer">
+    Prepared for ontology alignment discussion. The main practical next step is a small source/provenance proposal for Ciaran's space, followed by a Gene-type reuse proposal.
+  </p>
+</body>
+</html>

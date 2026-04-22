@@ -1,0 +1,30 @@
+{
+  "name": "hetionet-disease-atlas-geo-publisher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:wave-packets": "python3 scripts/geo/build-disease-wave-packets.py",
+    "build:wave3-packets": "python3 scripts/geo/build-disease-wave3-packets.py",
+    "build:evidence-packets": "python3 scripts/geo/build-three-disease-evidence.py",
+    "check:setup": "node scripts/check-geo-setup.mjs",
+    "query:space": "node scripts/query-space-schema.mjs",
+    "audit:ontology": "node scripts/geo/audit-ontology-reuse.mjs",
+    "audit:live": "node scripts/geo/audit-disease-atlas-live.mjs",
+    "geo:proposal:structure-repair": "node scripts/geo/proposal-11-structure-provenance-repair.mjs",
+    "geo:proposal:evidence-ontology": "node scripts/geo/proposal-12-evidence-ontology-delta.mjs",
+    "geo:proposal:evidence-enrichment": "node scripts/geo/proposal-13-three-disease-evidence-enrichment.mjs",
+    "geo:proposal:wave3": "node scripts/geo/proposal-14-disease-wave3.mjs",
+    "geo:proposal:navigation-polish": "node scripts/geo/proposal-15-navigation-polish.mjs",
+    "geo:proposal:regulation-cleanup": "node scripts/geo/proposal-16-regulation-ontology-cleanup.mjs",
+    "geo:proposal:core-ontology-cleanup": "node scripts/geo/proposal-17-core-ontology-navigation-cleanup.mjs",
+    "geo-local:export-wave3": "node scripts/geo-local/export-wave3-review.mjs",
+    "geo-local:submit-wave3": "node scripts/geo-local/submit-wave3-review.mjs",
+    "geo-local:start": "scripts/geo-local/start-geo-local-review.sh"
+  },
+  "dependencies": {
+    "@geoprotocol/geo-sdk": "^0.16.0",
+    "@geoprotocol/grc-20": "^0.4.1",
+    "dotenv": "^17.4.1",
+    "viem": "^2.45.3"
+  }
+}

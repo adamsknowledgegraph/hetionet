@@ -1,0 +1,116 @@
+{
+  "space": {
+    "id": "141d3ace705feabc04d50c78bbf7226e",
+    "current_name": "Hetionet bioinformatics",
+    "recommended_name": "Disease Atlas",
+    "description": "A disease-centered knowledge graph linking conditions to genes, pathways, anatomy, symptoms, and therapies, starting with curated Hetionet-derived relationships."
+  },
+  "tabs": {
+    "keep": ["About", "Ontology", "Papers"],
+    "remove": ["Courses", "Schools", "News", "People"],
+    "add": ["Diseases", "Sources"]
+  },
+  "reuse": {
+    "types": [
+      "Dataset",
+      "Paper",
+      "Source",
+      "License",
+      "Claim",
+      "Quote",
+      "Text block",
+      "Data block",
+      "Disease",
+      "Drug",
+      "Drug class",
+      "Gene",
+      "Pathway",
+      "Symptom",
+      "Side effect",
+      "Anatomical structure",
+      "Anatomical region",
+      "Body system",
+      "Therapeutic area"
+    ],
+    "properties": [
+      "Sources",
+      "Source database identifier",
+      "Pmid",
+      "ICD-10 code",
+      "ICD-11 code",
+      "OMIM number",
+      "DrugBank ID",
+      "RxNorm code",
+      "KEGG ID",
+      "UniProt ID",
+      "SMILES",
+      "Inchikey",
+      "Treats",
+      "Target protein",
+      "Targeted by",
+      "Interacts with",
+      "Related pathways",
+      "Related proteins",
+      "Drug interactions",
+      "Symptoms",
+      "Side effects",
+      "Associated diseases"
+    ],
+    "health_disease_entities": {
+      "Asthma": "c1d11a58e7f548fca52da2f8f0642a06",
+      "Psoriasis": "1bd0dae46c25444d8d923e67dd421645",
+      "Rheumatoid arthritis": "a9fbd2d46b235e259d2f671bd8c20a62"
+    }
+  },
+  "create_now": {
+    "types": [
+      "Biological Process",
+      "Molecular Function",
+      "Cellular Component"
+    ],
+    "value_properties": [
+      "GO ID",
+      "Disease Ontology ID",
+      "Entrez Gene ID",
+      "HGNC ID",
+      "Uberon ID",
+      "MeSH ID",
+      "InChI",
+      "Hetionet metaedge",
+      "Import batch",
+      "Method",
+      "Unbiased",
+      "Z-score",
+      "Log2 fold change"
+    ],
+    "relation_properties": [
+      "Associated with",
+      "Participates in biological process",
+      "Has molecular function",
+      "Located in cellular component",
+      "Localizes to"
+    ]
+  },
+  "defer": {
+    "relations": [
+      "Disease resembles disease",
+      "Disease presents symptom",
+      "Disease localizes anatomy",
+      "Upregulates",
+      "Downregulates",
+      "Anatomy upregulates gene",
+      "Anatomy downregulates gene",
+      "Compound resembles compound",
+      "Gene covaries gene"
+    ],
+    "reason": "Most of these either need a stronger ontology decision or come from noisier evidence layers such as literature cooccurrence."
+  },
+  "publish_rules": [
+    "Reuse before creation.",
+    "Treat Hetionet as a dataset entity, not the space name.",
+    "Keep provenance on every imported relation.",
+    "Do not publish literature cooccurrence edges as canonical facts without review.",
+    "Start with one disease packet and expand only after the UI shape feels stable."
+  ],
+  "starter_order": ["Asthma", "Psoriasis", "Rheumatoid arthritis"]
+}

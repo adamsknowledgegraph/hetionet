@@ -1,0 +1,939 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 AvenirNext-Bold;\f1\fnil\fcharset0 AvenirNext-Regular;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red78\green92\blue109;\red14\green35\blue57;\red51\green66\blue83;
+\red75\green88\blue99;\red15\green73\blue126;\red18\green24\blue38;\red243\green249\blue246;\red15\green31\blue44;
+\red234\green240\blue242;\red16\green39\blue62;\red24\green60\blue86;\red234\green243\blue245;\red200\green212\blue220;
+\red88\green99\blue114;}
+{\*\expandedcolortbl;;\cssrgb\c37647\c43922\c50196;\cssrgb\c5882\c18431\c29020;\cssrgb\c25882\c32941\c40000;
+\cssrgb\c36471\c41961\c46275;\cssrgb\c5098\c36471\c56863;\cssrgb\c9020\c12549\c20000;\cssrgb\c96078\c98039\c97255;\cssrgb\c7059\c16471\c22745;
+\cssrgb\c93333\c95294\c96078;\cssrgb\c7059\c20392\c30980;\cssrgb\c11373\c30196\c41176;\cssrgb\c93333\c96078\c96863;\cssrgb\c82353\c86275\c89020;
+\cssrgb\c41961\c46667\c52157;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid701\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}}
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs25\fsmilli12667 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 GEO ONTOLOGY REVIEW\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\fs66\fsmilli33333 \AppleTypeServices\AppleTypeServicesF65539 \cf3 \strokec3 Disease Atlas and Ciaran Space Ontology Comparison\
+\pard\pardeftab720\sa346\partightenfactor0
+
+\f1\b0\fs32 \AppleTypeServices \cf4 \strokec4 A practical comparison of the live Geo ontology used in Disease Atlas and the ontology currently used in Ciaran's metabolic-model space, with recommendations for reuse, provenance, source identifiers, and cross-space interoperability.\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\fs25\fsmilli12667 \cf5 \strokec5 Prepared from live Geo queries on April 20, 2026. Spaces reviewed: {\field{\*\fldinst{HYPERLINK "https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e"}}{\fldrslt \cf6 \strokec6 Disease Atlas}} and {\field{\*\fldinst{HYPERLINK "https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc"}}{\fldrslt \cf6 \strokec6 Ciaran's space}}.\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f0\b\fs29\fsmilli14933 \cf7 \cb8 \strokec7 Executive summary.
+\f1\b0  Ciaran's space is a metabolic-network style graph, probably imported from BiGG / an E. coli K-12 MG1655 genome-scale model. Disease Atlas is a disease-mechanism and evidence graph.\cb1 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 \cb8 The biggest ontology issue in Ciaran's space is not the metabolism-specific terms. Those are mostly reasonable. The biggest gaps are provenance and reuse:\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls1\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7  is duplicated locally instead of reusing Health's 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7 .\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls1\ilvl0\cf7 \cb8 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 There are no 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Source
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Dataset
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7 , or 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Paper
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7  entities.\cb1 \
+\ls1\ilvl0\cb8 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 There is no source provenance linking entities or relations back to BiGG, the model, or the paper.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls1\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 BiGG ID
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7  is useful, but it is overloaded across reactions, metabolites, genes, and compartments.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls1\ilvl0\cf7 \cb8 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Relation entities are mostly not named or provenance-backed in the way Disease Atlas evidence claims are.\cb1 \
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Ontology Inventory\
+\pard\pardeftab720\sa133\partightenfactor0
+
+\fs33\fsmilli16667 \cf12 \strokec12 Disease Atlas\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat13 \clwWidth1649\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clcbpat13 \clwWidth13650\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs29\fsmilli14933 \cf11 \strokec11 Area\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Terms in use\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1649\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth13650\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1\b0 \cf7 \strokec7 Shared Health/Root types\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Disease
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Symptom
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Anatomical structure
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Side effect
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Drug
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Drug class
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Pathway
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Dataset
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Source
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Paper
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1649\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth13650\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Local types\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Biological Process
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Molecular Function
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Cellular Component
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1649\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth13650\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Core relation properties\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Associated with
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Treats
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Related drugs
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Related pathways
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Sources
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Includes
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Presents with
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Localizes to
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Resembles
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Palliates
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Upregulates
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Downregulates
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , plus GO annotation relations\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1649\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth13650\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Source and identifier fields\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Website
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 DOI
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Pmid
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Publish date
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Source database identifier
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Version ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 DrugBank ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Inchikey
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 GO ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Disease Ontology ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Entrez Gene ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 License
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \lastrow\row
+\pard\pardeftab720\sa133\partightenfactor0
+
+\f0\b\fs33\fsmilli16667 \cf12 \strokec12 Ciaran's Space\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat13 \clwWidth2675\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clcbpat13 \clwWidth12625\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs29\fsmilli14933 \cf11 \strokec11 Area\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Terms in use\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2675\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth12625\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1\b0 \cf7 \strokec7 Local types\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Reaction
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Subsystem
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Compartment
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2675\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth12625\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Relation properties\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 substrate of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 product of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 catalysed by
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 part of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2675\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth12625\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Value properties\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 BiGG ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Common Name
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Formula
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Charge
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene Reaction Rule
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Lower Bound
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Upper Bound
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Stoichiometry
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Organism
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Compartment Code
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2675\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth12625\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Source/provenance entities\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 None found\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2675\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth12625\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Pages/data blocks\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 None found\cell \lastrow\row
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Live Counts Observed In Ciaran's Space\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f1\b0\fs29\fsmilli14933 \cf7 \strokec7 The live API caps some result sets at 2,000, so counts marked as capped are lower bounds.\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat13 \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clcbpat13 \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clcbpat13 \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b \cf11 \strokec11 Type/property\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Observed count\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Notes\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\b0\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Reaction
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 At least 2,000\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 API-capped. Examples include exchange reactions and transport reactions.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 1,844\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Examples include palmitoyl-CoA, superoxide anion, arsenite, and other metabolites.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 1,366\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Local duplicate of Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 . Examples include 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 mepM
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 lpxP
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 fhuF
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Subsystem
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 39\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Examples include transport, membrane lipid metabolism, amino-acid metabolism, and unassigned.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Compartment
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 3\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Cytoplasm
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Periplasm
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Extracellular
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2572\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth3374\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth9012\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Metabolic relation properties\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 At least 2,000 each for major relations\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 substrate of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 product of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 catalysed by
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , and 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 part of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  are high-volume relation properties.\cell \lastrow\row
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Direct Overlap And Reuse Opportunities\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f1\b0\fs29\fsmilli14933 \cf7 \strokec7 There is almost no true ontology reuse overlap right now. The one obvious duplicate is:\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat13 \clwWidth1394\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clcbpat13 \clwWidth5040\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clcbpat13 \clwWidth8525\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b \cf11 \strokec11 Local Ciaran term\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Existing reusable term\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Recommendation\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1394\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth5040\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth8525\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\b0\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  = 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 93a0c3dc71314daf862e66c3af8b4fe4
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Reuse Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , or dual-type existing Ciaran gene entities with Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  and eventually retire the local type.\cell \lastrow\row
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 Other useful existing Root/Health terms Ciaran should reuse:\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat13 \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clcbpat13 \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b \cf11 \strokec11 Need in Ciaran's space\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Existing Root/Health term\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1\b0 \cf7 \strokec7 Dataset entity for model/source import\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Dataset
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Source database entity\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Source
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 BiGG paper\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Paper
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Link every entity/relation to provenance\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Sources
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 External URL\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Website
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Paper/source DOI\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 DOI
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 PubMed ID\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Pmid
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Publication/model date\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Publish date
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Database/model identifier\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Source database identifier
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Model/source version\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Version ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8635\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6665\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Gene synonym/locus tag if needed\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Alias
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell \lastrow\row
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 There are also likely useful Health properties for metabolites if the BiGG import has cross-references:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls2\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 SMILES
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls2\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 KEGG ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 Disease Atlas currently has local 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 InChI
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  and 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 License
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 . Those are useful ideas, but ideally they should become shared Root/Health-style properties rather than Ciaran reusing Disease Atlas-local properties.\
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Ciaran-Specific Terms To Keep\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f1\b0\fs29\fsmilli14933 \cf7 \strokec7 I would not force everything into Disease Atlas or Health. These terms are domain-specific and should probably stay local, or become part of a future metabolism ontology.\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat13 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clcbpat13 \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clcbpat13 \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b \cf11 \strokec11 Term\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Keep?\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf11 Reason\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\b0\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Reaction
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Yes\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 No Root/Health equivalent found. Core metabolic-model type.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Yes\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 No Root/Health equivalent found. Should maybe become a shared Health type later.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Compartment
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Yes, but refine\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Model compartment is not exactly the same as GO cellular component.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Subsystem
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Maybe dual-type as 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Pathway
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Many subsystems are pathway-like, but some are model categories such as transport or unassigned.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 substrate of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  / 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 product of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Keep or invert\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Very useful metabolic relation vocabulary. Could be improved for navigation.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart213 \tamarb346 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2148\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth7670\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadt133 \clpadl160 \clpadb133 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Stoichiometry
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Lower Bound
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Upper Bound
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene Reaction Rule
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 Keep\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf7 These are model/math-specific fields, not general health ontology.\cell \lastrow\row
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Suggested Improvements For Ciaran's Space\
+\pard\pardeftab720\sa133\partightenfactor0
+
+\fs33\fsmilli16667 \cf12 \strokec12 Pass 1: provenance/source repair\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f1\b0\fs29\fsmilli14933 \cf7 \strokec7 Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls3\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Dataset
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 : likely 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 BiGG model: E. coli K-12 MG1655
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , with exact model ID once confirmed.\
+\ls3\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Source
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 : 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 BiGG Models
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls3\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Paper
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 : 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 BiGG Models: A platform for integrating, standardizing and sharing genome-scale models
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls3\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 DOI
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 : 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 10.1093/nar/gkv1049
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls3\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Pmid
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 : 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 26476456
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls3\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Website
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 : 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 https://bigg.ucsd.edu/
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls3\ilvl0\cf7 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Model page link if confirmed, likely 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 https://bigg.ucsd.edu/models/iJO1366
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 Then add 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Sources
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  relations from reactions, metabolites, genes, compartments, subsystems, and relation/equation claim entities back to the dataset/source.\
+\pard\pardeftab720\sa133\partightenfactor0
+
+\f0\b\fs33\fsmilli16667 \cf12 \strokec12 Pass 2: ontology reuse\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls4\ilvl0
+\f1\b0\fs29\fsmilli14933 \cf7 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Add Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  type to all current gene entities.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Keep 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 BiGG ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , but also add generic Root 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Source database identifier
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Add 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Website
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  links on entities where possible: \uc0\u8232 Reaction: 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 /models/\{model\}/reactions/\{bigg_id\}
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  \uc0\u8232 Metabolite: 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 /models/\{model\}/metabolites/\{bigg_id\}
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  \uc0\u8232 Gene: 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 /models/\{model\}/genes/\{bigg_id\}
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Add 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Version ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  to the dataset if the model or BiGG version is known.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Use 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Alias
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  for alternate gene names/locus tags if available.\
+\pard\pardeftab720\sa133\partightenfactor0
+
+\f0\b\fs33\fsmilli16667 \cf12 \strokec12 Pass 3: relation cleanup\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls5\ilvl0
+\f1\b0\fs29\fsmilli14933 \cf7 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Rename or normalize 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 catalysed by
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  to 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Catalyzed by
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  or 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Catalyzed by gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls5\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Normalize 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 part of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  to 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Part of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , if keeping it generic.\
+\ls5\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Consider changing relation direction for reaction navigation: \uc0\u8232 Instead of 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Metabolite substrate of Reaction
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , use 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Reaction consumes Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 . \uc0\u8232 Instead of 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Metabolite product of Reaction
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 , use 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Reaction produces Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\ls5\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Preserve stoichiometry on relation entities, not just as anonymous values.\
+\ls5\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Name relation entities like 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Dodecanoate exchange - consumes - Dodecanoate
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 .\
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Best Way To Make Both Ontologies More Overlapping\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f1\b0\fs29\fsmilli14933 \cf7 \strokec7 The common layer should be provenance and identifiers first, biology second.\
+Shared/common ontology both spaces should use:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Dataset
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Source
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Paper
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Sources
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Website
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 DOI
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Pmid
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Publish date
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Source database identifier
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Version ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls6\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Alias
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 Then, over time, promote or share these across spaces:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Reaction
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Catalyzed by
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Consumes
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Produces
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Part of
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Stoichiometry
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Organism
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  / 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Taxon
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\ls7\ilvl0
+\f2\fs25\fsmilli12667 \cf9 \cb10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 BiGG ID
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7  or source-specific identifier properties\
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Main Recommendation\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f1\b0\fs29\fsmilli14933 \cf7 \cb8 \strokec7 Do not make Disease Atlas absorb Ciaran's metabolism ontology yet. Instead, make both spaces interoperable through shared 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7 , shared provenance, shared source identifiers, and source-backed relation entities.\cb1 \
+\cb8 That gives a clean bridge:\cb1 \
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Disease -> Gene
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7  in Disease Atlas\cb1 \uc0\u8232 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene -> Reaction -> Metabolite
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7  in Ciaran's space\cb1 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf7 \cb8 Once Ciaran's genes reuse Health 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 Gene
+\f1\fs29\fsmilli14933 \cf7 \cb8 \strokec7 , a future dashboard can click a gene from Disease Atlas and discover metabolic reactions from Ciaran's graph without merging the two spaces or overloading Disease Atlas with metabolic-model details.\cb1 \
+\pard\pardeftab720\sa186\partightenfactor0
+
+\f0\b\fs40 \cf11 \strokec11 Source Notes\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa53\partightenfactor0
+\ls8\ilvl0
+\f1\b0\fs29\fsmilli14933 \cf7 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Geo Disease Atlas space: {\field{\*\fldinst{HYPERLINK "https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e"}}{\fldrslt \cf6 \strokec6 https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e}}\
+\ls8\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Ciaran's Geo space: {\field{\*\fldinst{HYPERLINK "https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc"}}{\fldrslt \cf6 \strokec6 https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc}}\
+\ls8\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 BiGG Models: {\field{\*\fldinst{HYPERLINK "https://bigg.ucsd.edu/models"}}{\fldrslt \cf6 \strokec6 https://bigg.ucsd.edu/models}}\
+\ls8\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 BiGG Models paper: {\field{\*\fldinst{HYPERLINK "https://pubmed.ncbi.nlm.nih.gov/26476456/"}}{\fldrslt \cf6 \strokec6 PubMed PMID 26476456}}, DOI 
+\f2\fs25\fsmilli12667 \cf9 \cb10 \strokec9 10.1093/nar/gkv1049
+\f1\fs29\fsmilli14933 \cf7 \cb1 \strokec7 \
+\pard\pardeftab720\sa213\partightenfactor0
+
+\fs24 \cf15 \strokec15 Prepared for ontology alignment discussion. The main practical next step is a small source/provenance proposal for Ciaran's space, followed by a Gene-type reuse proposal.\
+}

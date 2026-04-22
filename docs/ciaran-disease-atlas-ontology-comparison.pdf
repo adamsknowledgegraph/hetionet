@@ -1,0 +1,500 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 4003 >>
+stream
+BT
+/F2 20.0 Tf
+1 0 0 1 54.0 738.0 Tm
+(Disease Atlas and Ciaran Space Ontology Comparison) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 705.4 Tm
+(A practical comparison of the live Geo ontology used in Disease Atlas and the ontology) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 691.0 Tm
+(currently used in Ciaran's metabolic-model space, with recommendations for reuse,) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 676.5 Tm
+(provenance, source identifiers, and cross-space interoperability.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 660.1 Tm
+(Prepared from live Geo queries on April 20, 2026.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 643.6 Tm
+(Spaces reviewed: Disease Atlas) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 629.2 Tm
+(https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e and Ciaran's space) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 614.8 Tm
+(https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 582.3 Tm
+(Executive summary) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 560.4 Tm
+(Ciaran's space is a metabolic-network style graph, probably imported from BiGG / an E. coli) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 546.0 Tm
+(K-12 MG1655 genome-scale model. Disease Atlas is a disease-mechanism and evidence graph.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 529.5 Tm
+(The biggest ontology issue in Ciaran's space is not the metabolism-specific terms. Those are) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 515.1 Tm
+(mostly reasonable. The biggest gaps are provenance and reuse:) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 498.6 Tm
+(- Gene is duplicated locally instead of reusing Health's Gene.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 484.6 Tm
+(- There are no Source, Dataset, or Paper entities.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 470.5 Tm
+(- There is no source provenance linking entities or relations back to BiGG, the model, or) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 456.5 Tm
+(  the paper.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 442.4 Tm
+(- BiGG ID is useful, but it is overloaded across reactions, metabolites, genes, and) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 428.4 Tm
+(  compartments.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 414.3 Tm
+(- Relation entities are mostly not named or provenance-backed in the way Disease Atlas) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 400.2 Tm
+(  evidence claims are.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 378.2 Tm
+(Ontology inventory) Tj
+/F2 12.0 Tf
+1 0 0 1 54.0 352.3 Tm
+(Disease Atlas) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 335.9 Tm
+(Area | Terms in use) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 323.0 Tm
+(Shared Health/Root types | Disease, Symptom, Anatomical structure, Side effect, Drug, Drug) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 310.1 Tm
+(class, Gene, Pathway, Dataset, Source, Paper) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 297.2 Tm
+(Local types | Biological Process, Molecular Function, Cellular Component) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 284.3 Tm
+(Core relation properties | Associated with, Treats, Related drugs, Related pathways,) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 271.4 Tm
+(Sources, Includes, Presents with, Localizes to, Resembles, Palliates, Upregulates,) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 258.5 Tm
+(Downregulates, plus GO annotation relations) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 245.6 Tm
+(Source and identifier fields | Website, DOI, Pmid, Publish date, Source database) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 232.7 Tm
+(identifier, Version ID, DrugBank ID, Inchikey, GO ID, Disease Ontology ID, Entrez Gene ID,) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 219.8 Tm
+(License) Tj
+/F2 12.0 Tf
+1 0 0 1 54.0 202.9 Tm
+(Ciaran's Space) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 186.5 Tm
+(Area | Terms in use) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 173.6 Tm
+(Local types | Reaction, Metabolite, Subsystem, Gene, Compartment) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 160.7 Tm
+(Relation properties | substrate of, product of, catalysed by, part of) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 147.8 Tm
+(Value properties | BiGG ID, Common Name, Formula, Charge, Gene Reaction Rule, Lower Bound,) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 134.9 Tm
+(Upper Bound, Stoichiometry, Organism, Compartment Code) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 122.0 Tm
+(Source/provenance entities | None found) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 109.1 Tm
+(Pages/data blocks | None found) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 88.2 Tm
+(Live counts observed in Ciaran's space) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4531 >>
+stream
+BT
+/F1 10.5 Tf
+1 0 0 1 54.0 738.0 Tm
+(The live API caps some result sets at 2,000, so counts marked as capped are lower bounds.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 721.6 Tm
+(Type/property | Observed count | Notes) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 708.7 Tm
+(Reaction | At least 2,000 | API-capped. Examples include exchange reactions and transport) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 695.8 Tm
+(reactions.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 682.8 Tm
+(Metabolite | 1,844 | Examples include palmitoyl-CoA, superoxide anion, arsenite, and other) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 669.9 Tm
+(metabolites.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 657.0 Tm
+(Gene | 1,366 | Local duplicate of Health Gene. Examples include mepM, lpxP, fhuF.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 644.1 Tm
+(Subsystem | 39 | Examples include transport, membrane lipid metabolism, amino-acid) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 631.2 Tm
+(metabolism, and unassigned.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 618.3 Tm
+(Compartment | 3 | Cytoplasm, Periplasm, Extracellular.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 605.4 Tm
+(Metabolic relation properties | At least 2,000 each for major relations | substrate of,) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 592.5 Tm
+(product of, catalysed by, and part of are high-volume relation properties.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 571.6 Tm
+(Direct overlap and reuse opportunities) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 549.7 Tm
+(There is almost no true ontology reuse overlap right now. The one obvious duplicate is:) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 533.3 Tm
+(Local Ciaran term | Existing reusable term | Recommendation) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 520.4 Tm
+(Gene | Health Gene = 93a0c3dc71314daf862e66c3af8b4fe4 | Reuse Health Gene, or dual-type) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 507.4 Tm
+(existing Ciaran gene entities with Health Gene and eventually retire the local type.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 494.5 Tm
+(Other useful existing Root/Health terms Ciaran should reuse:) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 478.1 Tm
+(Need in Ciaran's space | Existing Root/Health term) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 465.2 Tm
+(Dataset entity for model/source import | Dataset) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 452.3 Tm
+(Source database entity | Source) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 439.4 Tm
+(BiGG paper | Paper) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 426.5 Tm
+(Link every entity/relation to provenance | Sources) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 413.6 Tm
+(External URL | Website) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 400.7 Tm
+(Paper/source DOI | DOI) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 387.8 Tm
+(PubMed ID | Pmid) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 374.9 Tm
+(Publication/model date | Publish date) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 362.0 Tm
+(Database/model identifier | Source database identifier) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 349.1 Tm
+(Model/source version | Version ID) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 336.2 Tm
+(Gene synonym/locus tag if needed | Health Alias) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 323.3 Tm
+(There are also likely useful Health properties for metabolites if the BiGG import has) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 308.8 Tm
+(cross-references: SMILES and KEGG ID.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 292.4 Tm
+(Disease Atlas currently has local InChI and License. Those are useful ideas, but ideally) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 277.9 Tm
+(they should become shared Root/Health-style properties rather than Ciaran reusing Disease) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 263.5 Tm
+(Atlas-local properties.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 239.1 Tm
+(Ciaran-specific terms to keep) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 217.1 Tm
+(I would not force everything into Disease Atlas or Health. These terms are domain-specific) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 202.7 Tm
+(and should probably stay local, or become part of a future metabolism ontology.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 186.3 Tm
+(Term | Keep? | Reason) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 173.4 Tm
+(Reaction | Yes | No Root/Health equivalent found. Core metabolic-model type.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 160.4 Tm
+(Metabolite | Yes | No Root/Health equivalent found. Should maybe become a shared Health) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 147.5 Tm
+(type later.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 134.6 Tm
+(Compartment | Yes, but refine | Model compartment is not exactly the same as GO cellular) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 121.7 Tm
+(component.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 108.8 Tm
+(Subsystem | Maybe dual-type as Pathway | Many subsystems are pathway-like, but some are) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 95.9 Tm
+(model categories such as transport or unassigned.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 83.0 Tm
+(substrate of / product of | Keep or invert | Very useful metabolic relation vocabulary.) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 70.1 Tm
+(Could be improved for navigation.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4168 >>
+stream
+BT
+/F1 9.3 Tf
+1 0 0 1 62.0 738.0 Tm
+(Stoichiometry, Lower Bound, Upper Bound, Gene Reaction Rule | Keep | These are) Tj
+/F1 9.3 Tf
+1 0 0 1 62.0 725.1 Tm
+(model/math-specific fields, not general health ontology.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 704.2 Tm
+(Suggested improvements for Ciaran's space) Tj
+/F2 12.0 Tf
+1 0 0 1 54.0 678.3 Tm
+(Pass 1: provenance/source repair) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 661.9 Tm
+(Create:) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 645.5 Tm
+(- Dataset: likely BiGG model: E. coli K-12 MG1655, with exact model ID once confirmed.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 631.4 Tm
+(- Source: BiGG Models.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 617.4 Tm
+(- Paper: BiGG Models: A platform for integrating, standardizing and sharing genome-scale) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 603.3 Tm
+(  models.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 589.2 Tm
+(- DOI: 10.1093/nar/gkv1049.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 575.2 Tm
+(- Pmid: 26476456.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 561.1 Tm
+(- Website: https://bigg.ucsd.edu/.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 547.1 Tm
+(- Model page link if confirmed, likely https://bigg.ucsd.edu/models/iJO1366.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 533.0 Tm
+(Then add Sources relations from reactions, metabolites, genes, compartments, subsystems, and) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 518.6 Tm
+(relation/equation claim entities back to the dataset/source.) Tj
+/F2 12.0 Tf
+1 0 0 1 54.0 498.1 Tm
+(Pass 2: ontology reuse) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 481.8 Tm
+(- Add Health Gene type to all current gene entities.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 467.7 Tm
+(- Keep BiGG ID, but also add generic Root Source database identifier.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 453.7 Tm
+(- Add Website links on entities where possible: /models/{model}/reactions/{bigg_id},) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 439.6 Tm
+(  /models/{model}/metabolites/{bigg_id}, /models/{model}/genes/{bigg_id}.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 425.6 Tm
+(- Add Version ID to the dataset if the model or BiGG version is known.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 411.5 Tm
+(- Use Alias for alternate gene names/locus tags if available.) Tj
+/F2 12.0 Tf
+1 0 0 1 54.0 393.4 Tm
+(Pass 3: relation cleanup) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 377.1 Tm
+(- Rename or normalize catalysed by to Catalyzed by or Catalyzed by gene.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 363.0 Tm
+(- Normalize part of to Part of, if keeping it generic.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 349.0 Tm
+(- Consider changing relation direction for reaction navigation: instead of Metabolite) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 334.9 Tm
+(  substrate of Reaction, use Reaction consumes Metabolite; instead of Metabolite product) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 320.9 Tm
+(  of Reaction, use Reaction produces Metabolite.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 306.8 Tm
+(- Preserve stoichiometry on relation entities, not just as anonymous values.) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 292.8 Tm
+(- Name relation entities like Dodecanoate exchange - consumes - Dodecanoate.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 270.7 Tm
+(Best way to make both ontologies more overlapping) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 248.8 Tm
+(The common layer should be provenance and identifiers first, biology second.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 232.3 Tm
+(Shared/common ontology both spaces should use: Gene, Dataset, Source, Paper, Sources,) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 217.9 Tm
+(Website, DOI, Pmid, Publish date, Source database identifier, Version ID, Alias.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 201.5 Tm
+(Then, over time, promote or share these across spaces: Metabolite, Reaction, Catalyzed by,) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 187.0 Tm
+(Consumes, Produces, Part of, Stoichiometry, Organism / Taxon, BiGG ID or source-specific) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 172.6 Tm
+(identifier properties.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 148.1 Tm
+(Main recommendation) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 126.2 Tm
+(Do not make Disease Atlas absorb Ciaran's metabolism ontology yet. Instead, make both spaces) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 111.8 Tm
+(interoperable through shared Gene, shared provenance, shared source identifiers, and) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 97.3 Tm
+(source-backed relation entities.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 80.9 Tm
+(That gives a clean bridge: Disease -> Gene in Disease Atlas; Gene -> Reaction -> Metabolite) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 956 >>
+stream
+BT
+/F1 10.5 Tf
+1 0 0 1 54.0 738.0 Tm
+(in Ciaran's space.) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 721.6 Tm
+(Once Ciaran's genes reuse Health Gene, a future dashboard can click a gene from Disease) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 707.1 Tm
+(Atlas and discover metabolic reactions from Ciaran's graph without merging the two spaces or) Tj
+/F1 10.5 Tf
+1 0 0 1 54.0 692.7 Tm
+(overloading Disease Atlas with metabolic-model details.) Tj
+/F2 14.0 Tf
+1 0 0 1 54.0 668.2 Tm
+(Source notes) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 646.3 Tm
+(- Geo Disease Atlas space:) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 632.3 Tm
+(  https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 618.2 Tm
+(- Ciaran's Geo space: https://www.geobrowser.io/space/aec359295ff90d00aea6696f0ddb1bbc) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 604.2 Tm
+(- BiGG Models: https://bigg.ucsd.edu/models) Tj
+/F1 10.2 Tf
+1 0 0 1 68.0 590.1 Tm
+(- BiGG Models paper: PubMed PMID 26476456, DOI 10.1093/nar/gkv1049) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000141 00000 n 
+0000000211 00000 n 
+0000000286 00000 n 
+0000004341 00000 n 
+0000004477 00000 n 
+0000009060 00000 n 
+0000009196 00000 n 
+0000013416 00000 n 
+0000013553 00000 n 
+0000014561 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+14699
+%%EOF

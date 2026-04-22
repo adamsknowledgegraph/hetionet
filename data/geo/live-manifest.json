@@ -1,0 +1,370 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "network": "TESTNET",
+    "source": "bootstrap-public-snapshot"
+  },
+  "spaces": {
+    "root": {
+      "id": "a19c345ab9866679b001d7d2138d88a1",
+      "name": "Root"
+    },
+    "health": {
+      "id": "52c7ae149838b6d47ce0f3b2a5974546",
+      "name": "Health"
+    },
+    "target": {
+      "id": "141d3ace705feabc04d50c78bbf7226e",
+      "address": "0x7ec9E7f68C446e009a8F825f844fAFa8C8bC4228",
+      "entityId": "7a61e49028284ccf8e325f21b4929628",
+      "name": "Disease Atlas",
+      "currentName": "Hetionet bioinformatics"
+    }
+  },
+  "types": {
+    "Page": {
+      "id": "480e3fc267f3499385fbacdf4ddeaa6b",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Type": {
+      "id": "e7d737c536764c609fa16aa64a8c90ad",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Property": {
+      "id": "808a04ceb21c4d888ad12e240613e5ca",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Paper": {
+      "id": "5e24fb52856c4189a9716af4387b1b89",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Dataset": {
+      "id": "0c4babfb43893486af827341bbf32e09",
+      "ownerSpaceIds": [
+        "41e851610e13a19441c4d980f2f2ce6b",
+        "a19c345ab9866679b001d7d2138d88a1",
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    },
+    "Source": {
+      "id": "706779bf537744a68694ea06cf87a3a2",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Disease": {
+      "id": "aa949a7e4e615830b37b793fac1257e5",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    },
+    "Drug": {
+      "id": "1115f250e2a953ee8c8e4cfd0ae7a297",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    },
+    "Drug class": {
+      "id": "291e33212b7146e79d79eb2739809fea",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    },
+    "Gene": {
+      "id": "93a0c3dc71314daf862e66c3af8b4fe4",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    },
+    "Pathway": {
+      "id": "4dc67296e849f4108914da6c662a5d12",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    }
+  },
+  "properties": {
+    "Tabs": {
+      "id": "4d9cba1c4766469881cd3273891a018b",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1",
+        "d69608290513c2a91102c939b3265bd7"
+      ]
+    },
+    "Blocks": {
+      "id": "beaba5cba67741a8b35377030613fc70",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1",
+        "d69608290513c2a91102c939b3265bd7"
+      ]
+    },
+    "Types": {
+      "id": "8f151ba4de204e3c9cb499ddf96f48f1",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Page type": {
+      "id": "62dfabe5282d44a7ba93f2e80d20743d",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1",
+        "d69608290513c2a91102c939b3265bd7"
+      ]
+    },
+    "Filter": {
+      "id": "14a46854bfd14b1882152785c2dab9f3",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Treats": {
+      "id": "0099eeaf5c36acba4463ca5c4cda1930",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    },
+    "Sources": {
+      "id": "49c5d5e1679a4dbdbfd33f618f227c94",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1",
+        "d69608290513c2a91102c939b3265bd7"
+      ]
+    },
+    "Data type": {
+      "id": "6d29d57849bb4959baf72cc696b1671a",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    },
+    "Name": {
+      "id": "a126ca530c8e48d5b88882c734c38935",
+      "ownerSpaceIds": [
+        "a19c345ab9866679b001d7d2138d88a1"
+      ]
+    }
+  },
+  "targetSnapshot": {
+    "spacePage": {
+      "id": "7a61e49028284ccf8e325f21b4929628",
+      "name": "Hetionet bioinformatics",
+      "description": null,
+      "tabs": [
+        {
+          "name": "About",
+          "entityId": "9a89b13680f546e4bd7444ac5ce60429",
+          "relationId": "ef9f42b639c542aeb4f09dab4e5dd9a6",
+          "position": "a6C4u",
+          "isPage": true
+        },
+        {
+          "name": "Ontology",
+          "entityId": "f755ab051c7449f794cf35ee18b5eff6",
+          "relationId": "d9e22b52a036458bb0e56cca3d79b358",
+          "position": "a52Ay",
+          "isPage": true
+        },
+        {
+          "name": "Papers",
+          "entityId": "4a5d0a501fad46bda99019e4c0f65c69",
+          "relationId": "75ed63faf57042c4bae09d5c416a1635",
+          "position": "a19YN",
+          "isPage": false
+        },
+        {
+          "name": "News",
+          "entityId": "c3fd64479a9c4ee4afb81fb068c5fb18",
+          "relationId": "4659661f39eb432581756d94efeb98bb",
+          "position": "a28LO",
+          "isPage": true
+        },
+        {
+          "name": "People",
+          "entityId": "9dd9ad9b62344a2d8ac13306affc2cc2",
+          "relationId": "6cd709ef7e4e454c983d79893c7e1421",
+          "position": "a42dC",
+          "isPage": false
+        },
+        {
+          "name": "Courses",
+          "entityId": "081b07be309447ce83e5ee6ae2d3bd9b",
+          "relationId": "e10a6183be72493896992d7bdc96fa18",
+          "position": "a0BF6",
+          "isPage": false
+        },
+        {
+          "name": "Schools",
+          "entityId": "6a6d686910b24d1baeb306b6db97c591",
+          "relationId": "e097567da17c4102a168cf7d57a2007d",
+          "position": "a370b",
+          "isPage": false
+        }
+      ]
+    },
+    "pages": {
+      "About": {
+        "id": "9a89b13680f546e4bd7444ac5ce60429",
+        "pageTypeEntityId": "f93d044e61f642a892ebef37a377a535",
+        "blockRelations": [
+          {
+            "name": "Goals",
+            "blockId": "51c3a63992044db3b0556c559f407d03",
+            "relationId": "9b2f8bfd2fe04b409414f9d04c47c87b",
+            "position": "a2BSm"
+          }
+        ]
+      },
+      "Ontology": {
+        "id": "f755ab051c7449f794cf35ee18b5eff6",
+        "pageTypeEntityId": "6e7215ec10ca490488952d89070a9c69",
+        "blockRelations": [
+          {
+            "name": "Types",
+            "blockId": "b71aaadd34ec47c1a143b45861c157a8",
+            "relationId": "8a0b15e0cf564b5fa89dfdef29e47c72",
+            "position": "a2AoP"
+          }
+        ]
+      },
+      "Papers": {
+        "id": "4a5d0a501fad46bda99019e4c0f65c69"
+      }
+    },
+    "blocks": {
+      "Goals": {
+        "id": "51c3a63992044db3b0556c559f407d03"
+      },
+      "Types": {
+        "id": "b71aaadd34ec47c1a143b45861c157a8"
+      },
+      "Recent papers": {
+        "id": "7d4ce0f6519b4d82be08df016adf9218",
+        "filter": "{\"filter\":{\"8f151ba4de204e3c9cb499ddf96f48f1\":{\"is\":\"a441a5335fb54fddbe9acf6cc22793e7\"},\"5b722cd361d6494e88871310566437ba\":{\"is\":\"8f8ca0d0473e4f969cce64efd1cb6310\"}}}"
+      }
+    }
+  },
+  "reusableEntities": {
+    "Disease:Asthma": {
+      "id": "c1d11a58e7f548fca52da2f8f0642a06",
+      "name": "Asthma",
+      "type": "Disease",
+      "ownerSpaceIds": [
+        "52c7ae149838b6d47ce0f3b2a5974546"
+      ]
+    }
+  },
+  "unresolvedEntities": [
+    {
+      "type": "Gene",
+      "name": "IL4"
+    },
+    {
+      "type": "Gene",
+      "name": "IL5"
+    },
+    {
+      "type": "Gene",
+      "name": "IL13"
+    },
+    {
+      "type": "Gene",
+      "name": "IL33"
+    },
+    {
+      "type": "Gene",
+      "name": "TSLP"
+    },
+    {
+      "type": "Gene",
+      "name": "TNF"
+    },
+    {
+      "type": "Gene",
+      "name": "ADRB2"
+    },
+    {
+      "type": "Gene",
+      "name": "PDE4A"
+    },
+    {
+      "type": "Gene",
+      "name": "STAT6"
+    },
+    {
+      "type": "Gene",
+      "name": "GATA3"
+    },
+    {
+      "type": "Gene",
+      "name": "ALOX5"
+    },
+    {
+      "type": "Gene",
+      "name": "LTC4S"
+    },
+    {
+      "type": "Drug",
+      "name": "Montelukast"
+    },
+    {
+      "type": "Drug",
+      "name": "Beclomethasone"
+    },
+    {
+      "type": "Drug",
+      "name": "Prednisone"
+    },
+    {
+      "type": "Drug",
+      "name": "Ciclesonide"
+    },
+    {
+      "type": "Drug",
+      "name": "Arformoterol"
+    },
+    {
+      "type": "Drug",
+      "name": "Salmeterol"
+    },
+    {
+      "type": "Drug",
+      "name": "Hydrocortisone"
+    },
+    {
+      "type": "Drug",
+      "name": "Nedocromil"
+    },
+    {
+      "type": "Drug class",
+      "name": "Corticosteroid Hormone Receptor Agonists"
+    },
+    {
+      "type": "Drug class",
+      "name": "Adrenergic beta2-Agonists"
+    },
+    {
+      "type": "Drug class",
+      "name": "Leukotriene Receptor Antagonists"
+    },
+    {
+      "type": "Pathway",
+      "name": "Immune System"
+    },
+    {
+      "type": "Pathway",
+      "name": "Signaling by GPCR"
+    },
+    {
+      "type": "Pathway",
+      "name": "GPCR downstream signaling"
+    }
+  ]
+}
+

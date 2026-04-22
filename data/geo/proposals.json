@@ -1,0 +1,239 @@
+{
+  "targetSpace": {
+    "id": "141d3ace705feabc04d50c78bbf7226e",
+    "address": "0x7ec9E7f68C446e009a8F825f844fAFa8C8bC4228",
+    "name": "Disease Atlas"
+  },
+  "proposals": [
+    {
+      "key": "space-structure",
+      "name": "Disease Atlas - space structure",
+      "proposalId": "0xe62df41fc5f949beb32fc4f10bbf55c8",
+      "editId": "822040ebe8244ed5925ccfb935f21105",
+      "cid": "ipfs://bafkreia2vu7jb3dcy3zqq2h2xcvay4v63r3rs74axzcywubklkpzukkizq",
+      "proposalTxHash": "0xc7b47a6638f4e335fbf4714110fe3092d35c220cfca0272b5457ffcb5bf8bc38"
+    },
+    {
+      "key": "ontology-delta",
+      "name": "Disease Atlas - ontology delta",
+      "proposalId": "0x7c5454bac59548c0ad2966392a6a2f2d",
+      "editId": "794829be371e49cf8fec5e888bec4042",
+      "cid": "ipfs://bafkreicwf7ry4y4ngxr4rttt55x3pga3ddgx5fikniifzhye7pabqfb6ii",
+      "proposalTxHash": "0xec8b705dc7e4c0b132309859fda1df726a8d26c28349457b7dc819454587f373"
+    },
+    {
+      "key": "asthma-content",
+      "name": "Disease Atlas - Asthma content",
+      "proposalId": "0xf4244a70a802436298bf61c9e918f6e4",
+      "editId": "1119c253d1704e3293d7e2bcd4432baf",
+      "cid": "ipfs://bafkreid2kvvj6ztcj72bedixzkndx67z4iyx325pf5kjxatj3jx6fqb6uq",
+      "proposalTxHash": "0xe47238b9cc5ff0991b1e3f43bb0f1c162e6ce208ffccbf1d79ddd9f7c1316666"
+    },
+    {
+      "key": "asthma-visibility",
+      "name": "Disease Atlas - Asthma visibility",
+      "proposalId": "0x071e560f6a4247b087c05eb14eaeee97",
+      "editId": "7cc7e7cd0a2543daa6bc64e3786bbd2e",
+      "cid": "ipfs://bafkreihcvmz2audlcb7hlwp7qoy6ypyimlol44333vcdi4ipxsgmtjrji4",
+      "proposalTxHash": "0x1bbd286fec6d77b2cfd5b095725222eb0be558c22b8073bbe57f4ab660887d3c"
+    },
+    {
+      "key": "overview-dashboard",
+      "name": "Disease Atlas - overview dashboard",
+      "proposalId": "0xa477e1bdb66343b291b77b2062ec0601",
+      "editId": "583b5a0ca2394252adb916522d0c70d7",
+      "cid": "ipfs://bafkreibw7my7xzakz2ilbqr7mv32gej2repekbikxtlttk7dmyjsg27n54",
+      "proposalTxHash": "0x7ff044198aad8f83d835c6be06f431e188269e82fccde57ff7493550b59b9183"
+    },
+    {
+      "key": "explorer-tabs",
+      "name": "Disease Atlas - explorer tabs",
+      "proposalId": "0xd68e2aeca9f243238a7d6fd3a6053b6f",
+      "editId": "f36d09263b754bcd9076973ee5c91475",
+      "cid": "ipfs://bafkreiecyoglkht4goyscjgphh6midthdjnxq5goksggmzepmgw54kfuvy",
+      "proposalTxHash": "0xcddd3b6b424f3f7a16a792499dbbb8e82c1c877a9bc8ac56f0496519c63018eb"
+    },
+    {
+      "key": "provenance-repair",
+      "name": "Disease Atlas - provenance and table repair",
+      "proposalId": "0xcd0471f0a6794283b32219f5c24e7ff4",
+      "editId": "e6e5678257eb4690a4e5c4a6909fbafd",
+      "cid": "ipfs://bafkreiexbifuaud4owvnznaayvrxvycyr6ho4l4fro4qthcoxom6c5cmgu",
+      "proposalTxHash": "0xd9b357d9a0c48c57238cc626e1643866f9fb0034971df02610e4630a29e653b5",
+      "voteTxHash": "0x8358d38f0e050f840270003ad0db28638d77a304ef052f8689f19951dd68ea24",
+      "executed": true
+    },
+    {
+      "key": "papers-table-columns",
+      "name": "Disease Atlas - Papers table columns",
+      "proposalId": "0x6b00a111f273470b87056de1723b7334",
+      "editId": "44971f94569e46808aa8ac5785e6aeeb",
+      "cid": "ipfs://bafkreif3rswbn4f6a3ib4ym6ohhl57dihebnbqwmekykszfiyh2xxjjxsa",
+      "proposalTxHash": "0xfaf829a15407648406ae9e22562f4d19ecb4f6c4833ac4cb1651c91b95637e46",
+      "voteTxHash": "0x5ca9c1cc194ad6fa4c259f6b93ebcdb149aba04d74d0cf92ad283dc97cadc506",
+      "executed": true
+    },
+    {
+      "key": "diseases-collection-fix",
+      "name": "Disease Atlas - Diseases table collection fix",
+      "proposalId": "0x0333129309154be7887ec8b3175539b4",
+      "editId": "c6360f354e184949b1b6329e59a9c8f1",
+      "cid": "ipfs://bafkreigub5rkmc3k4nypys34qhyvyn425oqqfmareruezhz7mqbmpinemu",
+      "proposalTxHash": "0x517fe226bc5d5ff42630ee15dae277bea88fcde897cb1f9988a661122321ea5e",
+      "voteTxHash": "0x6873b31c576ed9bb21a319cb2cf636b16bfc3007afaba822e5674fd21b916c44",
+      "executed": true
+    },
+    {
+      "key": "immune-disease-wave",
+      "name": "Disease Atlas - Psoriasis and rheumatoid arthritis wave",
+      "proposalId": "0x40b793ba8d544848836650d43191b473",
+      "editId": "5fbf457a61dd453dbb27b45958171ea0",
+      "cid": "ipfs://bafkreiaexzvkjc2wws2i3vwt5dodpmj3oahlqdfehmq33ssv5wfqj25il4",
+      "proposalTxHash": "0x68bd84c1bb63dbf62eac4c5a0a5b2d8ac48f1f7ff517fa340c503c6a1523d7f2",
+      "voteTxHash": "0xb0dadac9823f305c5e4140fca8235bf445dda4209226856d5bc927a7ee14963b",
+      "executed": true
+    },
+    {
+      "key": "structure-provenance-repair",
+      "name": "Disease Atlas - Structure and provenance repair",
+      "proposalId": "0x79704812c1ea41a4b77143858a36c091",
+      "editId": "5753d21a1da04743846d95a50719e471",
+      "cid": "ipfs://bafkreibllqsw6km7dkgitcczf6xrsvylbj4jtzm5fb65h55crlhul2bqzi",
+      "proposalTxHash": "0xcc59df134777e5a218e2773297b114c32d73e3c7f8d65db5adf04aaf9cebd9f7",
+      "executed": false
+    },
+    {
+      "key": "evidence-ontology-delta",
+      "name": "Disease Atlas - Evidence ontology delta",
+      "proposalId": "0xd946ea47a47743d3861d87e0adb62edb",
+      "editId": "e362814cf341462b9885884c7553e4c6",
+      "cid": "ipfs://bafkreibgmew5a4cainhy3ewlyri4en5fpzqb5wugxehq5zv3i7lotbtc7m",
+      "proposalTxHash": "0x90a64e404cc683081ba841e89219efee2756e3d50a43509150d268ec32f794b2",
+      "executed": false,
+      "supersededBy": "evidence-ontology-delta-v2",
+      "note": "Do not execute. This first version overlaps with the structure repair proposal's Properties collection rows."
+    },
+    {
+      "key": "evidence-ontology-delta-v2",
+      "name": "Disease Atlas - Evidence ontology delta v2",
+      "proposalId": "0xa076d3ae438044929a3a8636d63a310f",
+      "editId": "3cf81639766a41528b86665f0b31a8da",
+      "cid": "ipfs://bafkreihpl4gggnqzdclxzggms5se5ym2y3vjvz67ko3oh7zaukndun6ksm",
+      "proposalTxHash": "0x6f3a5b11578d806a1f27419b70d47c90b3a4f02e36c8c81cb752c198f41de40c",
+      "executed": false
+    },
+    {
+      "key": "structure-provenance-repair-rerun-20260420",
+      "name": "Disease Atlas - Structure and provenance repair",
+      "proposalId": "0x6af8d7ebd95f4a45b3c559230205dfbb",
+      "editId": "87d36aa9fa1746789cd96e81a9bddf7a",
+      "cid": "ipfs://bafkreie67kh25iuepqvdyrcslhspr7arzrymnlzg35r6i726xuozaxqaju",
+      "proposalTxHash": "0x631ff8d89b6da6831f219d1717a48be633943673dfbb385e37658b1a594c3b11",
+      "voteTxHash": "0xf4d70ef9dad065e844810f538a8862924814c0fbd728d80b5a59740dbcf88eb6",
+      "executed": true,
+      "replacesExpired": "structure-provenance-repair"
+    },
+    {
+      "key": "evidence-ontology-delta-v2-rerun-20260420",
+      "name": "Disease Atlas - Evidence ontology delta v2",
+      "proposalId": "0xa32e296992f549c981acb4711e9865f1",
+      "editId": "ffc5e3a47e4f4e2aadc07672fd978dd5",
+      "cid": "ipfs://bafkreigzsd5qec2hzhtp2fkdmjgxnsk6f6kup6sd4udeabmxdhm2jjeod4",
+      "proposalTxHash": "0x49a2c9e6991ecdb15581136dd35afb65f39c391e888e2df5eefcc52b4fa7b1d3",
+      "voteTxHash": "0x63d6bc326386860a070c044f8064118489a882238ba0c184771c6c544598f854",
+      "executed": true,
+      "replacesExpired": "evidence-ontology-delta-v2"
+    },
+    {
+      "key": "three-disease-evidence-enrichment-rerun-20260420",
+      "name": "Disease Atlas - Three disease evidence enrichment",
+      "proposalId": "0xfbb779ed1041458eb5f3a3f1d10b5ebb",
+      "editId": "c9c0ac49e8734e21b3278f24355f1e80",
+      "cid": "ipfs://bafkreigcobquhid724tfidhmdbvic7erlpvvdql3y2wwwhxyx3uw2grqji",
+      "proposalTxHash": "0x30c77e31dada06480386d169f2574259116530d5f5ce809c636ca95794280049",
+      "voteTxHash": "0x7199c9bd20f86ebd38b9921b1a0f8668a288f54a5353bf134a30f872c5496238",
+      "executed": true
+    },
+    {
+      "key": "wave3-cross-therapeutic-diseases-20260420",
+      "name": "Disease Atlas - Wave 3 cross-therapeutic diseases",
+      "proposalId": "0x2c8785c929024b059c64667b61f1c5eb",
+      "editId": "233580cb290d4e14819fc5f3db36e116",
+      "cid": "ipfs://bafybeid3vkk7ivfeznzfn7ecndovddjyvfdd7izdixs63neq2dw6l3x3ym",
+      "proposalTxHash": "0x02a0bf395ca9636d4e0e70d872de2a1e89c2c222278288a8aec75bf4a39af69e",
+      "voteTxHash": "0xedfed29179ff9dae3305d2525cd3075e6843037c5d8ce44fd2ae809f81dbe8d1",
+      "executed": true
+    },
+    {
+      "key": "navigation-browse-polish-20260420",
+      "name": "Disease Atlas - Navigation and browse polish",
+      "proposalId": "0x6c3eda882a324d8d8f90508f0d397687",
+      "editId": "a2a8fa9b8bfc468d9a238d20a93f3f1d",
+      "cid": "ipfs://bafkreie5asvp2m33o3rgvzdqdxmqbjbfzxnaxildjzouol4taxuj3bjeim",
+      "proposalTxHash": "0xd509c015cf0c89dfe7bbee14b4c00808d645826856072a552e863f3e2575d45c",
+      "voteTxHash": "0x911d856ec9e94a21fb6e0dc9ff113a308d18d5ca37f83e42d7f39a2124dd9fe3",
+      "executed": true
+    },
+    {
+      "key": "navigation-browse-polish-repair-20260420",
+      "name": "Disease Atlas - Navigation and browse polish",
+      "proposalId": "0xa6b3fe9496f2454786ebd375705d5bd5",
+      "editId": "c28edfd7216f426fb0bf0575bcc80088",
+      "cid": "ipfs://bafkreihqoiuqik5wh3xvy4o2ksvqduzkdk5rybmbl3bxvugzvbrdm4hej4",
+      "proposalTxHash": "0x45d3f2ec6606fc288aea60f5275472efe6024c205d74d86043a8bf108b1fcb31",
+      "voteTxHash": "0xeb164ddc2d833a362ad1ca640b76be4aedfb29b6db46fb74916300523dbc6a07",
+      "executed": true,
+      "repairs": "navigation-browse-polish-20260420"
+    },
+    {
+      "key": "regulation-ontology-cleanup-20260420",
+      "name": "Disease Atlas - regulation ontology cleanup",
+      "proposalId": "0xb3b2701ad8694becbf407aa145188cf7",
+      "editId": "7299d632eadf48adb926ab657b7159d4",
+      "cid": "ipfs://bafkreih4ee7wg7ot4zpofbq6ptmh3g3b4t7spnc5tvguvbw7ildaugmdki",
+      "proposalTxHash": "0xf3c2696b88f390aca7de6bcfccf382702c5025453001eb795d1c84d622ea0278",
+      "voteTxHash": "0x32244a332cafda07da22f1ff195ec242117644e58b51efe311fe149b00e1ce00",
+      "executed": true
+    },
+    {
+      "key": "core-ontology-navigation-cleanup-20260420",
+      "name": "Disease Atlas - Core ontology and navigation cleanup",
+      "proposalId": "0x07b298111dca4511bad8512cdca15499",
+      "editId": "6d28c433fa944bdea98f7df26eb786da",
+      "cid": "ipfs://bafkreiaewal2jnapu4grekkj4idymmk3tar7wd4dl7mrp6ndnjjfkfztla",
+      "proposalTxHash": "0x28e6fe92d42b62f8e3ff5b65cf9c262ad42e24ca6c68a22d70a011f9a78ff256",
+      "voteTxHash": "0x6947c7d81a4ea35b039a9942c99e55e2f411537b4dfb0e73d3ef36496c1b4a05",
+      "executed": true
+    },
+    {
+      "key": "identifier-evidence-source-repair-20260420",
+      "name": "Disease Atlas - identifier and evidence source repair",
+      "proposalId": "0xa76ae6aebfae43a6a049d6626cf393c1",
+      "editId": "cbc079adda134681bc3fa4109d8325d0",
+      "cid": "ipfs://bafkreidsi3c4iohuae4gqvsya66vut6vlqpct2sxu42sq5bfqv5xstfmxe",
+      "proposalTxHash": "0xd030cfb2ffb5f4440444cf667755069bbe545ceca8e8dd8b824dc950e5c16191",
+      "voteTxHash": "0x26c7266b6409734837fc06afdb0c645087d8f25dd93546c90bfaf2b8d28d44f9",
+      "executed": true
+    },
+    {
+      "key": "residual-evidence-category-repair-20260420",
+      "name": "Disease Atlas - residual evidence category repair",
+      "proposalId": "0xe5a35c5917504e9a9d6ea0237acf9fca",
+      "editId": "a594cb2909f74063b121cd5a55be28a7",
+      "cid": "ipfs://bafkreiajgrrsxv3vvoyuqobhkb7yzrl7f54uqecanvhdmuvos5qfci2l5q",
+      "proposalTxHash": "0x03a1780dec2165d7541d18894eb688af491f4202a926385e9d1b4525b69c825c",
+      "voteTxHash": "0x6f48d8b04d9a0e3ab1d64e82ccbe4219ddec4ed8e64de96a73b61672edc54ac2",
+      "executed": true
+    },
+    {
+      "key": "evidence-navigation-redesign-20260420",
+      "name": "Disease Atlas - evidence navigation redesign",
+      "proposalId": "0x8458b12b77be4857ab1807fcfe35d36c",
+      "editId": "c378064f34ca4efb81a8247f3388b500",
+      "cid": "ipfs://bafkreienqydngpzy756ocuku5rw4mmhbnhnrwm3vwlykymi3so37r2klsa",
+      "proposalTxHash": "0x28107a1dd46343940e935484290a89a8ecdf48dfa7ffcd0069b8d64caa82822f",
+      "voteTxHash": "0x3cfa7a4078a03df1f2c961fe9aaa1af6b0c0abc68dfb54e7e16e96ff93b5f218",
+      "executed": true
+    }
+  ]
+}
