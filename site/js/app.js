@@ -111,6 +111,57 @@ const CLAIM_HELP = {
   },
 };
 
+const QUALITY_HELP = {
+  treats: {
+    label: "Curated indication",
+    tone: "strong",
+    explanation: "This is one of the strongest claim types in this atlas: a curated treatment-indication relationship. Still not prescribing advice.",
+  },
+  associatedGenes: {
+    label: "Database association",
+    tone: "moderate",
+    explanation: "This is a disease-gene association from a structured source. Useful for target triage, but not proof that the gene causes the disease.",
+  },
+  palliates: {
+    label: "Supportive signal",
+    tone: "moderate",
+    explanation: "This points to supportive or palliative use. It should be separated from a direct treatment indication.",
+  },
+  upregulatedGenes: {
+    label: "Expression signal",
+    tone: "numeric",
+    explanation: "This is differential-expression evidence with a numeric log2 fold-change where available. It is useful for prioritization, not causal proof.",
+  },
+  downregulatedGenes: {
+    label: "Expression signal",
+    tone: "numeric",
+    explanation: "This is differential-expression evidence with a numeric log2 fold-change where available. It is useful for prioritization, not causal proof.",
+  },
+  symptomEvidence: {
+    label: "Exploratory signal",
+    tone: "exploratory",
+    explanation: "This is a literature/source cooccurrence signal. Treat it as a clue to inspect, not a canonical medical fact.",
+  },
+  anatomyEvidence: {
+    label: "Exploratory signal",
+    tone: "exploratory",
+    explanation: "This is a literature/source cooccurrence signal. Treat it as a clue to inspect, not a literal anatomy assertion.",
+  },
+  diseaseSimilarityEvidence: {
+    label: "Exploratory signal",
+    tone: "exploratory",
+    explanation: "This is a source-derived similarity signal between diseases. Useful for hypothesis generation, not equivalence.",
+  },
+};
+
+const ANNOTATION_TYPES = new Set([
+  "includesDrug",
+  "participatesInPathway",
+  "participatesInBiologicalProcess",
+  "hasMolecularFunction",
+  "locatedInCellularComponent",
+]);
+
 const canvas = document.querySelector("#graph-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -185,6 +236,33 @@ function claimExplanation(item) {
 
 function claimPlainLabel(item) {
   return claimHelp(item).plainLabel;
+}
+
+function modeLabel(mode) {
+  return mode === "brief" ? "Insights" : `${mode[0].toUpperCase()}${mode.slice(1)}`;
+}
+
+function evidenceQuality(item) {
+  if (QUALITY_HELP[item.type]) {
+    return QUALITY_HELP[item.type];
+  }
+  if (ANNOTATION_TYPES.has(item.type)) {
+    return {
+      label: "Annotation context",
+      tone: "context",
+      explanation: "This is ontology or database context connected to a gene, drug, pathway, or GO term. It helps explain biology, but is not a disease claim by itself.",
+    };
+  }
+  return {
+    label: "Source-backed claim",
+    tone: "context",
+    explanation: "This claim has source provenance in the graph, but does not yet have a more specific quality label.",
+  };
+}
+
+function qualityChip(item) {
+  const quality = evidenceQuality(item);
+  return `<span class="quality-chip" data-quality="${escapeHtml(quality.tone)}">${escapeHtml(quality.label)}</span>`;
 }
 
 function byId(items) {
@@ -304,6 +382,14 @@ function setKindFilter(kind) {
 
 function evidenceGroupsForDisease(diseaseName = state.disease) {
   return [...new Set(getDiseaseEdges(diseaseName).map((item) => item.evidenceGroup || item.type))].sort();
+}
+
+function evidenceQualityCounts(diseaseName = state.disease) {
+  return getDiseaseEdges(diseaseName).reduce((counts, item) => {
+    const quality = evidenceQuality(item);
+    counts[quality.tone] = (counts[quality.tone] || 0) + 1;
+    return counts;
+  }, {});
 }
 
 function evidenceGroupLabel(group) {
@@ -875,11 +961,29 @@ function topEdgesByType(types, limit = 8) {
   return getDiseaseEdges()
     .filter((item) => wanted.includes(item.type))
     .sort((left, right) => {
-      const leftScore = Math.abs(Number(left.log2FoldChange || 0));
-      const rightScore = Math.abs(Number(right.log2FoldChange || 0));
-      return rightScore - leftScore || left.targetName.localeCompare(right.targetName);
+      const leftScore = relationPriority(left.type) * 1000 + Math.abs(Number(left.log2FoldChange || 0));
+      const rightScore = relationPriority(right.type) * 1000 + Math.abs(Number(right.log2FoldChange || 0));
+      return rightScore - leftScore || displayNameForEdge(left).localeCompare(displayNameForEdge(right));
     })
     .slice(0, limit);
+}
+
+function relationPriority(type) {
+  return {
+    treats: 6,
+    associatedGenes: 5,
+    palliates: 4,
+    upregulatedGenes: 3,
+    downregulatedGenes: 3,
+    participatesInPathway: 2,
+    participatesInBiologicalProcess: 1,
+    hasMolecularFunction: 1,
+    locatedInCellularComponent: 1,
+  }[type] || 0;
+}
+
+function displayNameForEdge(item) {
+  return item.targetName === state.disease ? item.sourceName : item.targetName;
 }
 
 function uniqueTargets(edges) {
@@ -894,14 +998,157 @@ function uniqueTargets(edges) {
   });
 }
 
+function edgeNodeId(item, kind) {
+  if (node(item.source)?.kind === kind) {
+    return item.source;
+  }
+  if (node(item.target)?.kind === kind) {
+    return item.target;
+  }
+  return null;
+}
+
+function sharedNodeStatsForDisease(kind, relationTypes, diseaseName = state.disease) {
+  const ids = new Set(
+    getDiseaseEdges(diseaseName)
+      .filter((item) => relationTypes.includes(item.type))
+      .map((item) => edgeNodeId(item, kind))
+      .filter(Boolean)
+  );
+
+  return [...ids]
+    .map((id) => {
+      const item = node(id);
+      const edges = state.data.edges.filter((edge) => relationTypes.includes(edge.type) && edgeNodeId(edge, kind) === id);
+      const diseaseNames = [...new Set(edges.map((edge) => edge.disease))].sort();
+      const direct = edges.filter((edge) => edge.type === "associatedGenes" || edge.type === "treats").length;
+      const expression = edges.filter((edge) => edge.type === "upregulatedGenes" || edge.type === "downregulatedGenes").length;
+      return {
+        item,
+        edges,
+        diseaseNames,
+        diseaseCount: diseaseNames.length,
+        claimCount: edges.length,
+        direct,
+        expression,
+      };
+    })
+    .filter((entry) => entry.item && entry.diseaseCount > 1)
+    .sort((left, right) => right.diseaseCount - left.diseaseCount
+      || right.direct - left.direct
+      || right.expression - left.expression
+      || right.claimCount - left.claimCount
+      || left.item.name.localeCompare(right.item.name));
+}
+
+function topMechanismStats(diseaseName = state.disease) {
+  const counts = new Map();
+  for (const item of getDiseaseEdges(diseaseName)) {
+    if (!["participatesInPathway", "participatesInBiologicalProcess", "hasMolecularFunction"].includes(item.type)) {
+      continue;
+    }
+    const target = node(item.target);
+    if (!target) {
+      continue;
+    }
+    const current = counts.get(target.id) || {
+      item: target,
+      claimCount: 0,
+      genes: new Set(),
+      sources: new Set(),
+    };
+    current.claimCount += 1;
+    if (node(item.source)?.kind === "gene") {
+      current.genes.add(item.sourceName);
+    }
+    for (const source of item.sourceNames || []) {
+      current.sources.add(source);
+    }
+    counts.set(target.id, current);
+  }
+
+  return [...counts.values()]
+    .sort((left, right) => right.claimCount - left.claimCount
+      || right.genes.size - left.genes.size
+      || left.item.name.localeCompare(right.item.name));
+}
+
+function diseaseInsightCards(disease) {
+  const sharedGenes = sharedNodeStatsForDisease("gene", ["associatedGenes", "upregulatedGenes", "downregulatedGenes"], disease.name);
+  const sharedDrugs = sharedNodeStatsForDisease("drug", ["treats", "palliates"], disease.name);
+  const mechanisms = topMechanismStats(disease.name);
+  const qualityCounts = evidenceQualityCounts(disease.name);
+  const exploratory = qualityCounts.exploratory || 0;
+  const stronger = (qualityCounts.strong || 0) + (qualityCounts.moderate || 0) + (qualityCounts.context || 0);
+  const cards = [];
+
+  if (sharedGenes[0]) {
+    cards.push({
+      kicker: "Shared biology",
+      title: sharedGenes[0].item.name,
+      body: `${sharedGenes[0].diseaseCount} disease packets share this gene through ${sharedGenes[0].claimCount} evidence rows.`,
+      meta: [`${sharedGenes[0].direct} direct`, `${sharedGenes[0].expression} expression`],
+      nodeId: sharedGenes[0].item.id,
+    });
+  }
+
+  if (sharedDrugs[0]) {
+    cards.push({
+      kicker: "Repurposing clue",
+      title: sharedDrugs[0].item.name,
+      body: `${sharedDrugs[0].diseaseCount} disease packets include this treatment/supportive compound.`,
+      meta: [`${sharedDrugs[0].claimCount} claims`, "drug overlap"],
+      nodeId: sharedDrugs[0].item.id,
+    });
+  }
+
+  if (mechanisms[0]) {
+    cards.push({
+      kicker: "Mechanism anchor",
+      title: mechanisms[0].item.name,
+      body: `${mechanisms[0].genes.size} genes in this disease packet connect to this pathway/function context.`,
+      meta: [`${mechanisms[0].claimCount} annotations`, `${mechanisms[0].sources.size} sources`],
+      nodeId: mechanisms[0].item.id,
+    });
+  }
+
+  cards.push({
+    kicker: "Evidence quality",
+    title: exploratory > stronger ? "Mostly exploratory" : "Mixed evidence",
+    body: `${stronger} curated/annotation rows and ${exploratory} exploratory signals. Use Evidence before treating a signal as a fact.`,
+    meta: [`${qualityCounts.strong || 0} curated`, `${qualityCounts.exploratory || 0} exploratory`],
+    mode: "evidence",
+  });
+
+  return cards;
+}
+
+function renderInsightCard(card) {
+  return `
+    <button class="insight-card" type="button"
+      ${card.nodeId ? `data-insight-node-id="${escapeHtml(card.nodeId)}"` : ""}
+      ${card.mode ? `data-insight-mode="${escapeHtml(card.mode)}"` : ""}>
+      <span class="mini-pill">${escapeHtml(card.kicker)}</span>
+      <strong>${escapeHtml(card.title)}</strong>
+      <span>${escapeHtml(card.body)}</span>
+      <span class="chip-row">
+        ${card.meta.map((item) => `<span class="source-chip">${escapeHtml(item)}</span>`).join("")}
+      </span>
+    </button>
+  `;
+}
+
 function renderBrief() {
   const disease = diseaseByName(state.disease);
-  const genes = uniqueTargets(topEdgesByType("associatedGenes", 8));
-  const expression = uniqueTargets(topEdgesByType(["upregulatedGenes", "downregulatedGenes"], 6));
+  const genes = uniqueTargets([
+    ...topEdgesByType("associatedGenes", 5),
+    ...topEdgesByType(["upregulatedGenes", "downregulatedGenes"], 5),
+  ]).slice(0, 8);
   const treatments = uniqueTargets(topEdgesByType(["treats", "palliates"], 8));
   const pathways = uniqueTargets(topEdgesByType("participatesInPathway", 6));
   const symptoms = uniqueTargets(topEdgesByType("symptomEvidence", 6));
   const anatomy = uniqueTargets(topEdgesByType("anatomyEvidence", 6));
+  const insightCards = diseaseInsightCards(disease);
   const curatedCount = (disease.evidenceGroupCounts["Disease gene associations"] || 0)
     + (disease.evidenceGroupCounts.Treatments || 0)
     + (disease.evidenceGroupCounts["Pathway annotations"] || 0)
@@ -923,6 +1170,9 @@ function renderBrief() {
         ${metric("Exploratory signals", signalCount)}
       </div>
     </section>
+    <section class="insight-grid">
+      ${insightCards.map(renderInsightCard).join("")}
+    </section>
     <section class="brief-grid">
       ${briefSection("Genes to inspect", "Disease-gene associations and expression signals that are worth opening first.", genes, "target")}
       ${briefSection("Treatments", "Treating and palliative compounds linked to this disease packet.", treatments, "source")}
@@ -941,6 +1191,16 @@ function renderBrief() {
       state.selectedEdgeId = null;
       renderInspector();
     });
+  });
+  els.briefBoard.querySelectorAll("[data-insight-node-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.selectedNodeId = button.dataset.insightNodeId;
+      state.selectedEdgeId = null;
+      renderInspector();
+    });
+  });
+  els.briefBoard.querySelectorAll("[data-insight-mode]").forEach((button) => {
+    button.addEventListener("click", () => setMode(button.dataset.insightMode));
   });
 }
 
@@ -966,6 +1226,7 @@ function briefItem(item, side) {
         <small>${escapeHtml(claimPlainLabel(item))}</small>
       </span>
       <span class="chip-row">
+        ${qualityChip(item)}
         ${item.log2FoldChange !== null && item.log2FoldChange !== undefined ? `<span class="source-chip">log2 ${Number(item.log2FoldChange).toFixed(3)}</span>` : ""}
         ${sourceChips(item.sourceNames, false)}
       </span>
@@ -1149,6 +1410,7 @@ function renderEvidence() {
               <span class="mini-pill">${escapeHtml(claimPlainLabel(item))}</span>
             </span>
             <span class="chip-row">
+              ${qualityChip(item)}
               <span class="source-chip">${escapeHtml(item.evidenceGroup || item.type)}</span>
               ${sourceChips(item.sourceNames, false)}
               ${item.log2FoldChange !== null && item.log2FoldChange !== undefined ? `<span class="source-chip">log2 ${Number(item.log2FoldChange).toFixed(3)}</span>` : ""}
@@ -1291,20 +1553,22 @@ function renderInspector() {
   if (state.selectedEdgeId) {
     const item = edge(state.selectedEdgeId);
     if (item) {
+      const quality = evidenceQuality(item);
       els.inspectorContent.innerHTML = `
         <div class="detail-stack">
           <span class="kind-chip" data-kind="${escapeHtml(node(item.source)?.kind || "disease")}">${escapeHtml(claimPlainLabel(item))}</span>
           <h2>${escapeHtml(claimSentence(item))}</h2>
           <p>${escapeHtml(claimExplanation(item))}</p>
           <div class="chip-row">
+            ${qualityChip(item)}
             <span class="source-chip">${escapeHtml(item.evidenceGroup || "Evidence")}</span>
             ${item.log2FoldChange !== null && item.log2FoldChange !== undefined ? `<span class="source-chip">log2 fold-change ${Number(item.log2FoldChange).toFixed(4)}</span>` : ""}
             ${item.license ? `<span class="source-chip">${escapeHtml(item.license)}</span>` : ""}
           </div>
         </div>
         <div class="plain-explainer">
-          <strong>How to read this</strong>
-          <span>This is an edge in the graph: source object -> relationship -> target object. The source list below tells you where the relationship came from.</span>
+          <strong>${escapeHtml(quality.label)}</strong>
+          <span>${escapeHtml(quality.explanation)} This is an edge in the graph: source object -> relationship -> target object.</span>
         </div>
         <div class="detail-stack">
           <div class="section-label"><span>Sources</span><span>${item.sourceNames?.length || 0}</span></div>
@@ -1315,12 +1579,14 @@ function renderInspector() {
     }
   }
 
-  if (["brief", "evidence", "sources"].includes(state.mode)) {
+  const selectedDefaultDisease = !state.selectedEdgeId && state.selectedNodeId === diseaseNodeId(state.disease);
+  if (["brief", "evidence", "sources"].includes(state.mode) && selectedDefaultDisease) {
     const disease = diseaseByName(state.disease);
     const edges = getDiseaseEdges();
     const groups = evidenceGroupsForDisease();
+    const qualityCounts = evidenceQualityCounts();
     const guideTitle = state.mode === "brief"
-      ? "Use the brief as a disease workup"
+      ? "Use Insights as a disease workup"
       : state.mode === "evidence"
         ? "Inspect claims in the center panel"
         : "Inspect provenance in the center panel";
@@ -1331,15 +1597,15 @@ function renderInspector() {
         : "Use the source list to open datasets, ontologies, papers, and external identifiers. Source records tell you where claims and annotations come from.";
     els.inspectorContent.innerHTML = `
       <div class="detail-stack mode-guide">
-        <span class="kind-chip" data-kind="disease">${escapeHtml(`${state.mode[0].toUpperCase()}${state.mode.slice(1)} mode`)}</span>
+        <span class="kind-chip" data-kind="disease">${escapeHtml(`${modeLabel(state.mode)} mode`)}</span>
         <h2>${escapeHtml(guideTitle)}</h2>
         <p>${escapeHtml(guideText)}</p>
       </div>
       <div class="metric-grid compact-metrics">
         ${metric("Disease claims", edges.length)}
         ${metric("Evidence families", groups.length)}
-        ${metric("Sources", disease.sources?.length || 0)}
-        ${metric("Papers", state.data.papers?.length || 0)}
+        ${metric("Curated / context", (qualityCounts.strong || 0) + (qualityCounts.moderate || 0) + (qualityCounts.context || 0))}
+        ${metric("Exploratory", qualityCounts.exploratory || 0)}
       </div>
       <div class="plain-explainer">
         <strong>Why this matters</strong>
@@ -1355,7 +1621,10 @@ function renderInspector() {
     return;
   }
 
-  const related = getDiseaseEdges().filter(
+  const relatedScope = state.mode === "compare" && item.kind === "gene"
+    ? state.data.edges
+    : getDiseaseEdges();
+  const related = relatedScope.filter(
     (edge) => edge.source === item.id || edge.target === item.id
   );
   const context = nodeContext(item);
@@ -1587,8 +1856,9 @@ async function init() {
   bindEvents();
   renderAll();
   resizeCanvas();
-  if (["brief", "explore", "compare", "evidence", "sources"].includes(URL_PARAMS.get("mode"))) {
-    setMode(URL_PARAMS.get("mode"));
+  const requestedMode = URL_PARAMS.get("mode") === "insights" ? "brief" : URL_PARAMS.get("mode");
+  if (["brief", "explore", "compare", "evidence", "sources"].includes(requestedMode)) {
+    setMode(requestedMode);
   }
   startAnimation();
 }

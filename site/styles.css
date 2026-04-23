@@ -1129,7 +1129,8 @@ button.kind-chip {
 .node-row,
 .edge-row,
 .compare-lane,
-.review-row {
+.review-row,
+.insight-card {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.045);
@@ -1144,6 +1145,8 @@ button.kind-chip {
 
 .quest-card:hover,
 .quest-card:focus-visible,
+.insight-card:hover,
+.insight-card:focus-visible,
 .node-row:hover,
 .edge-row:hover {
   border-color: rgba(0, 255, 209, 0.7);
@@ -1224,7 +1227,7 @@ button.kind-chip {
 
 .brief-board {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   gap: 12px;
   height: 100%;
   overflow: hidden;
@@ -1274,6 +1277,56 @@ button.kind-chip {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.insight-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  min-height: 132px;
+  padding: 10px;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(0, 255, 209, 0.12), transparent 12rem),
+    rgba(255, 255, 255, 0.045);
+  text-align: left;
+  cursor: pointer;
+}
+
+.insight-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 88% 14%, rgba(255, 61, 127, 0.12), transparent 12rem),
+    rgba(255, 255, 255, 0.045);
+}
+
+.insight-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 18% 84%, rgba(255, 243, 109, 0.10), transparent 12rem),
+    rgba(255, 255, 255, 0.045);
+}
+
+.insight-card strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--cyan);
+  font-size: 1.02rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.insight-card > span:not(.mini-pill):not(.chip-row) {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
 }
 
 .brief-grid {
@@ -1724,6 +1777,50 @@ button.kind-chip {
   background: var(--hot);
 }
 
+.quality-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border: 1px solid rgba(245, 244, 238, 0.16);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(245, 244, 238, 0.08);
+  font-size: 0.72rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.quality-chip[data-quality="strong"] {
+  color: #061018;
+  border-color: transparent;
+  background: var(--lime);
+}
+
+.quality-chip[data-quality="moderate"] {
+  color: #061018;
+  border-color: transparent;
+  background: var(--gold);
+}
+
+.quality-chip[data-quality="numeric"] {
+  color: #061018;
+  border-color: transparent;
+  background: var(--cyan);
+}
+
+.quality-chip[data-quality="exploratory"] {
+  color: var(--orange);
+  border-color: rgba(255, 159, 28, 0.42);
+  background: rgba(255, 159, 28, 0.11);
+}
+
+.quality-chip[data-quality="context"] {
+  color: #cfc3ff;
+  border-color: rgba(123, 92, 255, 0.38);
+  background: rgba(123, 92, 255, 0.12);
+}
+
 a.mini-pill,
 a.source-chip {
   color: var(--text);
@@ -2020,6 +2117,10 @@ a.source-chip:hover {
     grid-template-columns: 1fr;
   }
 
+  .insight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .disclaimer {
     position: relative;
     right: auto;
@@ -2075,6 +2176,7 @@ a.source-chip:hover {
 
   .brief-hero,
   .brief-grid,
+  .insight-grid,
   .brief-item {
     grid-template-columns: 1fr;
   }
