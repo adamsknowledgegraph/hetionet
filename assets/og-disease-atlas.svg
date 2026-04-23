@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="118" y1="72" x2="1042" y2="566" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101217"/>
+      <stop offset="1" stop-color="#06070B"/>
+    </linearGradient>
+    <radialGradient id="tealGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(266 118) rotate(38.2) scale(324 220)">
+      <stop stop-color="#00FFD1" stop-opacity=".33"/>
+      <stop offset="1" stop-color="#00FFD1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pinkGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1006 144) rotate(139.4) scale(302 218)">
+      <stop stop-color="#FF3D7F" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#FF3D7F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(824 504) rotate(180) scale(338 248)">
+      <stop stop-color="#FFF36D" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#FFF36D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="120" y1="154" x2="496" y2="286" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4D6"/>
+      <stop offset=".44" stop-color="#FFF36D"/>
+      <stop offset=".82" stop-color="#FF8ABD"/>
+      <stop offset="1" stop-color="#00FFD1"/>
+    </linearGradient>
+    <linearGradient id="cardStroke" x1="652" y1="74" x2="1110" y2="562" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity=".16"/>
+      <stop offset="1" stop-color="white" stop-opacity=".06"/>
+    </linearGradient>
+    <linearGradient id="tealLine" x1="766" y1="334" x2="957" y2="222" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFD1"/>
+      <stop offset="1" stop-color="#6BFFE4"/>
+    </linearGradient>
+    <linearGradient id="pinkLine" x1="780" y1="348" x2="1028" y2="414" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7BA9"/>
+      <stop offset="1" stop-color="#FF3D7F"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="790" y1="324" x2="1044" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF36D"/>
+      <stop offset="1" stop-color="#FFB341"/>
+    </linearGradient>
+    <filter id="softBlur" x="-200" y="-200" width="1600" height="1030" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="cardShadow" x="612" y="42" width="562" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feOffset dy="20"/>
+      <feGaussianBlur stdDeviation="20"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.027451 0 0 0 0 0.054902 0 0 0 0.42 0"/>
+      <feBlend in2="SourceGraphic" result="shape"/>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="white" stroke-opacity=".055"/>
+    </pattern>
+    <filter id="grain" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse">
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0 .06 .12"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#07080D"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#tealGlow)" filter="url(#softBlur)"/>
+  <rect width="1200" height="630" fill="url(#pinkGlow)" filter="url(#softBlur)"/>
+  <rect width="1200" height="630" fill="url(#goldGlow)" filter="url(#softBlur)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <g opacity=".95">
+    <rect x="72" y="70" width="182" height="34" rx="17" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+    <circle cx="95" cy="87" r="6" fill="#00FFD1"/>
+    <text x="112" y="91" fill="#DDFCF5" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing=".16em">GEO KNOWLEDGE GRAPH</text>
+  </g>
+
+  <text x="72" y="196" fill="#F5EFE1" font-family="Georgia, 'Times New Roman', serif" font-size="84" letter-spacing="-0.05em">Disease Atlas</text>
+  <text x="72" y="266" fill="url(#titleGrad)" font-family="Georgia, 'Times New Roman', serif" font-size="56" letter-spacing="-0.05em">source-backed biology</text>
+
+  <text x="74" y="332" fill="#D4CEC1" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700">Genes, drugs, pathways, symptoms, anatomy,</text>
+  <text x="74" y="368" fill="#D4CEC1" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700">and evidence with traceable source links.</text>
+  <text x="74" y="408" fill="#A3A7B3" font-family="Arial, Helvetica, sans-serif" font-size="21">A public Geo explorer for moving from a disease to the claims, identifiers,</text>
+  <text x="74" y="437" fill="#A3A7B3" font-family="Arial, Helvetica, sans-serif" font-size="21">datasets, and source pages behind it.</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="650" y="72" width="480" height="486" rx="34" fill="rgba(13,15,21,0.78)" stroke="url(#cardStroke)"/>
+    <rect x="676" y="98" width="430" height="46" rx="23" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.09)"/>
+    <rect x="694" y="109" width="114" height="24" rx="12" fill="#00FFD1" fill-opacity=".16" stroke="#00FFD1" stroke-opacity=".42"/>
+    <text x="718" y="126" fill="#D9FFF7" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">PUBLIC EXPLORER</text>
+    <rect x="820" y="109" width="95" height="24" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="845" y="126" fill="#EDE6D4" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">COMPARE</text>
+    <rect x="927" y="109" width="68" height="24" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="945" y="126" fill="#EDE6D4" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">GEO</text>
+
+    <rect x="676" y="166" width="152" height="158" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="696" y="198" fill="#AEB2BD" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing=".18em">LIVE PACKET</text>
+    <text x="696" y="252" fill="#F5EFE1" font-family="Georgia, 'Times New Roman', serif" font-size="42">Asthma</text>
+    <text x="696" y="286" fill="#B0B4BE" font-family="Arial, Helvetica, sans-serif" font-size="18">disease → genes → evidence</text>
+    <rect x="696" y="302" width="104" height="30" rx="15" fill="rgba(255,243,109,0.14)" stroke="rgba(255,243,109,0.32)"/>
+    <text x="722" y="322" fill="#FFF4AF" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">OPEN IN GEO</text>
+
+    <rect x="846" y="166" width="260" height="158" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="868" y="198" fill="#AEB2BD" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing=".18em">GRAPH MOTIFS</text>
+
+    <path d="M894 254C860 245 829 236 794 208" stroke="url(#tealLine)" stroke-width="3.2" stroke-linecap="round" opacity=".95"/>
+    <path d="M892 268C848 262 806 260 758 245" stroke="url(#tealLine)" stroke-width="2.8" stroke-linecap="round" opacity=".75"/>
+    <path d="M898 282C854 287 818 301 779 318" stroke="url(#goldLine)" stroke-width="2.8" stroke-linecap="round" opacity=".72"/>
+    <path d="M910 300C934 293 961 286 996 276" stroke="url(#goldLine)" stroke-width="3.2" stroke-linecap="round" opacity=".92"/>
+    <path d="M916 321C950 326 982 336 1034 360" stroke="url(#pinkLine)" stroke-width="3.1" stroke-linecap="round" opacity=".92"/>
+    <path d="M906 340C939 355 969 374 997 405" stroke="url(#pinkLine)" stroke-width="2.8" stroke-linecap="round" opacity=".7"/>
+    <path d="M887 344C846 364 812 384 785 416" stroke="url(#tealLine)" stroke-width="2.8" stroke-linecap="round" opacity=".68"/>
+
+    <circle cx="903" cy="302" r="24" fill="#F6D97A" stroke="#FFF9D7" stroke-opacity=".65" stroke-width="5"/>
+    <circle cx="903" cy="302" r="10" fill="#11151C"/>
+
+    <circle cx="786" cy="201" r="18" fill="#00FFD1" fill-opacity=".88"/>
+    <circle cx="753" cy="244" r="14" fill="#00FFD1" fill-opacity=".78"/>
+    <circle cx="771" cy="322" r="11" fill="#FFB341" fill-opacity=".84"/>
+    <circle cx="998" cy="275" r="15" fill="#FFB341" fill-opacity=".88"/>
+    <circle cx="1035" cy="361" r="16" fill="#FF3D7F" fill-opacity=".90"/>
+    <circle cx="997" cy="405" r="13" fill="#FF3D7F" fill-opacity=".82"/>
+    <circle cx="784" cy="418" r="15" fill="#00FFD1" fill-opacity=".76"/>
+
+    <rect x="676" y="346" width="430" height="188" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="698" y="378" fill="#AEB2BD" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing=".18em">ATLAS SNAPSHOT</text>
+
+    <rect x="698" y="396" width="120" height="52" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="715" y="420" fill="#FFF9D6" font-family="Georgia, 'Times New Roman', serif" font-size="30">16</text>
+    <text x="715" y="438" fill="#9FA4AF" font-family="Arial, Helvetica, sans-serif" font-size="13">disease packets</text>
+
+    <rect x="832" y="396" width="120" height="52" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="847" y="420" fill="#D8FFF8" font-family="Georgia, 'Times New Roman', serif" font-size="30">1,522</text>
+    <text x="847" y="438" fill="#9FA4AF" font-family="Arial, Helvetica, sans-serif" font-size="13">graph objects</text>
+
+    <rect x="966" y="396" width="120" height="52" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="983" y="420" fill="#FFD7E5" font-family="Georgia, 'Times New Roman', serif" font-size="30">3,297</text>
+    <text x="983" y="438" fill="#9FA4AF" font-family="Arial, Helvetica, sans-serif" font-size="13">claims</text>
+
+    <rect x="698" y="468" width="388" height="44" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="722" cy="490" r="6" fill="#00FFD1"/>
+    <text x="740" y="495" fill="#D8DED2" font-family="Arial, Helvetica, sans-serif" font-size="18">Public dashboard + direct Geo packet links</text>
+  </g>
+
+  <g opacity=".98">
+    <rect x="72" y="462" width="162" height="86" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="94" y="494" fill="#B3B7C0" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing=".18em">DISEASES</text>
+    <text x="94" y="533" fill="#FFF6DE" font-family="Georgia, 'Times New Roman', serif" font-size="40">16</text>
+    <text x="94" y="555" fill="#9196A2" font-family="Arial, Helvetica, sans-serif" font-size="15">curated packets</text>
+
+    <rect x="248" y="462" width="176" height="86" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="270" y="494" fill="#B3B7C0" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing=".18em">OBJECTS</text>
+    <text x="270" y="533" fill="#D6FFF6" font-family="Georgia, 'Times New Roman', serif" font-size="40">1,522</text>
+    <text x="270" y="555" fill="#9196A2" font-family="Arial, Helvetica, sans-serif" font-size="15">genes, drugs, pathways, terms</text>
+
+    <rect x="438" y="462" width="172" height="86" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="460" y="494" fill="#B3B7C0" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing=".18em">CLAIMS</text>
+    <text x="460" y="533" fill="#FFD7E5" font-family="Georgia, 'Times New Roman', serif" font-size="40">3,297</text>
+    <text x="460" y="555" fill="#9196A2" font-family="Arial, Helvetica, sans-serif" font-size="15">source-backed relationships</text>
+  </g>
+
+  <text x="74" y="586" fill="#7D8694" font-family="Arial, Helvetica, sans-serif" font-size="18">adamsknowledgegraph.github.io/hetionet</text>
+  <text x="842" y="586" fill="#9CA3B0" font-family="Arial, Helvetica, sans-serif" font-size="16">Built on Geo • disease-first evidence explorer</text>
+
+  <rect width="1200" height="630" fill="white" opacity=".10" filter="url(#grain)"/>
+</svg>
