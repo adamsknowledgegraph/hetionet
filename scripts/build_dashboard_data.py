@@ -13,6 +13,7 @@ ASTHMA_ENRICHMENT_JSON = ROOT / "data/geo/asthma-enrichment.json"
 WAVE2_PACKET_JSON = ROOT / "data/geo/disease-wave2-packets.json"
 THREE_DISEASE_EVIDENCE_JSON = ROOT / "data/geo/three-disease-evidence.json"
 WAVE3_PACKET_JSON = ROOT / "data/geo/disease-wave3-packets.json"
+WAVE4_PACKET_JSON = ROOT / "data/geo/disease-wave4-packets.json"
 OUTPUT_JSON = ROOT / "site/data/atlas-dashboard.json"
 
 GEO_SPACE_URL = "https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e"
@@ -25,6 +26,14 @@ DISEASE_ORDER = [
     "Type 2 diabetes mellitus",
     "Alzheimer's disease",
     "Crohn's disease",
+    "Chronic obstructive pulmonary disease",
+    "Atopic dermatitis",
+    "Ulcerative colitis",
+    "Multiple sclerosis",
+    "Systemic lupus erythematosus",
+    "Coronary artery disease",
+    "Obesity",
+    "Lung cancer",
 ]
 
 PUBLIC_SOURCE_NAMES = {
@@ -785,6 +794,7 @@ def main() -> None:
     wave2_packets = load_json(WAVE2_PACKET_JSON)
     evidence_packets = load_json(THREE_DISEASE_EVIDENCE_JSON)
     wave3_packets = load_json(WAVE3_PACKET_JSON)
+    wave4_packets = load_json(WAVE4_PACKET_JSON)
 
     sources = {}
     papers = {}
@@ -808,9 +818,10 @@ def main() -> None:
         evidence_packets,
         wave2_packets,
         wave3_packets,
+        wave4_packets,
     )
 
-    for packet in get_packets(asthma_packet, wave2_packets, evidence_packets, wave3_packets):
+    for packet in get_packets(asthma_packet, wave2_packets, evidence_packets, wave3_packets, wave4_packets):
         process_packet(packet, nodes, edges, sources, disease_stats, enrichment_index)
 
     disease_outputs = [
@@ -841,6 +852,7 @@ def main() -> None:
                 str(WAVE2_PACKET_JSON.relative_to(ROOT)),
                 str(THREE_DISEASE_EVIDENCE_JSON.relative_to(ROOT)),
                 str(WAVE3_PACKET_JSON.relative_to(ROOT)),
+                str(WAVE4_PACKET_JSON.relative_to(ROOT)),
             ],
             "summary": {
                 "diseaseCount": len(disease_outputs),

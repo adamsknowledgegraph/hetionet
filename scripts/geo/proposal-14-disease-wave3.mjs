@@ -11,6 +11,7 @@ import {
   findEntityInSpace,
   findPreferredEntity,
   listSpaceEntities,
+  searchExactEntitiesByName,
 } from "./lib/graphql.mjs";
 import {
   deterministicEntityId,
@@ -37,7 +38,12 @@ import {
   updateMissingValues,
 } from "./lib/proposal-utils.mjs";
 
-const PROPOSAL_NAME = "Disease Atlas - Wave 3 cross-therapeutic diseases";
+const WAVE_KEY = process.env.GEO_DISEASE_WAVE_KEY ?? "wave3";
+const WAVE_FILE = process.env.GEO_DISEASE_WAVE_FILE ?? "disease-wave3-packets.json";
+const WAVE_LABEL = process.env.GEO_DISEASE_WAVE_LABEL ?? "Wave 3 cross-therapeutic diseases";
+const SHOULD_RESET_TABS = process.env.GEO_SKIP_TAB_RESET !== "1";
+const PROPOSAL_NAME =
+  process.env.GEO_PROPOSAL_NAME ?? `Disease Atlas - ${WAVE_LABEL}`;
 
 const SOURCE_ALIASES = {
   "Reactome via Pathway Commons": "Reactome",
@@ -59,12 +65,12 @@ const config = loadGeoEnv({ requirePrivateKey: false });
 const manifest = await loadLiveManifest();
 const wave = JSON.parse(
   await readFile(
-    fileURLToPath(new URL("../../data/geo/disease-wave3-packets.json", import.meta.url)),
+    fileURLToPath(new URL(`../../data/geo/${WAVE_FILE}`, import.meta.url)),
     "utf8"
   )
 );
 
-const currentEntities = await listSpaceEntities(config.targetSpaceId, 5000);
+const currentEntities = await listSpaceEntities(config.targetSpaceId, 2000);
 const ops = [];
 const touched = {
   checkedSharedOntology: {},
@@ -1045,10 +1051,20 @@ async function createPacketRelations(packet, entities, sourceMap) {
   touched.relationCounts[packet.disease.name] = relationCount;
 }
 
-function mustFindPage(name) {
-  const page = findLocalEntity(name, sharedTypes.Page.id);
+async function mustFindPage(name) {
+  let page = findLocalEntity(name, sharedTypes.Page.id);
+  if (!page) {
+    const matches = await searchExactEntitiesByName({
+      typeId: sharedTypes.Page.id,
+      name,
+    });
+    page = matches.find((entity) => entity.spaceIds?.includes(config.targetSpaceId)) ?? null;
+  }
   if (!page) {
     throw new Error(`Missing expected page "${name}".`);
+  }
+  if (!currentEntities.some((entity) => entity.id === page.id)) {
+    currentEntities.push(page);
   }
   return page;
 }
@@ -1193,13 +1209,13 @@ async function publishCollections() {
     touched.collectionBlocks[blockConfig.finalName] = block;
 
     for (const pageName of blockConfig.attachTo) {
-      const page = mustFindPage(pageName);
+      const page = await mustFindPage(pageName);
       const added = await ensureBlockRelation({
         ops,
         config,
         fromId: page.id,
         blockId: block.id,
-        sourceKey: `${pageName}:${blockConfig.finalName}:wave3-block`,
+        sourceKey: `${pageName}:${blockConfig.finalName}:${WAVE_KEY}-block`,
       });
       if (added) touched.attachedBlocks.push(`${pageName}:${blockConfig.finalName}`);
     }
@@ -1335,8 +1351,9 @@ async function configureColumns(blockIds) {
 }
 
 async function updateOverviewGuide() {
+  const diseaseNames = wave.packets.map((packet) => packet.disease.name);
   const overviewText = [
-    "Disease Atlas now contains eight focused Hetionet-derived disease packets: Asthma, Psoriasis, Rheumatoid arthritis, Breast cancer, Hypertension, Type 2 diabetes mellitus, Alzheimer's disease, and Crohn's disease.",
+    `Disease Atlas includes a focused ${WAVE_LABEL} expansion: ${diseaseNames.join(", ")}.`,
     "",
     "Use Diseases as the disease-first index, then Treatments, Mechanisms, Evidence, Sources, and Papers to inspect the same graph from different angles. Disease-symptom, disease-anatomy, disease-similarity, and expression rows are evidence-only imports and should be read as traceable source evidence rather than canonical clinical assertions.",
     "",
@@ -1355,7 +1372,7 @@ async function updateOverviewGuide() {
     config,
     fromId: config.targetSpaceEntityId,
     blockId: overviewBlockId,
-    sourceKey: "overview-guide-wave3",
+    sourceKey: `overview-guide-${WAVE_KEY}`,
   });
   if (added) touched.attachedBlocks.push("Overview:Overview guide");
 }
@@ -1365,14 +1382,14 @@ async function resetTabs() {
   if (!tabProperty?.id) return;
 
   const targetTabs = [
-    mustFindPage("Diseases"),
-    mustFindPage("Treatments"),
-    mustFindPage("Mechanisms"),
-    mustFindPage("Evidence"),
-    mustFindPage("Sources"),
-    mustFindPage("Papers"),
-    mustFindPage("Ontology"),
-    mustFindPage("About"),
+    await mustFindPage("Diseases"),
+    await mustFindPage("Treatments"),
+    await mustFindPage("Mechanisms"),
+    await mustFindPage("Evidence"),
+    await mustFindPage("Sources"),
+    await mustFindPage("Papers"),
+    await mustFindPage("Ontology"),
+    await mustFindPage("About"),
   ];
 
   const spaceEntity = await fetchEntity(config.targetSpaceEntityId);
@@ -1395,7 +1412,7 @@ async function resetTabs() {
         typeId: tabProperty.id,
         toId: tab.id,
         spaceId: config.targetSpaceId,
-        sourceKey: `wave3:${index}:${tab.name}`,
+        sourceKey: `${WAVE_KEY}:${index}:${tab.name}`,
       }),
       fromEntity: config.targetSpaceEntityId,
       toEntity: tab.id,
@@ -1420,7 +1437,9 @@ for (const packet of wave.packets) {
 const blockIds = await publishCollections();
 await configureColumns(blockIds);
 await updateOverviewGuide();
-await resetTabs();
+if (SHOULD_RESET_TABS) {
+  await resetTabs();
+}
 
 if (ops.length === 0) {
   console.log(
@@ -1434,7 +1453,7 @@ if (ops.length === 0) {
         opCount: 0,
         opTypes: {},
         touched,
-        skipped: "Disease Atlas Wave 3 is already published.",
+        skipped: `${WAVE_LABEL} is already published.`,
       },
       null,
       2

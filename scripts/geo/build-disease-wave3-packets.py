@@ -2,21 +2,40 @@ from __future__ import annotations
 
 import bz2
 import json
+import os
 from collections import Counter, defaultdict
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_JSON = ROOT / "data/source/hetionet-v1.0.json.bz2"
-OUTPUT_JSON = ROOT / "data/geo/disease-wave3-packets.json"
+WAVE_NAME = os.environ.get("DISEASE_WAVE", "wave3")
+OUTPUT_JSON = ROOT / f"data/geo/disease-{WAVE_NAME}-packets.json"
 
-PUBLISH_DISEASES = [
-    "breast cancer",
-    "hypertension",
-    "type 2 diabetes mellitus",
-    "Alzheimer's disease",
-    "Crohn's disease",
-]
+WAVE_DISEASES = {
+    "wave3": [
+        "breast cancer",
+        "hypertension",
+        "type 2 diabetes mellitus",
+        "Alzheimer's disease",
+        "Crohn's disease",
+    ],
+    "wave4": [
+        "chronic obstructive pulmonary disease",
+        "atopic dermatitis",
+        "ulcerative colitis",
+        "multiple sclerosis",
+        "systemic lupus erythematosus",
+        "coronary artery disease",
+        "obesity",
+        "lung cancer",
+    ],
+}
+
+if WAVE_NAME not in WAVE_DISEASES:
+    raise ValueError(f"Unsupported DISEASE_WAVE={WAVE_NAME!r}; expected one of {sorted(WAVE_DISEASES)}")
+
+PUBLISH_DISEASES = WAVE_DISEASES[WAVE_NAME]
 
 DISEASE_DISPLAY_NAMES = {
     "breast cancer": "Breast cancer",
@@ -24,6 +43,14 @@ DISEASE_DISPLAY_NAMES = {
     "type 2 diabetes mellitus": "Type 2 diabetes mellitus",
     "Alzheimer's disease": "Alzheimer's disease",
     "Crohn's disease": "Crohn's disease",
+    "chronic obstructive pulmonary disease": "Chronic obstructive pulmonary disease",
+    "atopic dermatitis": "Atopic dermatitis",
+    "ulcerative colitis": "Ulcerative colitis",
+    "multiple sclerosis": "Multiple sclerosis",
+    "systemic lupus erythematosus": "Systemic lupus erythematosus",
+    "coronary artery disease": "Coronary artery disease",
+    "obesity": "Obesity",
+    "lung cancer": "Lung cancer",
 }
 
 DISEASE_ENTITY_IDS = {
@@ -120,6 +147,142 @@ GENE_PRIORITIES = {
         "PTPN2",
         "FUT2",
     ],
+    "chronic obstructive pulmonary disease": [
+        "STAT4",
+        "NOS2",
+        "GC",
+        "SCGB1A1",
+        "CRP",
+        "HDAC2",
+        "ANXA11",
+        "GSTM1",
+        "MMP1",
+        "GSTT1",
+        "TP53",
+        "LEP",
+        "MPO",
+        "IL6",
+        "SERPINB1",
+    ],
+    "atopic dermatitis": [
+        "KIF3A",
+        "CD4",
+        "RNASE3",
+        "CCL27",
+        "ZNF365",
+        "IL1B",
+        "NFKBIA",
+        "IL2",
+        "FLG",
+        "CCL18",
+        "IL18R1",
+        "MS4A2",
+        "CCR5",
+        "CCL17",
+        "IL31",
+    ],
+    "ulcerative colitis": [
+        "CXCR2",
+        "KIF21B",
+        "IL10",
+        "IL15",
+        "ORMDL3",
+        "ITGAL",
+        "MPO",
+        "IRF5",
+        "GHRL",
+        "RELA",
+        "FCGR2A",
+        "TLR4",
+        "MIF",
+        "PTGS1",
+        "ECM1",
+    ],
+    "multiple sclerosis": [
+        "CD40",
+        "CD40LG",
+        "TLR4",
+        "TNF",
+        "PLP1",
+        "CXCL10",
+        "HLA-G",
+        "TNFAIP3",
+        "ITGA4",
+        "SPP1",
+        "TYK2",
+        "IL1B",
+        "IL6",
+        "HLA-DRB1",
+        "IFNB1",
+    ],
+    "systemic lupus erythematosus": [
+        "TRIM21",
+        "LYN",
+        "IL1RN",
+        "SH2B3",
+        "NCF2",
+        "IRF5",
+        "IFNA1",
+        "PPARG",
+        "TNF",
+        "IL6",
+        "PTPN22",
+        "FCGR3B",
+        "TYK2",
+        "BANK1",
+        "HLA-DQA1",
+    ],
+    "coronary artery disease": [
+        "AGT",
+        "CKB",
+        "PON2",
+        "ESR2",
+        "PRKCE",
+        "MMP2",
+        "SIRT1",
+        "LCAT",
+        "AGTR1",
+        "APOC3",
+        "IL18",
+        "HMGB1",
+        "HMGCR",
+        "MMP1",
+        "ATP2B1",
+    ],
+    "obesity": [
+        "PCK1",
+        "DEFB1",
+        "CPB2",
+        "ENPP2",
+        "NOS1",
+        "MTCH2",
+        "CRHBP",
+        "F2",
+        "GNB3",
+        "FOXO1",
+        "HTR1B",
+        "CIDEA",
+        "SLC6A14",
+        "IFNG",
+        "LEP",
+    ],
+    "lung cancer": [
+        "QPCT",
+        "DAPK1",
+        "PYCARD",
+        "SATB2",
+        "CYP2A6",
+        "TF",
+        "TOP1",
+        "CSF3",
+        "MMP2",
+        "VEGFA",
+        "GSTA1",
+        "CDKN1A",
+        "ALB",
+        "CYP1A1",
+        "SFN",
+    ],
 }
 
 DRUG_PRIORITIES = {
@@ -172,6 +335,101 @@ DRUG_PRIORITIES = {
         "Prednisone",
         "Azathioprine",
         "Mercaptopurine",
+    ],
+    "chronic obstructive pulmonary disease": [
+        "Prednisolone",
+        "Arformoterol",
+        "Roflumilast",
+        "Tiotropium",
+        "Prednisone",
+        "Salbutamol",
+        "Formoterol",
+        "Aminophylline",
+        "Montelukast",
+    ],
+    "atopic dermatitis": [
+        "Fluocinolone Acetonide",
+        "Loratadine",
+        "Fluocinonide",
+        "Prednisone",
+        "Tacrolimus",
+        "Mometasone",
+        "Desonide",
+        "Triamcinolone",
+        "Hydrocortisone",
+        "Diphenhydramine",
+    ],
+    "ulcerative colitis": [
+        "Triamcinolone",
+        "Mesalazine",
+        "Azathioprine",
+        "Sulfasalazine",
+        "Cholecalciferol",
+        "Prednisone",
+        "Budesonide",
+        "Olsalazine",
+        "Balsalazide",
+        "Prednisolone",
+    ],
+    "multiple sclerosis": [
+        "Methotrexate",
+        "Mitoxantrone",
+        "Fingolimod",
+        "Betamethasone",
+        "Azathioprine",
+        "Prednisone",
+        "Cladribine",
+        "Triamcinolone",
+        "Methylprednisolone",
+        "Prednisolone",
+    ],
+    "systemic lupus erythematosus": [
+        "Methotrexate",
+        "Cyclosporine",
+        "Dapsone",
+        "Dexamethasone",
+        "Triamcinolone",
+        "Mycophenolate mofetil",
+        "Prednisone",
+        "Azathioprine",
+        "Hydrocortisone",
+        "Leflunomide",
+    ],
+    "coronary artery disease": [
+        "Valsartan",
+        "Rosuvastatin",
+        "Simvastatin",
+        "Tirofiban",
+        "Ticagrelor",
+        "Pitavastatin",
+        "Losartan",
+        "Telmisartan",
+        "Niacin",
+        "Eplerenone",
+    ],
+    "obesity": [
+        "Phentermine",
+        "Cimetidine",
+        "Diethylpropion",
+        "Bupropion",
+        "Sibutramine",
+        "Benzphetamine",
+        "Orlistat",
+        "Methamphetamine",
+        "Phenylpropanolamine",
+        "Phendimetrazine",
+    ],
+    "lung cancer": [
+        "Erlotinib",
+        "Methotrexate",
+        "Pemetrexed",
+        "Irinotecan",
+        "Doxorubicin",
+        "Gemcitabine",
+        "Cisplatin",
+        "Etoposide",
+        "Paclitaxel",
+        "Crizotinib",
     ],
 }
 
@@ -664,6 +922,15 @@ def raw_edge_id(source: tuple[str, str], kind: str, target: tuple[str, str]) -> 
     return f"hetionet-v1.0:{source[0]}:{source[1]}|{kind}|{target[0]}:{target[1]}"
 
 
+def slugify(value: str) -> str:
+    return (
+        value.lower()
+        .replace("'", "")
+        .replace("/", "-")
+        .replace(" ", "-")
+    )
+
+
 def edge_relation(
     *,
     from_name: str,
@@ -1009,7 +1276,7 @@ def build_packet(disease_name: str, indexes: dict) -> dict:
             )
 
     return {
-        "importBatch": f"{disease_name.replace(' ', '-')}-wave3-v1",
+        "importBatch": f"{slugify(disease_name)}-{WAVE_NAME}-v1",
         "datasetName": "Hetionet v1.0",
         "disease": {
             **disease_entity(disease_node),
@@ -1026,7 +1293,7 @@ def main() -> None:
     indexes = build_indexes(hetionet)
     packets = [build_packet(name, indexes) for name in PUBLISH_DISEASES]
     output = {
-        "importName": "disease-wave3-v1",
+        "importName": f"disease-{WAVE_NAME}-v1",
         "sourceDataset": "Hetionet v1.0",
         "sources": SOURCE_DEFINITIONS,
         "papers": PAPER_DEFINITIONS,

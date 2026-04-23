@@ -234,6 +234,16 @@
       "proposalTxHash": "0x28107a1dd46343940e935484290a89a8ecdf48dfa7ffcd0069b8d64caa82822f",
       "voteTxHash": "0x3cfa7a4078a03df1f2c961fe9aaa1af6b0c0abc68dfb54e7e16e96ff93b5f218",
       "executed": true
+    },
+    {
+      "key": "disease-wave4-cross-system-expansion-20260423",
+      "name": "Disease Atlas - Wave 4 cross-system expansion",
+      "proposalId": "0xcf0c81f6e278410a89c5d60b0305c5e1",
+      "editId": "1d80cf4c87144fbfba74e2ac023c3286",
+      "cid": "ipfs://bafybeielxijrprev5ppymu2b6aiywnaf74nuccqrmjexllcrnzfnf5ko4q",
+      "proposalTxHash": "0x75bc52c7a55ab3e7eafbc78d91d8ae6e5fc57f70f2f4a268b2a2ec91859f7908",
+      "voteTxHash": "0x576b45e52225e8bd6dc1988dc1da302528f91158354546042f5a8ad876c141c3",
+      "executed": true
     }
   ]
 }
