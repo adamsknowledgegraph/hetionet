@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Abstract source and evidence cards with grain texture">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="42"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.38"/>
+      </feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" x2="1">
+      <stop offset="0" stop-color="#00ffd1"/>
+      <stop offset="0.36" stop-color="#fff36d"/>
+      <stop offset="0.68" stop-color="#ff3d7f"/>
+      <stop offset="1" stop-color="#7b5cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="520" rx="34" fill="url(#panel)"/>
+  <g filter="url(#grain)">
+    <rect x="34" y="34" width="652" height="452" rx="28" fill="#f4f1ea" fill-opacity="0.055" stroke="#f4f1ea" stroke-opacity="0.16"/>
+    <rect x="68" y="74" width="584" height="18" rx="9" fill="url(#band)"/>
+    <g fill="#f4f1ea" font-family="DM Mono, monospace">
+      <text x="68" y="132" font-size="18">EVIDENCE STACK</text>
+      <text x="68" y="160" font-size="12" fill="#a8a39a">SOURCES · PAPERS · IDENTIFIERS</text>
+    </g>
+    <g>
+      <rect x="68" y="194" width="252" height="86" rx="18" fill="#00ffd1" fill-opacity="0.16" stroke="#00ffd1" stroke-opacity="0.42"/>
+      <rect x="92" y="219" width="112" height="12" rx="6" fill="#00ffd1"/>
+      <rect x="92" y="245" width="182" height="10" rx="5" fill="#f4f1ea" fill-opacity="0.34"/>
+      <circle cx="282" cy="237" r="18" fill="#00ffd1"/>
+    </g>
+    <g>
+      <rect x="348" y="194" width="304" height="86" rx="18" fill="#ff3d7f" fill-opacity="0.14" stroke="#ff3d7f" stroke-opacity="0.42"/>
+      <rect x="372" y="219" width="142" height="12" rx="6" fill="#ff3d7f"/>
+      <rect x="372" y="245" width="224" height="10" rx="5" fill="#f4f1ea" fill-opacity="0.34"/>
+      <circle cx="614" cy="237" r="18" fill="#ff3d7f"/>
+    </g>
+    <g>
+      <rect x="68" y="306" width="196" height="118" rx="18" fill="#fff36d" fill-opacity="0.14" stroke="#fff36d" stroke-opacity="0.42"/>
+      <rect x="92" y="331" width="84" height="12" rx="6" fill="#fff36d"/>
+      <rect x="92" y="359" width="132" height="9" rx="5" fill="#f4f1ea" fill-opacity="0.34"/>
+      <rect x="92" y="383" width="92" height="9" rx="5" fill="#f4f1ea" fill-opacity="0.22"/>
+    </g>
+    <g>
+      <rect x="288" y="306" width="170" height="118" rx="18" fill="#7b5cff" fill-opacity="0.15" stroke="#7b5cff" stroke-opacity="0.42"/>
+      <rect x="312" y="331" width="76" height="12" rx="6" fill="#7b5cff"/>
+      <rect x="312" y="359" width="102" height="9" rx="5" fill="#f4f1ea" fill-opacity="0.34"/>
+      <rect x="312" y="383" width="72" height="9" rx="5" fill="#f4f1ea" fill-opacity="0.22"/>
+    </g>
+    <g>
+      <rect x="482" y="306" width="170" height="118" rx="18" fill="#ff8abd" fill-opacity="0.15" stroke="#ff8abd" stroke-opacity="0.42"/>
+      <rect x="506" y="331" width="76" height="12" rx="6" fill="#ff8abd"/>
+      <rect x="506" y="359" width="102" height="9" rx="5" fill="#f4f1ea" fill-opacity="0.34"/>
+      <rect x="506" y="383" width="72" height="9" rx="5" fill="#f4f1ea" fill-opacity="0.22"/>
+    </g>
+    <path d="M282 237 C340 272 382 282 430 237" fill="none" stroke="#f4f1ea" stroke-opacity="0.34" stroke-width="2"/>
+    <path d="M166 365 C234 294 314 289 373 365" fill="none" stroke="#00ffd1" stroke-opacity="0.4" stroke-width="2"/>
+    <path d="M567 365 C507 300 450 296 373 365" fill="none" stroke="#ff3d7f" stroke-opacity="0.36" stroke-width="2"/>
+  </g>
+</svg>

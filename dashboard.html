@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disease Atlas Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="dashboard-page">
+    <main class="page-shell">
+      <section id="atlas-explorer" class="app-shell" aria-label="Disease Atlas Explorer">
+        <header class="topbar" aria-label="Dashboard controls">
+          <a class="brand" href="index.html" aria-label="Disease Atlas landing page">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>
+              <strong>Disease Atlas</strong>
+              <small>Evidence Explorer</small>
+            </span>
+          </a>
+
+          <div class="control-strip">
+            <label class="select-wrap">
+              <span>Disease</span>
+              <select id="disease-select"></select>
+            </label>
+
+            <div class="mode-tabs" role="tablist" aria-label="View mode">
+              <button class="mode-button is-active" type="button" data-mode="brief" role="tab" aria-selected="true">Insights</button>
+              <button class="mode-button" type="button" data-mode="explore" role="tab" aria-selected="false">Graph</button>
+              <button class="mode-button" type="button" data-mode="compare" role="tab" aria-selected="false">Compare</button>
+              <button class="mode-button" type="button" data-mode="evidence" role="tab" aria-selected="false">Evidence</button>
+              <button class="mode-button" type="button" data-mode="sources" role="tab" aria-selected="false">Sources</button>
+            </div>
+
+            <label class="search-wrap">
+              <span class="search-icon" aria-hidden="true"></span>
+              <input id="search-input" type="search" placeholder="Search node or source" autocomplete="off">
+            </label>
+
+            <button id="motion-toggle" class="icon-button label-button" type="button" aria-pressed="false" aria-label="Toggle graph animation" title="Toggle graph animation">
+              <span data-motion-label>Motion on</span>
+            </button>
+          </div>
+        </header>
+
+        <section id="app-main" class="hud" aria-live="polite">
+          <aside class="left-rail" aria-label="Disease summary">
+            <div class="metric-stack" id="metric-stack"></div>
+            <div class="quest-zone" id="quest-zone"></div>
+          </aside>
+
+          <section class="center-stage" aria-label="Interactive view">
+            <canvas id="graph-canvas" aria-label="Animated disease graph"></canvas>
+
+            <div class="mode-panel is-active" id="brief-panel" data-panel="brief">
+              <div class="brief-board" id="brief-board"></div>
+            </div>
+
+            <div class="mode-panel" id="explore-panel" data-panel="explore">
+              <div class="legend-strip" id="legend-strip"></div>
+              <div class="explore-browser" id="explore-browser"></div>
+            </div>
+
+            <div class="mode-panel" id="compare-panel" data-panel="compare">
+              <div class="compare-board" id="compare-board"></div>
+            </div>
+
+            <div class="mode-panel" id="evidence-panel" data-panel="evidence">
+              <div class="evidence-console">
+                <div class="evidence-toolbar" id="evidence-toolbar"></div>
+                <div class="evidence-list" id="evidence-list"></div>
+              </div>
+            </div>
+
+            <div class="mode-panel" id="sources-panel" data-panel="sources">
+              <div class="source-board" id="source-board"></div>
+            </div>
+          </section>
+
+          <aside class="inspector" aria-label="Selected node details">
+            <div class="inspector-header">
+              <span class="status-pill" id="status-pill">Loading</span>
+              <button id="reset-focus" class="icon-button label-button reset-button" type="button" title="Clear search and return to the selected disease">
+                <span>Reset</span>
+              </button>
+            </div>
+            <div id="inspector-content"></div>
+          </aside>
+        </section>
+
+        <footer class="disclaimer">
+          Exploratory data visualization only; not medical advice.
+          <a href="https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e" target="_blank" rel="noreferrer">Open the Geo Space</a>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

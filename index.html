@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disease Atlas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell landing-page">
+      <section class="hero landing-hero" aria-label="Disease Atlas introduction">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="hero-label">Geo Disease Atlas · Knowledge graph</p>
+          <h1 class="hero-title">
+            A source-backed map of <em>disease biology</em>, treatments, and evidence.
+          </h1>
+          <p class="hero-sub">
+            Disease Atlas is for people doing early biomedical triage: researchers, pharma strategists,
+            ontology builders, and app builders who need to move from a disease to genes, drugs,
+            mechanisms, evidence, and source links without losing provenance.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-cta" href="dashboard.html" target="_blank" rel="noreferrer">Open dashboard</a>
+            <a class="secondary-cta" href="https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e" target="_blank" rel="noreferrer">Open Geo Space</a>
+          </div>
+          <div class="hero-stats" aria-label="Disease Atlas summary">
+            <span class="stat"><strong>8</strong><small>disease packets</small></span>
+            <span class="stat"><strong>942</strong><small>graph objects</small></span>
+            <span class="stat"><strong>1,713</strong><small>source-backed claims</small></span>
+            <span class="stat"><strong>97</strong><small>drug entities</small></span>
+          </div>
+        </div>
+        <figure class="hero-visual" aria-label="Disease Atlas dashboard screenshots">
+          <img class="hero-visual-main" src="disease-atlas-insights-v2.png" alt="Disease Atlas insights dashboard screenshot">
+          <img class="hero-visual-card" src="disease-atlas-evidence-quality-v1.png" alt="Disease Atlas evidence quality view screenshot">
+        </figure>
+      </section>
+
+      <section class="landing-section use-case-section" aria-label="Who Disease Atlas is for">
+        <div class="section-heading">
+          <p class="story-label">Useful for</p>
+          <h2>Not a pretty graph. A disease evidence workbench.</h2>
+          <p>
+            The dashboard is not meant to diagnose patients or replace clinical guidelines. It is meant to help
+            someone decide what to inspect next, what looks connected, and whether a claim has a source trail worth trusting.
+          </p>
+        </div>
+        <div class="use-case-grid">
+          <article>
+            <span class="mini-pill">Translational scientist</span>
+            <h3>Start a disease workup.</h3>
+            <p>Open one disease and quickly inspect associated genes, pathway context, treatments, expression changes, and exploratory symptom/anatomy signals.</p>
+            <strong>Question answered: what should I investigate first?</strong>
+          </article>
+          <article>
+            <span class="mini-pill">Pharma / BD / strategy</span>
+            <h3>Look for repurposing clues.</h3>
+            <p>Compare disease packets to find shared genes, overlapping treatments, drug classes, and mechanisms that might justify a deeper review.</p>
+            <strong>Question answered: where are the interesting bridges?</strong>
+          </article>
+          <article>
+            <span class="mini-pill">Data and ontology builder</span>
+            <h3>Audit the claim graph.</h3>
+            <p>Click a claim, inspect its plain-English meaning, source family, identifiers, external links, and whether it is curated evidence or exploratory signal.</p>
+            <strong>Question answered: can another builder reuse this safely?</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="landing-section split-section" aria-label="What the atlas is">
+        <div>
+          <p class="story-label">Knowledge graph</p>
+          <h2>What is being organized?</h2>
+          <p>
+            Instead of storing disease information as isolated tables or long summaries, the atlas stores each
+            statement as a relationship: a drug treats a disease, a disease is associated with a gene, a gene
+            participates in a pathway, or a source supports a claim.
+          </p>
+          <p>
+            That means you can click from a disease to a gene, from that gene to pathways and GO annotations,
+            then back to the dataset, ontology, paper, or external identifier that supports the relationship.
+          </p>
+        </div>
+        <div class="definition-card">
+          <span class="mini-pill">Example graph claim</span>
+          <strong>Asthma → associated with → IL4</strong>
+          <p>The claim is inspectable, source-backed, and reusable. It is not just prose on a page.</p>
+          <span class="mini-pill">Sources stay close to claims</span>
+          <p>Evidence rows link back to source databases, DOI/PubMed records, ontologies, and external pages where available.</p>
+        </div>
+      </section>
+
+      <section class="story-grid" aria-label="How the atlas is organized">
+        <article>
+          <div class="story-swatch story-swatch-graph" aria-hidden="true"></div>
+          <span class="story-label">01 · Diseases</span>
+          <h2>Start disease-first.</h2>
+          <p>
+            The current atlas focuses on Asthma, Psoriasis, Rheumatoid arthritis, Breast cancer, Hypertension,
+            Type 2 diabetes mellitus, Alzheimer’s disease, and Crohn’s disease.
+          </p>
+        </article>
+        <article>
+          <div class="story-swatch story-swatch-source" aria-hidden="true"></div>
+          <span class="story-label">02 · Evidence</span>
+          <h2>Separate facts from signals.</h2>
+          <p>
+            Curated treatment and annotation claims are displayed separately from literature cooccurrence signals
+            such as symptoms, anatomy, and disease similarity.
+          </p>
+        </article>
+        <article>
+          <div class="story-swatch story-swatch-click" aria-hidden="true"></div>
+          <span class="story-label">03 · Provenance</span>
+          <h2>Click back to source.</h2>
+          <p>
+            Drugs have DrugBank identifiers, genes have Entrez-style identifiers, papers have DOI/PubMed links,
+            and source pages link out wherever the underlying data provides a useful URL.
+          </p>
+        </article>
+      </section>
+
+      <section class="landing-section" aria-label="Disease Atlas data coverage">
+        <div class="section-heading">
+          <p class="story-label">Current coverage</p>
+          <h2>What data is in the dashboard?</h2>
+          <p>
+            This is a curated starter repertoire, not a bulk dump. The goal is to make the graph traceable and
+            buildable before scaling to more diseases and more evidence layers.
+          </p>
+        </div>
+        <div class="data-grid">
+          <article><strong>404</strong><span>genes</span><p>Gene associations, expression signals, pathway context, and GO annotations.</p></article>
+          <article><strong>97</strong><span>drugs</span><p>Treating and palliative drug links, all with DrugBank IDs and external links.</p></article>
+          <article><strong>30</strong><span>drug classes</span><p>Mechanism/class groupings that help compare treatment families.</p></article>
+          <article><strong>32</strong><span>pathways</span><p>Reactome-style pathway context for disease-associated genes.</p></article>
+          <article><strong>138</strong><span>presentation signals</span><p>Exploratory symptom/presentation evidence, kept separate from canonical clinical facts.</p></article>
+          <article><strong>147</strong><span>anatomy signals</span><p>Literature/source-derived anatomy cooccurrence signals for exploration.</p></article>
+          <article><strong>23</strong><span>sources</span><p>Datasets, ontologies, source databases, and supporting papers.</p></article>
+          <article><strong>3</strong><span>papers</span><p>All currently linked with DOI and PubMed identifiers.</p></article>
+        </div>
+      </section>
+
+      <section class="landing-section screenshot-section" aria-label="Dashboard screenshots">
+        <div class="section-heading">
+          <p class="story-label">Dashboard</p>
+          <h2>Start with insights, then inspect evidence.</h2>
+          <p>
+            The dashboard opens separately so the landing page can explain the project while the app stays focused.
+            Use Insights for a first-pass disease workup, Compare for shared biology, and Evidence for source audit.
+          </p>
+        </div>
+        <div class="screenshot-grid">
+          <figure>
+            <img src="disease-atlas-insights-v2.png" alt="Disease Atlas dashboard insights view">
+            <figcaption>Open a disease brief with shared biology, treatment overlap, mechanism anchors, and evidence-quality cues.</figcaption>
+          </figure>
+          <figure>
+            <img src="disease-atlas-evidence-quality-v1.png" alt="Disease Atlas evidence quality view">
+            <figcaption>Audit claims with plain-English descriptions and quality labels before trusting or reusing a relationship.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="landing-section disease-table-section" aria-label="Disease packet summary">
+        <div class="section-heading">
+          <p class="story-label">Disease packets</p>
+          <h2>Eight disease packets are live in the read model.</h2>
+        </div>
+        <div class="coverage-table" role="table" aria-label="Disease packet coverage">
+          <div role="row"><strong>Disease</strong><strong>Claims</strong><strong>Genes</strong><strong>Drugs</strong><strong>Symptoms</strong></div>
+          <div role="row"><span>Asthma</span><span>118</span><span>16</span><span>11</span><span>26</span></div>
+          <div role="row"><span>Psoriasis</span><span>196</span><span>63</span><span>13</span><span>25</span></div>
+          <div role="row"><span>Rheumatoid arthritis</span><span>261</span><span>63</span><span>24</span><span>51</span></div>
+          <div role="row"><span>Breast cancer</span><span>290</span><span>65</span><span>18</span><span>20</span></div>
+          <div role="row"><span>Hypertension</span><span>244</span><span>65</span><span>12</span><span>20</span></div>
+          <div role="row"><span>Type 2 diabetes mellitus</span><span>175</span><span>16</span><span>10</span><span>14</span></div>
+          <div role="row"><span>Alzheimer’s disease</span><span>211</span><span>65</span><span>9</span><span>20</span></div>
+          <div role="row"><span>Crohn’s disease</span><span>218</span><span>65</span><span>8</span><span>20</span></div>
+        </div>
+      </section>
+
+      <section class="landing-section final-cta" aria-label="Open dashboard">
+        <p class="story-label">Build on the atlas</p>
+        <h2>Open the dashboard when you want to inspect the graph.</h2>
+        <p>
+          The next step is improving source specificity and confidence cues: making it even clearer which claims are
+          curated facts, which are exploratory signals, and which source records support each relationship.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-cta" href="dashboard.html" target="_blank" rel="noreferrer">Open dashboard</a>
+          <a class="secondary-cta" href="https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e" target="_blank" rel="noreferrer">Open Geo Space</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
