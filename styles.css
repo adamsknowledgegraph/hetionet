@@ -617,7 +617,7 @@ button {
 
 .coverage-table [role="row"] {
   display: grid;
-  grid-template-columns: minmax(220px, 1.4fr) repeat(4, minmax(80px, 0.6fr));
+  grid-template-columns: minmax(220px, 1.3fr) repeat(4, minmax(80px, 0.55fr)) minmax(110px, 0.7fr);
   gap: 12px;
   padding: 13px 16px;
   border-bottom: 1px solid rgba(245, 244, 238, 0.1);
@@ -633,6 +633,20 @@ button {
 
 .coverage-table [role="row"]:last-child {
   border-bottom: 0;
+}
+
+.table-link {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.table-link:hover,
+.table-link:focus-visible {
+  color: var(--gold);
+}
+
+.table-link.is-muted {
+  color: var(--muted);
 }
 
 .final-cta {
@@ -851,6 +865,42 @@ select option {
   gap: 8px;
   width: auto;
   padding: 0 11px;
+}
+
+.geo-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.geo-topbar-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  max-width: 220px;
+  padding: 0 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 209, 0.34);
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(0, 255, 209, 0.1);
+  font-size: 0.78rem;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.geo-topbar-link:hover,
+.geo-topbar-link:focus-visible {
+  border-color: rgba(0, 255, 209, 0.72);
+  background: rgba(0, 255, 209, 0.18);
+}
+
+.geo-topbar-link-secondary {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.055);
 }
 
 .search-icon {
@@ -2029,6 +2079,24 @@ a.source-chip:hover {
   color: var(--cyan);
 }
 
+.geo-link-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(0, 255, 209, 0.28);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(0, 255, 209, 0.08);
+  text-decoration: none;
+}
+
+.geo-link-list a:hover,
+.geo-link-list a:focus-visible {
+  border-color: rgba(0, 255, 209, 0.72);
+  background: rgba(0, 255, 209, 0.16);
+}
+
 .disclaimer {
   position: relative;
   z-index: 1;
@@ -2088,6 +2156,15 @@ a.source-chip:hover {
     flex-wrap: wrap;
   }
 
+  .geo-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .geo-topbar-link {
+    max-width: none;
+  }
+
   .search-wrap {
     width: 100%;
   }
@@ -2140,6 +2217,16 @@ a.source-chip:hover {
 
   .hero-visual {
     min-height: 420px;
+  }
+
+  .coverage-table [role="row"] {
+    grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(72px, 0.6fr));
+  }
+
+  .coverage-table [role="row"] > :nth-child(4),
+  .coverage-table [role="row"] > :nth-child(5),
+  .coverage-table [role="row"] > :nth-child(6) {
+    display: none;
   }
 
   .hero-visual-card {

@@ -27,6 +27,15 @@ function formatNumber(value) {
   return Number(value || 0).toLocaleString();
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 function setStat(name, value) {
   document.querySelectorAll(`[data-atlas-stat="${name}"]`).forEach((node) => {
     node.textContent = formatNumber(value);
@@ -46,12 +55,19 @@ function renderCoverageTable(diseases) {
   for (const disease of diseases) {
     const row = document.createElement("div");
     row.setAttribute("role", "row");
+    const diseaseLink = disease.geoUrl
+      ? `<a class="table-link" href="${escapeHtml(disease.geoUrl)}" target="_blank" rel="noreferrer">${escapeHtml(disease.name)}</a>`
+      : escapeHtml(disease.name);
+    const geoLink = disease.geoUrl
+      ? `<a class="table-link" href="${escapeHtml(disease.geoUrl)}" target="_blank" rel="noreferrer">Open in Geo</a>`
+      : `<span class="table-link is-muted">Space</span>`;
     row.innerHTML = `
-      <span>${disease.name}</span>
+      <span>${diseaseLink}</span>
       <span>${formatNumber(Object.values(disease.evidenceGroupCounts || {}).reduce((sum, value) => sum + Number(value || 0), 0))}</span>
       <span>${formatNumber(disease.nodeCounts?.gene || 0)}</span>
       <span>${formatNumber(disease.nodeCounts?.drug || 0)}</span>
       <span>${formatNumber(disease.relationCounts?.symptomEvidence || 0)}</span>
+      <span>${geoLink}</span>
     `;
     table.append(row);
   }
