@@ -169,6 +169,8 @@ const els = {
   diseaseSelect: document.querySelector("#disease-select"),
   modeButtons: [...document.querySelectorAll(".mode-button")],
   searchInput: document.querySelector("#search-input"),
+  openGeoItem: document.querySelector("#open-geo-item"),
+  openGeoSpace: document.querySelector("#open-geo-space"),
   motionToggle: document.querySelector("#motion-toggle"),
   metricStack: document.querySelector("#metric-stack"),
   questZone: document.querySelector("#quest-zone"),
@@ -271,6 +273,80 @@ function byId(items) {
 
 function diseaseByName(name) {
   return state.data.diseases.find((disease) => disease.name === name);
+}
+
+function geoSpaceUrl() {
+  return state.data?.meta?.geoSpaceUrl || "https://www.geobrowser.io/space/141d3ace705feabc04d50c78bbf7226e";
+}
+
+function geoUrlForDiseaseName(name) {
+  return diseaseByName(name)?.geoUrl || geoSpaceUrl();
+}
+
+function renderTopbarGeoLinks() {
+  if (els.openGeoItem) {
+    els.openGeoItem.href = geoUrlForDiseaseName(state.disease);
+    els.openGeoItem.textContent = `Open ${state.disease} in Geo`;
+    els.openGeoItem.setAttribute("aria-label", `Open ${state.disease} packet in Geo`);
+    els.openGeoItem.title = `Open ${state.disease} packet in Geo`;
+  }
+  if (els.openGeoSpace) {
+    els.openGeoSpace.href = geoSpaceUrl();
+  }
+}
+
+function uniqueLinks(links) {
+  const seen = new Set();
+  return links.filter((link) => {
+    const key = `${link.label}|${link.href}`;
+    if (!link.href || seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+function renderLinkList(links, className = "link-list") {
+  if (!links.length) {
+    return "";
+  }
+  return `<div class="${className}">${links.map((link) => `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}</div>`;
+}
+
+function geoLinksForItem(item) {
+  const links = [];
+  if (item.kind === "disease") {
+    links.push({
+      label: `Open ${item.name} in Geo`,
+      href: geoUrlForDiseaseName(item.name),
+    });
+  } else {
+    for (const diseaseName of (item.appearsIn || []).slice(0, 6)) {
+      links.push({
+        label: `${diseaseName} packet in Geo`,
+        href: geoUrlForDiseaseName(diseaseName),
+      });
+    }
+  }
+  links.push({
+    label: "Open Geo Space",
+    href: geoSpaceUrl(),
+  });
+  return uniqueLinks(links);
+}
+
+function geoLinksForEdge(item) {
+  return uniqueLinks([
+    {
+      label: `Open ${item.disease} packet in Geo`,
+      href: geoUrlForDiseaseName(item.disease),
+    },
+    {
+      label: "Open Geo Space",
+      href: geoSpaceUrl(),
+    },
+  ]);
 }
 
 function node(id) {
@@ -760,6 +836,10 @@ function renderMetrics() {
         ${disease.diseaseOntologyId ? `<span class="mini-pill">${escapeHtml(disease.diseaseOntologyId)}</span>` : ""}
         <a class="mini-pill" href="${escapeHtml(disease.geoUrl)}" target="_blank" rel="noreferrer">Open in Geo</a>
       </div>
+      ${renderLinkList(uniqueLinks([
+        { label: `Open ${disease.name} in Geo`, href: disease.geoUrl },
+        { label: "Open Geo Space", href: geoSpaceUrl() },
+      ]), "link-list geo-link-list")}
     </div>
     <div class="metric-grid">
       ${metric("Claims", claimTotal)}
@@ -1554,6 +1634,7 @@ function renderInspector() {
     const item = edge(state.selectedEdgeId);
     if (item) {
       const quality = evidenceQuality(item);
+      const geoLinks = geoLinksForEdge(item);
       els.inspectorContent.innerHTML = `
         <div class="detail-stack">
           <span class="kind-chip" data-kind="${escapeHtml(node(item.source)?.kind || "disease")}">${escapeHtml(claimPlainLabel(item))}</span>
@@ -1569,6 +1650,10 @@ function renderInspector() {
         <div class="plain-explainer">
           <strong>${escapeHtml(quality.label)}</strong>
           <span>${escapeHtml(quality.explanation)} This is an edge in the graph: source object -> relationship -> target object.</span>
+        </div>
+        <div class="detail-stack">
+          <div class="section-label"><span>Continue in Geo</span><span>${geoLinks.length}</span></div>
+          ${renderLinkList(geoLinks, "link-list geo-link-list")}
         </div>
         <div class="detail-stack">
           <div class="section-label"><span>Sources</span><span>${item.sourceNames?.length || 0}</span></div>
@@ -1595,6 +1680,10 @@ function renderInspector() {
       : state.mode === "evidence"
         ? "Use the filters to separate curated treatment claims, database annotations, expression changes, and exploratory cooccurrence signals. Click any evidence row to see its sources here."
         : "Use the source list to open datasets, ontologies, papers, and external identifiers. Source records tell you where claims and annotations come from.";
+    const modeGeoLinks = uniqueLinks([
+      { label: `Open ${state.disease} in Geo`, href: geoUrlForDiseaseName(state.disease) },
+      { label: "Open Geo Space", href: geoSpaceUrl() },
+    ]);
     els.inspectorContent.innerHTML = `
       <div class="detail-stack mode-guide">
         <span class="kind-chip" data-kind="disease">${escapeHtml(`${modeLabel(state.mode)} mode`)}</span>
@@ -1610,6 +1699,10 @@ function renderInspector() {
       <div class="plain-explainer">
         <strong>Why this matters</strong>
         <span>The atlas is useful only if claims remain traceable. The center panel is the audit trail; this drawer shows detail once you select a row.</span>
+      </div>
+      <div class="detail-stack">
+        <div class="section-label"><span>Continue in Geo</span><span>${modeGeoLinks.length}</span></div>
+        ${renderLinkList(modeGeoLinks, "link-list geo-link-list")}
       </div>
     `;
     return;
@@ -1630,6 +1723,7 @@ function renderInspector() {
   const context = nodeContext(item);
   const identifiers = Object.entries(item.identifiers || {});
   const links = nodeLinks(item);
+  const geoLinks = geoLinksForItem(item);
   const contextLabel = state.mode === "compare" && item.kind === "gene"
     ? "Cross-disease context"
     : `${state.disease} context`;
@@ -1658,7 +1752,8 @@ function renderInspector() {
         </div>
       </div>
     ` : ""}
-    ${links.length ? `<div class="link-list">${links.map((link) => `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}</div>` : ""}
+    ${renderLinkList(geoLinks, "link-list geo-link-list")}
+    ${renderLinkList(links)}
     ${item.sources?.length ? `
       <div class="detail-stack">
         <div class="section-label"><span>Sources</span><span>${item.sources.length}</span></div>
@@ -1755,6 +1850,7 @@ function renderMode() {
 }
 
 function renderAll() {
+  renderTopbarGeoLinks();
   renderMetrics();
   renderQuests();
   renderMode();
