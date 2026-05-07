@@ -43,6 +43,19 @@ const KIND_LABEL = {
   anatomy: "Anatomy",
 };
 
+const GRAPH_LAYOUT_LABEL = {
+  network: "Network",
+  orbit: "Orbit",
+  bridges: "Bridge map",
+};
+
+const GRAPH_FAMILY_LABEL = {
+  all: "All links",
+  treatments: "Treatments",
+  mechanisms: "Mechanisms",
+  signals: "Signals",
+};
+
 const CLAIM_HELP = {
   associatedGenes: {
     plainLabel: "disease-gene association",
@@ -175,6 +188,8 @@ const els = {
   metricStack: document.querySelector("#metric-stack"),
   questZone: document.querySelector("#quest-zone"),
   legendStrip: document.querySelector("#legend-strip"),
+  graphToolbar: document.querySelector("#graph-toolbar"),
+  graphInsight: document.querySelector("#graph-insight"),
   briefBoard: document.querySelector("#brief-board"),
   exploreBrowser: document.querySelector("#explore-browser"),
   panels: [...document.querySelectorAll(".mode-panel")],
@@ -196,6 +211,8 @@ const state = {
   selectedEdgeId: null,
   evidenceFilter: "all",
   kindFilter: "all",
+  graphLayout: "network",
+  graphFamily: "all",
   motion: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   graphNodes: [],
   graphEdges: [],
@@ -442,6 +459,134 @@ function getFilteredDiseaseNodes(diseaseName = state.disease) {
   return [...ids].map((id) => node(id)).filter(Boolean);
 }
 
+function edgeMatchesGraphFamily(item, family = state.graphFamily) {
+  if (family === "all") {
+    return true;
+  }
+
+  if (family === "treatments") {
+    return ["treats", "palliates", "includesDrug"].includes(item.type);
+  }
+
+  if (family === "mechanisms") {
+    return [
+      "associatedGenes",
+      "participatesInPathway",
+      "participatesInBiologicalProcess",
+      "hasMolecularFunction",
+      "locatedInCellularComponent",
+      "upregulatedGenes",
+      "downregulatedGenes",
+    ].includes(item.type);
+  }
+
+  if (family === "signals") {
+    return [
+      "symptomEvidence",
+      "anatomyEvidence",
+      "diseaseSimilarityEvidence",
+      "upregulatedGenes",
+      "downregulatedGenes",
+    ].includes(item.type);
+  }
+
+  return true;
+}
+
+function bridgeEligibleNode(item) {
+  return item && ["gene", "drug"].includes(item.kind) && (item.appearsIn?.length || 0) > 1;
+}
+
+function graphDataset() {
+  if (state.graphLayout === "bridges") {
+    const currentEdges = getDiseaseEdges();
+    const bridgeIds = new Set(
+      currentEdges
+        .filter((item) => edgeMatchesGraphFamily(item))
+        .map((item) => {
+          const source = node(item.source);
+          const target = node(item.target);
+          if (source?.kind === "disease" && bridgeEligibleNode(target)) {
+            return target.id;
+          }
+          if (target?.kind === "disease" && bridgeEligibleNode(source)) {
+            return source.id;
+          }
+          return null;
+        })
+        .filter(Boolean)
+    );
+
+    const bridgeEdges = state.data.edges.filter((item) => {
+      if (!edgeMatchesGraphFamily(item)) {
+        return false;
+      }
+      const source = node(item.source);
+      const target = node(item.target);
+      const sourceBridge = bridgeIds.has(item.source);
+      const targetBridge = bridgeIds.has(item.target);
+      const sourceDisease = source?.kind === "disease";
+      const targetDisease = target?.kind === "disease";
+      return (sourceBridge && targetDisease) || (targetBridge && sourceDisease);
+    });
+
+    const ids = new Set([diseaseNodeId(state.disease)]);
+    bridgeEdges.forEach((item) => {
+      ids.add(item.source);
+      ids.add(item.target);
+    });
+
+    const nodes = [...ids].map((id) => node(id)).filter(Boolean);
+    return {
+      nodes: filterGraphNodes(nodes),
+      edges: bridgeEdges.filter((item) => filterGraphEdgeByKind(item)),
+      title: `${state.disease} bridge map`,
+      subtitle: "Shared genes and drugs that connect this packet to other diseases in the atlas.",
+    };
+  }
+
+  const edges = getDiseaseEdges().filter((item) => edgeMatchesGraphFamily(item));
+  const ids = new Set([diseaseNodeId(state.disease)]);
+  edges.forEach((item) => {
+    ids.add(item.source);
+    ids.add(item.target);
+  });
+  const nodes = [...ids].map((id) => node(id)).filter(Boolean);
+
+  return {
+    nodes: filterGraphNodes(nodes),
+    edges: edges.filter((item) => filterGraphEdgeByKind(item)),
+    title: state.graphLayout === "network"
+      ? `${state.disease} network`
+      : `${state.disease} orbit`,
+    subtitle: state.graphLayout === "network"
+      ? "A force-based layout where connected nodes pull together, making mechanism and treatment neighborhoods easier to see."
+      : "A clean orbital layout that groups genes, drugs, pathways, symptoms, and anatomy around the selected disease.",
+  };
+}
+
+function filterGraphNodes(nodes) {
+  if (state.kindFilter === "all") {
+    return nodes;
+  }
+  const ids = new Set(nodes.filter((item) => item.kind === state.kindFilter || item.kind === "disease").map((item) => item.id));
+  return nodes.filter((item) => ids.has(item.id));
+}
+
+function filterGraphEdgeByKind(item) {
+  if (state.kindFilter === "all") {
+    return true;
+  }
+  const source = node(item.source);
+  const target = node(item.target);
+  if (source?.kind === state.kindFilter || target?.kind === state.kindFilter) {
+    return true;
+  }
+  return state.kindFilter === "disease"
+    && source?.kind === "disease"
+    && target?.kind === "disease";
+}
+
 function setKindFilter(kind) {
   state.kindFilter = kind;
   state.selectedEdgeId = null;
@@ -636,6 +781,183 @@ function layoutCompare() {
   return placed;
 }
 
+function hashString(value) {
+  let hash = 0;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = ((hash << 5) - hash + value.charCodeAt(index)) | 0;
+  }
+  return Math.abs(hash);
+}
+
+function anchorForNode(item, index, counts, options = {}) {
+  const { width, height } = canvasSize();
+  const center = { x: width * 0.5, y: height * 0.5 };
+
+  if (options.bridge) {
+    if (item.kind === "disease") {
+      if (item.name === state.disease) {
+        return center;
+      }
+      const ringCount = Math.max(1, counts.disease - 1);
+      const ringIndex = Math.max(0, index - 1);
+      const angle = (-Math.PI / 2) + (Math.PI * 2 * (ringIndex / ringCount));
+      return {
+        x: center.x + Math.cos(angle) * Math.min(width, height) * 0.28,
+        y: center.y + Math.sin(angle) * Math.min(width, height) * 0.28,
+      };
+    }
+    if (item.kind === "gene") {
+      return { x: width * 0.34, y: height * 0.32 };
+    }
+    if (item.kind === "drug") {
+      return { x: width * 0.66, y: height * 0.7 };
+    }
+    return center;
+  }
+
+  const anchors = {
+    disease: center,
+    gene: { x: width * 0.34, y: height * 0.42 },
+    drug: { x: width * 0.67, y: height * 0.46 },
+    "drug-class": { x: width * 0.72, y: height * 0.23 },
+    pathway: { x: width * 0.52, y: height * 0.2 },
+    "go-term": { x: width * 0.54, y: height * 0.8 },
+    symptom: { x: width * 0.18, y: height * 0.72 },
+    anatomy: { x: width * 0.82, y: height * 0.7 },
+  };
+
+  return anchors[item.kind] || center;
+}
+
+function nodeRadiusForGraph(item) {
+  if (item.kind === "disease") {
+    return state.graphLayout === "bridges" ? 28 : 24;
+  }
+  if (item.kind === "gene" || item.kind === "drug") {
+    return 13;
+  }
+  return 11;
+}
+
+function layoutNetwork(nodes, edges, options = {}) {
+  const { width, height } = canvasSize();
+  const previous = state.layout;
+  const positions = new Map();
+  const velocity = new Map();
+  const anchorIndex = new Map();
+  const counts = nodes.reduce((map, item) => {
+    map[item.kind] = (map[item.kind] || 0) + 1;
+    return map;
+  }, {});
+  const seenByKind = {};
+
+  for (const item of nodes) {
+    const kindIndex = seenByKind[item.kind] || 0;
+    seenByKind[item.kind] = kindIndex + 1;
+    anchorIndex.set(item.id, kindIndex);
+    const prior = previous.get(item.id);
+    const anchor = anchorForNode(item, kindIndex, counts, options);
+    const seed = hashString(item.id);
+    const spreadX = ((seed % 200) - 100) * 0.8;
+    const spreadY = (((seed / 7) % 200) - 100) * 0.8;
+    positions.set(item.id, {
+      x: prior?.x ?? anchor.x + spreadX,
+      y: prior?.y ?? anchor.y + spreadY,
+    });
+    velocity.set(item.id, { x: 0, y: 0 });
+  }
+
+  const springStrength = options.bridge ? 0.015 : 0.012;
+  const repulsion = options.bridge ? 5400 : 3800;
+  const anchorStrength = options.bridge ? 0.011 : 0.008;
+  const collisionPadding = options.bridge ? 9 : 7;
+
+  for (let iteration = 0; iteration < 220; iteration += 1) {
+    const forces = new Map(nodes.map((item) => [item.id, { x: 0, y: 0 }]));
+
+    for (let leftIndex = 0; leftIndex < nodes.length; leftIndex += 1) {
+      const left = nodes[leftIndex];
+      const leftPos = positions.get(left.id);
+      for (let rightIndex = leftIndex + 1; rightIndex < nodes.length; rightIndex += 1) {
+        const right = nodes[rightIndex];
+        const rightPos = positions.get(right.id);
+        let dx = rightPos.x - leftPos.x;
+        let dy = rightPos.y - leftPos.y;
+        let distance = Math.hypot(dx, dy) || 0.001;
+        const nx = dx / distance;
+        const ny = dy / distance;
+        const repel = repulsion / (distance * distance);
+        forces.get(left.id).x -= nx * repel;
+        forces.get(left.id).y -= ny * repel;
+        forces.get(right.id).x += nx * repel;
+        forces.get(right.id).y += ny * repel;
+
+        const minDistance = nodeRadiusForGraph(left) + nodeRadiusForGraph(right) + collisionPadding;
+        if (distance < minDistance) {
+          const overlap = (minDistance - distance) * 0.08;
+          forces.get(left.id).x -= nx * overlap;
+          forces.get(left.id).y -= ny * overlap;
+          forces.get(right.id).x += nx * overlap;
+          forces.get(right.id).y += ny * overlap;
+        }
+      }
+    }
+
+    for (const edgeItem of edges) {
+      const source = positions.get(edgeItem.source);
+      const target = positions.get(edgeItem.target);
+      if (!source || !target) {
+        continue;
+      }
+      const sourceNode = node(edgeItem.source);
+      const targetNode = node(edgeItem.target);
+      let dx = target.x - source.x;
+      let dy = target.y - source.y;
+      const distance = Math.hypot(dx, dy) || 0.001;
+      const nx = dx / distance;
+      const ny = dy / distance;
+      const desired = options.bridge
+        ? (sourceNode?.kind === "disease" || targetNode?.kind === "disease" ? 115 : 88)
+        : (sourceNode?.kind === "disease" || targetNode?.kind === "disease" ? 108 : 74);
+      const pull = (distance - desired) * springStrength;
+      forces.get(edgeItem.source).x += nx * pull;
+      forces.get(edgeItem.source).y += ny * pull;
+      forces.get(edgeItem.target).x -= nx * pull;
+      forces.get(edgeItem.target).y -= ny * pull;
+    }
+
+    for (const item of nodes) {
+      const pos = positions.get(item.id);
+      const drift = velocity.get(item.id);
+      const kindIndex = anchorIndex.get(item.id) || 0;
+      const anchor = anchorForNode(item, kindIndex, counts, options);
+      const force = forces.get(item.id);
+      force.x += (anchor.x - pos.x) * anchorStrength;
+      force.y += (anchor.y - pos.y) * anchorStrength;
+
+      if (state.selectedNodeId === item.id) {
+        force.x += (width * 0.5 - pos.x) * 0.012;
+        force.y += (height * 0.5 - pos.y) * 0.012;
+      }
+
+      drift.x = (drift.x + force.x) * 0.82;
+      drift.y = (drift.y + force.y) * 0.82;
+      pos.x = Math.min(width - 42, Math.max(42, pos.x + drift.x));
+      pos.y = Math.min(height - 42, Math.max(42, pos.y + drift.y));
+    }
+  }
+
+  return nodes.map((item) => {
+    const pos = positions.get(item.id);
+    return {
+      id: item.id,
+      x: pos.x,
+      y: pos.y,
+      radius: nodeRadiusForGraph(item),
+    };
+  });
+}
+
 function rebuildCanvasGraph() {
   if (!state.data) {
     return;
@@ -645,9 +967,26 @@ function rebuildCanvasGraph() {
     state.graphEdges = [];
     state.layout = new Map();
   } else {
-    state.graphNodes = getFilteredDiseaseNodes();
-    state.graphEdges = getFilteredDiseaseEdges();
-    state.layout = new Map(layoutExplore(state.graphNodes).map((item) => [item.id, item]));
+    const dataset = graphDataset();
+    state.graphNodes = dataset.nodes;
+    state.graphEdges = dataset.edges;
+    if (!state.graphNodes.some((item) => item.id === state.selectedNodeId)) {
+      state.selectedNodeId = state.graphNodes.find((item) => item.id === diseaseNodeId(state.disease))?.id
+        || state.graphNodes[0]?.id
+        || null;
+      state.selectedEdgeId = null;
+    }
+    if (state.graphLayout === "orbit") {
+      state.layout = new Map(layoutExplore(state.graphNodes).map((item) => [item.id, item]));
+    } else {
+      state.layout = new Map(
+        layoutNetwork(
+          state.graphNodes,
+          state.graphEdges,
+          { bridge: state.graphLayout === "bridges" }
+        ).map((item) => [item.id, item])
+      );
+    }
   }
   drawFrame(performance.now());
 }
@@ -665,9 +1004,10 @@ function drawEdge(item, time, index) {
   const searched = edgeMatchesSearch(item);
   const color = RELATION_COLOR[item.type] || "#ffffff";
   const alpha = selected || searched ? 0.82 : 0.18;
+  const useOrbitCurves = state.graphLayout === "orbit";
   const midX = (source.x + target.x) / 2;
   const midY = (source.y + target.y) / 2;
-  const bend = Math.min(90, Math.hypot(target.x - source.x, target.y - source.y) * 0.18);
+  const bend = Math.min(90, Math.hypot(target.x - source.x, target.y - source.y) * (useOrbitCurves ? 0.18 : 0.05));
   const ctrlX = midX + (target.y - source.y > 0 ? bend : -bend);
   const ctrlY = midY - (target.x - source.x > 0 ? bend : -bend);
 
@@ -676,12 +1016,21 @@ function drawEdge(item, time, index) {
   ctx.lineWidth = selected || searched ? 2.2 : 1.1;
   ctx.beginPath();
   ctx.moveTo(source.x, source.y);
-  ctx.quadraticCurveTo(ctrlX, ctrlY, target.x, target.y);
+  if (useOrbitCurves) {
+    ctx.quadraticCurveTo(ctrlX, ctrlY, target.x, target.y);
+  } else {
+    ctx.lineTo(target.x, target.y);
+  }
   ctx.stroke();
 
   if (state.motion) {
     const t = ((time / 1300 + index * 0.071) % 1);
-    const dot = quadPoint(source, { x: ctrlX, y: ctrlY }, target, t);
+    const dot = useOrbitCurves
+      ? quadPoint(source, { x: ctrlX, y: ctrlY }, target, t)
+      : {
+        x: source.x + (target.x - source.x) * t,
+        y: source.y + (target.y - source.y) * t,
+      };
     ctx.fillStyle = hexToRgba(color, selected || searched ? 0.95 : 0.42);
     ctx.beginPath();
     ctx.arc(dot.x, dot.y, selected || searched ? 3.5 : 2.2, 0, Math.PI * 2);
@@ -720,7 +1069,7 @@ function drawNode(item, time) {
     ctx.fill();
   }
 
-  if (selected || hovered || searched || item.kind === "disease") {
+  if (selected || hovered || searched || item.kind === "disease" || (state.graphLayout === "bridges" && (item.appearsIn?.length || 0) > 1)) {
     drawLabel(item.name, layout.x, layout.y + radius + 18, color);
   }
   ctx.restore();
@@ -868,14 +1217,101 @@ function renderLegend() {
   });
 }
 
-function renderExploreBrowser() {
-  const nodes = getDiseaseNodes().filter((item) => {
-    if (item.kind === "disease") {
-      return state.kindFilter === "all" || state.kindFilter === "disease";
-    }
-    return state.kindFilter === "all" || item.kind === state.kindFilter;
+function setGraphLayout(layout) {
+  state.graphLayout = layout;
+  state.selectedEdgeId = null;
+  if (!state.selectedNodeId) {
+    state.selectedNodeId = diseaseNodeId(state.disease);
+  }
+  renderMode();
+  renderInspector();
+  rebuildCanvasGraph();
+}
+
+function setGraphFamily(family) {
+  state.graphFamily = family;
+  state.selectedEdgeId = null;
+  renderMode();
+  renderInspector();
+  rebuildCanvasGraph();
+}
+
+function renderGraphToolbar() {
+  if (!els.graphToolbar) {
+    return;
+  }
+  const layoutButtons = ["network", "orbit", "bridges"]
+    .map((layout) => `
+      <button class="graph-chip ${state.graphLayout === layout ? "is-active" : ""}" type="button" data-graph-layout="${layout}">
+        ${escapeHtml(GRAPH_LAYOUT_LABEL[layout])}
+      </button>
+    `)
+    .join("");
+  const familyButtons = ["all", "mechanisms", "treatments", "signals"]
+    .map((family) => `
+      <button class="graph-chip ${state.graphFamily === family ? "is-active" : ""}" type="button" data-graph-family="${family}">
+        ${escapeHtml(GRAPH_FAMILY_LABEL[family])}
+      </button>
+    `)
+    .join("");
+
+  els.graphToolbar.innerHTML = `
+    <div class="graph-toolbar-row">
+      <span class="section-label"><span>Layout</span><span>${escapeHtml(GRAPH_LAYOUT_LABEL[state.graphLayout])}</span></span>
+      <div class="graph-chip-group">${layoutButtons}</div>
+    </div>
+    <div class="graph-toolbar-row">
+      <span class="section-label"><span>Focus</span><span>${escapeHtml(GRAPH_FAMILY_LABEL[state.graphFamily])}</span></span>
+      <div class="graph-chip-group">${familyButtons}</div>
+    </div>
+  `;
+
+  els.graphToolbar.querySelectorAll("[data-graph-layout]").forEach((button) => {
+    button.addEventListener("click", () => setGraphLayout(button.dataset.graphLayout));
   });
-  const visible = nodes
+  els.graphToolbar.querySelectorAll("[data-graph-family]").forEach((button) => {
+    button.addEventListener("click", () => setGraphFamily(button.dataset.graphFamily));
+  });
+}
+
+function renderGraphInsight() {
+  if (!els.graphInsight) {
+    return;
+  }
+
+  const dataset = graphDataset();
+  const byKind = dataset.nodes.reduce((map, item) => {
+    map[item.kind] = (map[item.kind] || 0) + 1;
+    return map;
+  }, {});
+  const graphStats = [
+    `${dataset.nodes.length} nodes`,
+    `${dataset.edges.length} edges`,
+    `${byKind.gene || 0} genes`,
+    `${byKind.drug || 0} drugs`,
+    `${byKind.pathway || 0} pathways`,
+    `${(byKind.symptom || 0) + (byKind.anatomy || 0)} signals`,
+  ];
+
+  const copy = {
+    network: "This is the clearest “how things connect” view. Edge structure pulls related genes, treatments, pathways, and signals together instead of forcing them into fixed rings.",
+    orbit: "Use orbit when you want a cleaner category-first read: genes to the left, drugs to the right, mechanism context above, evidence signals around the perimeter.",
+    bridges: "Bridge map highlights the genes and drugs that recur across multiple disease packets, so you can spot overlap and possible repurposing or shared biology.",
+  };
+
+  els.graphInsight.innerHTML = `
+    <span class="section-label"><span>${escapeHtml(dataset.title)}</span><span>${escapeHtml(GRAPH_FAMILY_LABEL[state.graphFamily])}</span></span>
+    <h2>${escapeHtml(dataset.title)}</h2>
+    <p>${escapeHtml(dataset.subtitle)} ${escapeHtml(copy[state.graphLayout])}</p>
+    <div class="graph-stats">
+      ${graphStats.map((item) => `<span class="graph-stat">${escapeHtml(item)}</span>`).join("")}
+    </div>
+  `;
+}
+
+function renderExploreBrowser() {
+  const dataset = graphDataset();
+  const visible = dataset.nodes
     .filter((item) => !state.search || nodeMatchesSearch(item))
     .sort((left, right) => {
       const kindOrder = ["disease", "gene", "drug", "drug-class", "pathway", "go-term", "symptom", "anatomy"];
@@ -883,22 +1319,17 @@ function renderExploreBrowser() {
         || left.name.localeCompare(right.name);
     });
   const title = state.kindFilter === "all"
-    ? `${state.disease} graph objects`
+    ? dataset.title
     : state.kindFilter === "disease"
-      ? `${state.disease} disease links`
-      : `${state.disease} ${KIND_LABEL[state.kindFilter].toLowerCase()}s`;
+      ? `${dataset.title} · diseases`
+      : `${dataset.title} · ${KIND_LABEL[state.kindFilter].toLowerCase()}s`;
 
   els.exploreBrowser.innerHTML = `
-    ${state.kindFilter === "disease" ? `
-      <div class="plain-explainer">
-        <strong>What “Disease” shows</strong>
-        <span>This includes the selected disease itself plus other disease entities connected by similarity evidence. If you want genes, drugs, symptoms, or anatomy, use those chips instead.</span>
-      </div>
-    ` : ""}
     <div class="section-label">
       <span>${escapeHtml(title)}</span>
       <span>${visible.length}</span>
     </div>
+    <p class="claim-explainer">${escapeHtml(dataset.subtitle)}</p>
     <div class="node-card-grid">
       ${visible.length ? visible.map((item) => nodeCard(item)).join("") : `
         <div class="empty-panel">
@@ -1835,6 +2266,8 @@ function renderMode() {
     renderBrief();
   }
   if (state.mode === "explore") {
+    renderGraphToolbar();
+    renderGraphInsight();
     renderExploreBrowser();
   }
   if (state.mode === "compare") {
@@ -1846,7 +2279,9 @@ function renderMode() {
   if (state.mode === "sources") {
     renderSources();
   }
-  renderLegend();
+  if (state.mode === "explore") {
+    renderLegend();
+  }
 }
 
 function renderAll() {
