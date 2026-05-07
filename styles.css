@@ -1296,6 +1296,14 @@ button.kind-chip {
   pointer-events: auto;
 }
 
+.mode-panel[data-panel="explore"].is-active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  height: 100%;
+}
+
 .mode-panel[data-panel="compare"] {
   background:
     radial-gradient(circle at 18% 8%, rgba(0, 255, 209, 0.08), transparent 24rem),
@@ -1321,6 +1329,106 @@ button.kind-chip {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.graph-toolbar,
+.graph-insight,
+.explore-browser {
+  pointer-events: auto;
+}
+
+.graph-toolbar,
+.graph-insight {
+  width: min(760px, 62vw);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(16, 16, 16, 0.78);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.graph-toolbar {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.graph-toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.graph-toolbar-row .section-label {
+  min-width: 92px;
+}
+
+.graph-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.graph-chip {
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.graph-chip.is-active {
+  color: #061018;
+  border-color: transparent;
+  background: var(--cyan);
+  box-shadow: 0 0 18px rgba(0, 255, 209, 0.25);
+}
+
+.graph-insight {
+  display: grid;
+  gap: 10px;
+  padding: 13px 14px;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(0, 255, 209, 0.12), transparent 14rem),
+    radial-gradient(circle at 84% 20%, rgba(255, 61, 127, 0.08), transparent 14rem),
+    rgba(16, 16, 16, 0.84);
+}
+
+.graph-insight h2,
+.graph-insight p {
+  margin: 0;
+}
+
+.graph-insight h2 {
+  font-family: var(--font-display);
+  font-size: 1.42rem;
+  font-weight: 400;
+}
+
+.graph-insight p {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.graph-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.graph-stat {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--text);
+  font-size: 0.76rem;
 }
 
 .brief-board {
@@ -1502,9 +1610,8 @@ button.kind-chip {
 .explore-browser {
   display: grid;
   gap: 10px;
-  width: min(560px, 56vw);
-  max-height: min(52vh, 520px);
-  margin-top: 12px;
+  width: min(760px, 62vw);
+  max-height: min(34vh, 360px);
   padding: 12px;
   overflow: auto;
   border: 1px solid var(--line);
@@ -2213,6 +2320,12 @@ a.source-chip:hover {
     max-width: none;
   }
 
+  .graph-toolbar,
+  .graph-insight,
+  .explore-browser {
+    width: 100%;
+  }
+
   .search-wrap {
     width: 100%;
   }
@@ -2330,6 +2443,11 @@ a.source-chip:hover {
 
   .source-card {
     grid-template-columns: 1fr;
+  }
+
+  .graph-toolbar-row {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .source-meta-row {
