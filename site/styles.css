@@ -684,9 +684,57 @@ button {
 }
 
 body.dashboard-page .app-shell {
-  height: calc(100svh - 32px);
-  min-height: 0;
+  height: auto;
+  min-height: calc(100svh - 32px);
   margin: 16px auto;
+  overflow: visible;
+}
+
+body.dashboard-page .topbar {
+  position: sticky;
+  top: 16px;
+  z-index: 24;
+}
+
+body.dashboard-page .hud {
+  min-height: clamp(840px, calc(100svh - 180px), 1440px);
+}
+
+body.dashboard-page .left-rail,
+body.dashboard-page .center-stage,
+body.dashboard-page .inspector {
+  height: auto;
+}
+
+body.dashboard-page .center-stage {
+  min-height: 840px;
+  overflow: visible;
+}
+
+body.dashboard-page .mode-panel,
+body.dashboard-page .brief-board,
+body.dashboard-page .brief-grid,
+body.dashboard-page .compare-board,
+body.dashboard-page .evidence-console,
+body.dashboard-page .evidence-list,
+body.dashboard-page .source-board {
+  height: auto;
+  max-height: none;
+}
+
+body.dashboard-page .brief-board,
+body.dashboard-page .brief-grid,
+body.dashboard-page .compare-board,
+body.dashboard-page .evidence-list,
+body.dashboard-page .source-board,
+body.dashboard-page .quest-zone,
+body.dashboard-page .inspector,
+body.dashboard-page .inspector-edge-list {
+  overflow: visible;
+}
+
+body.dashboard-page .disclaimer {
+  padding-bottom: 8px;
 }
 
 body.capture-explorer .hero,
